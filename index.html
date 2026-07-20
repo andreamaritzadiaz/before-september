@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>before september</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif&family=Inter:wght@300;400&family=Pixelify+Sans:wght@400;700&family=Silkscreen&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Audio UI paused
+    <div class="sound-toggle" id="soundToggle">
+        <button class="sound-option active" data-sound="chime">Chime</button>
+        <button class="sound-option" data-sound="sparkle">Sparkle</button>
+        <button class="sound-option" data-sound="bubble">Bubble</button>
+        <button class="sound-option" data-sound="click">Click</button>
+        <button class="sound-option" data-sound="music-box">Music Box</button>
+        <button class="sound-option" data-sound="pluck">Pluck</button>
+    </div>
+    <button class="mute-btn" id="muteBtn" onclick="toggleAmbient()">Mute</button>
+    <div class="audio-hint" id="audioHint">click anywhere for sound</div>
+    -->
+    <div class="dark-overlay"></div>
+    <div class="texture-overlay"></div>
+    <div class="page-border"></div>
+    <div class="home-view" id="homeView">
+        <header>
+            <h1>before<br>september</h1>
+            <div class="intro-lines">
+                <p class="intro-line">things i</p>
+                <p class="intro-line">want to do</p>
+                <p class="intro-line indent-1">before the sun</p>
+                <p class="intro-line indent-2">sets on summer =)</p>
+            </div>
+        </header>
+        <div class="floating-items" id="floatingItems"></div>
+    </div>
+
+    <div class="detail-view hidden" id="detailView">
+        <button class="back-btn" id="backBtn">&larr; back</button>
+        <div class="detail-content">
+            <div class="detail-strip">
+                <h2 id="detailTitle"></h2>
+            </div>
+            <p class="status-note" id="detailNote"></p>
+
+            <!-- Scrapbook Editor -->
+            <div class="scrapbook-toolbar hidden" id="scrapbookToolbar">
+                <button class="sb-tool-btn" id="sbAddPhoto" title="Add Photo/Video">&#128247; photo</button>
+                <button class="sb-tool-btn" id="sbAddText" title="Add Text">&#9999;&#65039; text</button>
+                <button class="sb-tool-btn" id="sbAddSticker" title="Add Sticker">&#11088; sticker</button>
+                <button class="sb-tool-btn" id="sbAddAudio" title="Add Audio">&#127925; audio</button>
+                <button class="sb-tool-btn sb-save-btn" id="sbSave" title="Export Layout as JSON">&#128190; save/export</button>
+            </div>
+            <button class="sb-edit-toggle" id="sbEditToggle">&#9998; edit scrapbook</button>
+
+            <div class="scrapbook-canvas" id="scrapbookCanvas">
+                <div class="scrapbook-empty" id="scrapbookEmpty">
+                    <p>no memories yet ~ add some in edit mode!</p>
+                </div>
+            </div>
+
+            <div class="media-grid" id="mediaGrid"></div>
+        </div>
+    </div>
+
+    <!-- Sticker Picker Modal -->
+    <div class="sticker-picker hidden" id="stickerPicker">
+        <div class="sticker-picker-inner">
+            <p class="sticker-picker-title">pick a sticker</p>
+            <div class="sticker-grid" id="stickerGrid"></div>
+            <button class="sticker-picker-close" id="stickerPickerClose">close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>designed and built by <a href="https://instagram.com/andreadesignthings" target="_blank" class="footer-link">@andreadesignthings</a></p>
+        <p class="footer-bottom-line">july 2026 <a href="https://instagram.com/andreadesignthings" target="_blank" class="footer-cta">✴ follow me on instagram</a></p>
+    </footer>
+
+    <div class="cursor-star" id="cursorStar">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2 L14 9 L21.5 9 L15.5 13 L17.5 20.5 L12 16 L6.5 20.5 L8.5 13 L2.5 9 L10 9 Z" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

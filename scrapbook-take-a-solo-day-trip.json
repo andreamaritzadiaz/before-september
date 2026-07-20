@@ -1,0 +1,141 @@
+{
+  "item": "take a solo day trip",
+  "scrapbook": [
+    {
+      "type": "image",
+      "x": 226,
+      "y": 14,
+      "rotation": 3.88,
+      "src": "images/IMG_2834.jpg",
+      "width": 262
+    },
+    {
+      "type": "image",
+      "x": 18,
+      "y": 49,
+      "rotation": 0.13,
+      "src": "images/IMG_2848.jpg",
+      "width": 233
+    },
+    {
+      "type": "video",
+      "x": 807,
+      "y": 17,
+      "rotation": -3.22,
+      "src": "images/IMG_2847.MOV",
+      "width": 240
+    },
+    {
+      "type": "image",
+      "x": 32,
+      "y": 632,
+      "rotation": -1.93,
+      "src": "images/IMG_2888.jpg",
+      "width": 180
+    },
+    {
+      "type": "image",
+      "x": 298,
+      "y": 671,
+      "rotation": 2.09,
+      "src": "images/IMG_2928.jpg",
+      "width": 300
+    },
+    {
+      "type": "image",
+      "x": 417,
+      "y": 452,
+      "rotation": -0.44,
+      "src": "images/IMG_2889.jpg",
+      "width": 214
+    },
+    {
+      "type": "image",
+      "x": 69,
+      "y": 407,
+      "rotation": 0.23,
+      "src": "images/IMG_2913.jpg",
+      "width": 252
+    },
+    {
+      "type": "image",
+      "x": 709,
+      "y": 698,
+      "rotation": 3.27,
+      "src": "images/IMG_2993.jpg",
+      "width": 180
+    },
+    {
+      "type": "image",
+      "x": 299,
+      "y": 189,
+      "rotation": 2.18,
+      "src": "images/IMG_2865.jpg",
+      "width": 304
+    },
+    {
+      "type": "image",
+      "x": 614,
+      "y": 100,
+      "rotation": -2.41,
+      "src": "images/IMG_2949.jpg",
+      "width": 180
+    },
+    {
+      "type": "image",
+      "x": 664,
+      "y": 475,
+      "rotation": 2.83,
+      "src": "images/IMG_2987.jpg",
+      "width": 242
+    },
+    {
+      "type": "image",
+      "x": 1165,
+      "y": 57,
+      "rotation": 2.74,
+      "src": "images/IMG_2960.jpg",
+      "width": 279
+    },
+    {
+      "type": "image",
+      "x": 938,
+      "y": 509,
+      "rotation": 0.99,
+      "src": "images/IMG_2944.jpg",
+      "width": 216
+    },
+    {
+      "type": "image",
+      "x": 1191,
+      "y": 528,
+      "rotation": -2.84,
+      "src": "images/IMG_2985.jpg",
+      "width": 246
+    },
+    {
+      "type": "image",
+      "x": 1036,
+      "y": 206,
+      "rotation": 3.36,
+      "src": "images/IMG_2969.jpg",
+      "width": 180
+    },
+    {
+      "type": "text",
+      "x": 218,
+      "y": 613,
+      "rotation": -0.925309838180004,
+      "content": "twin falls",
+      "fontSize": 13
+    },
+    {
+      "type": "text",
+      "x": 974,
+      "y": 776,
+      "rotation": 0.5699817503024607,
+      "content": "heading for the blue skies\nand lavender fields \n",
+      "fontSize": 12
+    }
+  ]
+}

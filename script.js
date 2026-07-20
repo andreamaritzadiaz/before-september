@@ -474,8 +474,12 @@ function updateDrift() {
 
         const maxDist = 200;
         const strength = 25;
+        const isHovered = mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
 
-        if (dist < maxDist && dist > 0) {
+        if (isHovered) {
+            pos.offsetX *= 0.85;
+            pos.offsetY *= 0.85;
+        } else if (dist < maxDist && dist > 0) {
             const force = (1 - dist / maxDist) * strength;
             const angle = Math.atan2(dy, dx);
             pos.offsetX += (Math.cos(angle) * force - pos.offsetX) * 0.08;
@@ -985,6 +989,13 @@ function updateEmptyState() {
 }
 
 // ─── Save / Export to JSON ───
+function toRelativePath(src) {
+    if (src.includes('/images/')) {
+        return 'images/' + src.split('/images/').pop();
+    }
+    return src;
+}
+
 function getCanvasLayout() {
     const elements = scrapbookCanvas.querySelectorAll('.sb-element');
     const layout = [];
@@ -1005,9 +1016,7 @@ function getCanvasLayout() {
                 if (mediaSrc.startsWith('data:')) {
                     mediaSrc = el.dataset.filename || mediaSrc;
                 }
-                if (mediaSrc.includes('/images/')) {
-                    mediaSrc = 'images/' + mediaSrc.split('/images/').pop();
-                }
+                mediaSrc = toRelativePath(mediaSrc);
                 base.src = mediaSrc;
                 base.width = parseInt(el.style.width) || 180;
                 break;
@@ -1024,9 +1033,7 @@ function getCanvasLayout() {
                 if (audioSrc.startsWith('data:')) {
                     audioSrc = el.dataset.filename || audioSrc;
                 }
-                if (audioSrc.includes('/images/')) {
-                    audioSrc = 'images/' + audioSrc.split('/images/').pop();
-                }
+                audioSrc = toRelativePath(audioSrc);
                 base.src = audioSrc;
                 base.label = el.dataset.label || 'audio clip';
                 break;
@@ -1064,9 +1071,34 @@ function loadFromLocalStorage(item) {
     return null;
 }
 
+function loadFromJsonFile(item) {
+    const slug = item.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+    const filename = `scrapbook-${slug}.json`;
+    return fetch(filename)
+        .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
+        .then(data => data.scrapbook || null)
+        .catch(() => null);
+}
+
 sbSave.addEventListener('click', () => {
     saveToLocalStorage();
-    showToast('Saved!');
+
+    // Also export JSON file for persistence
+    const layout = getCanvasLayout();
+    const slug = (currentItem?.title || 'scrapbook').replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+    const exportData = { item: currentItem?.title, scrapbook: layout };
+    const json = JSON.stringify(exportData, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `scrapbook-${slug}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    showToast('Saved & exported!');
 });
 
 // ─── Export for publishing ───
@@ -1111,9 +1143,23 @@ function renderScrapbook(item) {
     scrapbookCanvas.style.height = '';
     scrapbookCanvas.style.transform = '';
 
-    // Check localStorage first, fall back to code-defined data
+    // Check localStorage first, then JSON file, then hardcoded data
     const localData = loadFromLocalStorage(item);
-    const scrapbookData = localData || item.scrapbook;
+    if (localData) {
+        renderScrapbookData(localData);
+    } else {
+        loadFromJsonFile(item).then(fileData => {
+            renderScrapbookData(fileData || item.scrapbook);
+        });
+    }
+}
+
+function renderScrapbookData(scrapbookData) {
+    // Clear again in case async loaded
+    scrapbookCanvas.querySelectorAll('.sb-element').forEach(el => el.remove());
+    scrapbookCanvas.style.width = '';
+    scrapbookCanvas.style.height = '';
+    scrapbookCanvas.style.transform = '';
 
     if (scrapbookData && scrapbookData.length > 0) {
         let maxRight = 0, maxBottom = 0;

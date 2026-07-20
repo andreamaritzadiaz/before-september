@@ -1,0 +1,101 @@
+{
+  "item": "sunset paddle board & pizza from cornelly",
+  "scrapbook": [
+    {
+      "type": "image",
+      "x": 202,
+      "y": 72,
+      "rotation": 3.43,
+      "src": "images/paddleboarding-4.jpg",
+      "width": 276
+    },
+    {
+      "type": "image",
+      "x": 58,
+      "y": 474,
+      "rotation": 3.44,
+      "src": "images/paddleboarding-5.jpg",
+      "width": 180
+    },
+    {
+      "type": "image",
+      "x": 606,
+      "y": 76,
+      "rotation": -2.1,
+      "src": "images/paddleboarding-6.jpg",
+      "width": 365
+    },
+    {
+      "type": "image",
+      "x": 669,
+      "y": 779,
+      "rotation": -0.81,
+      "src": "images/paddleboarding-7.jpg",
+      "width": 371
+    },
+    {
+      "type": "image",
+      "x": 511,
+      "y": 413,
+      "rotation": 2.05,
+      "src": "images/paddleboarding-2.jpg",
+      "width": 180
+    },
+    {
+      "type": "image",
+      "x": 1166,
+      "y": 636,
+      "rotation": -3.03,
+      "src": "images/paddleboarding-9.jpg",
+      "width": 251
+    },
+    {
+      "type": "image",
+      "x": 772,
+      "y": 408,
+      "rotation": -0.07,
+      "src": "images/paddleboarding-3.jpg",
+      "width": 223
+    },
+    {
+      "type": "image",
+      "x": 275,
+      "y": 717,
+      "rotation": -3.82,
+      "src": "images/paddleboarding-8.jpg",
+      "width": 253
+    },
+    {
+      "type": "image",
+      "x": 1075,
+      "y": 182,
+      "rotation": 1.98,
+      "src": "images/paddleboarding-1.jpg",
+      "width": 260
+    },
+    {
+      "type": "text",
+      "x": 233,
+      "y": 167,
+      "rotation": 1.0145806152145367,
+      "content": "tolu <3",
+      "fontSize": 11
+    },
+    {
+      "type": "text",
+      "x": 1206,
+      "y": 462,
+      "rotation": -2.861673857581229,
+      "content": "bambi shark dodododododo",
+      "fontSize": 11
+    },
+    {
+      "type": "text",
+      "x": 170,
+      "y": 764,
+      "rotation": -1.9176506287294521,
+      "content": "we \ngot \nbahn\n mi's \ninstead",
+      "fontSize": 13
+    }
+  ]
+}

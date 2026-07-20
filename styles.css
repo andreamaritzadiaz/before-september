@@ -402,6 +402,9 @@ header .subtitle {
     transition: opacity 0.4s ease;
     overflow: auto;
     background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .detail-view::before {
@@ -490,11 +493,14 @@ header .subtitle {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
+    width: 100%;
+    max-width: 1600px;
     position: relative;
     z-index: 102;
     pointer-events: none;
+    padding-top: 40px;
 }
 
 .detail-content > * {
@@ -531,9 +537,11 @@ header .subtitle {
 
 .media-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     margin-top: 40px;
+    width: 100%;
+    max-width: 1400px;
 }
 
 .media-grid img {
@@ -580,6 +588,21 @@ footer .footer-bottom-line {
 footer .footer-cta {
     margin-left: 10px;
     letter-spacing: 0.05em;
+}
+
+@media (min-width: 1600px) {
+    .detail-view {
+        padding: 60px 80px;
+    }
+
+    .media-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+    }
+
+    .detail-content h2 {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -826,16 +849,14 @@ footer .footer-cta {
 
 /* Scrapbook Canvas */
 .scrapbook-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
+    position: relative;
+    width: 100%;
     background: transparent;
     border: none;
     transition: background 0.3s ease;
     z-index: 101;
     pointer-events: none;
+    transform-origin: top center;
 }
 
 .scrapbook-canvas > * {
@@ -1176,8 +1197,8 @@ footer .footer-cta {
     .scrapbook-canvas {
         position: relative;
         inset: auto;
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
         overflow: visible;
         z-index: 10;
         pointer-events: all;
@@ -1186,6 +1207,7 @@ footer .footer-cta {
         align-items: center;
         gap: 16px;
         padding: 80px 20px 100px;
+        transform: none !important;
     }
 
     .scrapbook-canvas.edit-mode {
@@ -1239,5 +1261,9 @@ footer .footer-cta {
 
     .detail-view {
         overflow-y: auto;
+    }
+
+    .detail-content {
+        padding-top: 20px;
     }
 }

@@ -583,7 +583,7 @@ const stickerPicker = document.getElementById('stickerPicker');
 const stickerGrid = document.getElementById('stickerGrid');
 const stickerPickerClose = document.getElementById('stickerPickerClose');
 
-const editAllowed = new URLSearchParams(window.location.search).has('edit');
+const editAllowed = new URLSearchParams(window.location.search).has('edit') || window.location.hostname === 'localhost';
 if (!editAllowed) {
     sbEditToggle.style.display = 'none';
 }
@@ -878,7 +878,8 @@ function createScrapbookElement(data) {
             startX: e.clientX,
             startY: e.clientY,
             origWidth: rect.width,
-            origScale: parseFloat(wrapper.dataset.scale) || 1
+            origScale: parseFloat(wrapper.dataset.scale) || 1,
+            origFontSize: parseFloat(wrapper.dataset.fontSize) || 18
         };
     });
 
@@ -920,6 +921,10 @@ document.addEventListener('mousemove', (e) => {
             const newScale = Math.max(0.3, dragState.origScale + dx / 100);
             el.dataset.scale = newScale;
             el.style.transform = `rotate(${el.dataset.rotation || 0}deg) scale(${newScale})`;
+        } else if (el.dataset.type === 'text') {
+            const newSize = Math.max(8, dragState.origFontSize + dx / 4);
+            el.style.fontSize = newSize + 'px';
+            el.dataset.fontSize = newSize;
         } else {
             const newWidth = Math.max(60, dragState.origWidth + dx);
             el.style.width = newWidth + 'px';
@@ -1040,11 +1045,10 @@ function saveToLocalStorage() {
     localStorage.setItem(storageKey, JSON.stringify(layout));
     currentItem.scrapbook = layout;
 
-    // Save Spotify position
+    // Save Spotify position relative to canvas
     const spotifyEl = document.getElementById('spotifyEmbed');
     if (spotifyEl && currentItem.spotify) {
-        const rect = spotifyEl.getBoundingClientRect();
-        const pos = { x: rect.left, y: rect.top };
+        const pos = { x: parseInt(spotifyEl.style.left) || 0, y: parseInt(spotifyEl.style.top) || 0 };
         localStorage.setItem('spotify-pos-' + currentItem.title, JSON.stringify(pos));
     }
 }
@@ -1105,6 +1109,7 @@ function renderScrapbook(item) {
     scrapbookCanvas.querySelectorAll('.sb-element').forEach(el => el.remove());
     scrapbookCanvas.style.width = '';
     scrapbookCanvas.style.height = '';
+    scrapbookCanvas.style.transform = '';
 
     // Check localStorage first, fall back to code-defined data
     const localData = loadFromLocalStorage(item);
@@ -1123,13 +1128,50 @@ function renderScrapbook(item) {
             if (bottom > maxBottom) maxBottom = bottom;
         });
 
-        // Expand canvas to fit all elements
+        // Set intrinsic canvas size based on content
         scrapbookCanvas.style.width = maxRight + 'px';
         scrapbookCanvas.style.height = maxBottom + 'px';
+
+        // Scale canvas to fit viewport
+        scaleScrapbookCanvas(maxRight, maxBottom);
     }
 
     updateEmptyState();
 }
+
+// ─── Responsive Scaling ───
+let canvasNaturalWidth = 0;
+let canvasNaturalHeight = 0;
+
+function scaleScrapbookCanvas(naturalWidth, naturalHeight) {
+    canvasNaturalWidth = naturalWidth || parseInt(scrapbookCanvas.style.width) || 0;
+    canvasNaturalHeight = naturalHeight || parseInt(scrapbookCanvas.style.height) || 0;
+
+    if (!canvasNaturalWidth) return;
+
+    // On mobile, CSS handles the flow layout — don't scale
+    if (window.innerWidth <= 768) {
+        scrapbookCanvas.style.transform = '';
+        scrapbookCanvas.parentElement.style.minHeight = '';
+        return;
+    }
+
+    const containerWidth = detailView.clientWidth - 80;
+    const scale = Math.min(1.4, containerWidth / canvasNaturalWidth);
+
+    scrapbookCanvas.style.transform = `scale(${scale})`;
+    scrapbookCanvas.style.height = canvasNaturalHeight + 'px';
+
+    // Set wrapper height to account for scaling
+    const scaledHeight = canvasNaturalHeight * scale;
+    scrapbookCanvas.parentElement.style.minHeight = scaledHeight + 'px';
+}
+
+window.addEventListener('resize', () => {
+    if (canvasNaturalWidth && !detailView.classList.contains('hidden')) {
+        scaleScrapbookCanvas();
+    }
+});
 
 // ─── Patch openDetail to include scrapbook ───
 const _originalOpenDetail = openDetail;
@@ -1163,19 +1205,15 @@ openDetail = function(item) {
         wrapper.id = 'spotifyEmbed';
         wrapper.className = 'spotify-embed';
 
-        // Load saved position
+        // Load saved position (relative to canvas)
         const savedPos = localStorage.getItem('spotify-pos-' + item.title);
         if (savedPos) {
             const pos = JSON.parse(savedPos);
             wrapper.style.left = pos.x + 'px';
             wrapper.style.top = pos.y + 'px';
-            wrapper.style.right = 'auto';
-            wrapper.style.bottom = 'auto';
         } else {
             wrapper.style.left = '30px';
-            wrapper.style.bottom = '30px';
-            wrapper.style.right = 'auto';
-            wrapper.style.top = 'auto';
+            wrapper.style.top = '30px';
         }
 
         const dragHandle = document.createElement('div');
@@ -1228,18 +1266,22 @@ openDetail = function(item) {
 
         scrapbookCanvas.appendChild(wrapper);
 
-        // Make draggable via handle
+        // Make draggable via handle (position relative to canvas)
         let isDragging = false, dragOffsetX = 0, dragOffsetY = 0;
         dragHandle.addEventListener('mousedown', (e) => {
             isDragging = true;
-            dragOffsetX = e.clientX - wrapper.getBoundingClientRect().left;
-            dragOffsetY = e.clientY - wrapper.getBoundingClientRect().top;
+            const canvasRect = scrapbookCanvas.getBoundingClientRect();
+            const scale = canvasRect.width / scrapbookCanvas.offsetWidth || 1;
+            dragOffsetX = (e.clientX - canvasRect.left) / scale - (parseInt(wrapper.style.left) || 0);
+            dragOffsetY = (e.clientY - canvasRect.top) / scale - (parseInt(wrapper.style.top) || 0);
             e.preventDefault();
         });
         document.addEventListener('mousemove', (e) => {
             if (!isDragging) return;
-            wrapper.style.left = (e.clientX - dragOffsetX) + 'px';
-            wrapper.style.top = (e.clientY - dragOffsetY) + 'px';
+            const canvasRect = scrapbookCanvas.getBoundingClientRect();
+            const scale = canvasRect.width / scrapbookCanvas.offsetWidth || 1;
+            wrapper.style.left = ((e.clientX - canvasRect.left) / scale - dragOffsetX) + 'px';
+            wrapper.style.top = ((e.clientY - canvasRect.top) / scale - dragOffsetY) + 'px';
             wrapper.style.right = 'auto';
             wrapper.style.bottom = 'auto';
         });

@@ -53,10 +53,16 @@ const bucketList = [
     },
     {
         title: "take a solo day trip",
-        completed: false,
+        completed: true,
         note: "this one is still on the list ^_^",
         media: [],
-        scrapbook: []
+        spotify: "https://open.spotify.com/embed/track/37kzuSrUdgkC3X22F0bLbw?utm_source=generator&theme=0",
+        spotifyTitle: "Butterfly Season",
+        spotifyArtist: "Ella Langley",
+        spotifyArt: "https://i.scdn.co/image/ab67616d00001e028606848da949bbaddf447d87",
+        scrapbook: [
+            { type: 'video', src: 'images/IMG_2847.MOV', x: 200, y: 150, width: 400, rotation: 0 }
+        ]
     },
     {
         title: "watch the fireworks at a mariners game",
@@ -496,6 +502,8 @@ var openDetail = function(item) {
 
 function closeDetail() {
     detailView.classList.add('hidden');
+    const existingSpotify = document.getElementById('spotifyEmbed');
+    if (existingSpotify) existingSpotify.remove();
     history.replaceState(null, '', window.location.pathname);
 }
 
@@ -561,6 +569,11 @@ const stickerPicker = document.getElementById('stickerPicker');
 const stickerGrid = document.getElementById('stickerGrid');
 const stickerPickerClose = document.getElementById('stickerPickerClose');
 
+const editAllowed = new URLSearchParams(window.location.search).has('edit');
+if (!editAllowed) {
+    sbEditToggle.style.display = 'none';
+}
+
 let editMode = false;
 let currentItem = null;
 let selectedElement = null;
@@ -576,6 +589,7 @@ const STICKERS = [
 
 // ─── Toggle Edit Mode ───
 sbEditToggle.addEventListener('click', () => {
+    if (!editAllowed) return;
     editMode = !editMode;
     sbEditToggle.classList.toggle('active', editMode);
     sbEditToggle.textContent = editMode ? '✔ done editing' : '✎ edit scrapbook';
@@ -713,8 +727,10 @@ function createScrapbookElement(data) {
             const vid = document.createElement('video');
             vid.src = data.src;
             vid.controls = true;
+            vid.playsInline = true;
             vid.draggable = false;
             vid.style.width = '100%';
+            vid.style.pointerEvents = 'all';
             wrapper.appendChild(vid);
             break;
 
@@ -788,6 +804,24 @@ function createScrapbookElement(data) {
         updateEmptyState();
     });
     wrapper.appendChild(deleteBtn);
+
+    const moveToFrontBtn = document.createElement('button');
+    moveToFrontBtn.className = 'sb-layer-btn sb-to-front';
+    moveToFrontBtn.textContent = '↑ front';
+    moveToFrontBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        scrapbookCanvas.appendChild(wrapper);
+    });
+    wrapper.appendChild(moveToFrontBtn);
+
+    const moveToBackBtn = document.createElement('button');
+    moveToBackBtn.className = 'sb-layer-btn sb-to-back';
+    moveToBackBtn.textContent = '↓ back';
+    moveToBackBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        scrapbookCanvas.insertBefore(wrapper, scrapbookCanvas.querySelector('.sb-element'));
+    });
+    wrapper.appendChild(moveToBackBtn);
 
     const resizeHandle = document.createElement('div');
     resizeHandle.className = 'sb-resize-handle';
@@ -987,6 +1021,14 @@ function saveToLocalStorage() {
     const storageKey = 'scrapbook-' + currentItem.title;
     localStorage.setItem(storageKey, JSON.stringify(layout));
     currentItem.scrapbook = layout;
+
+    // Save Spotify position
+    const spotifyEl = document.getElementById('spotifyEmbed');
+    if (spotifyEl && currentItem.spotify) {
+        const rect = spotifyEl.getBoundingClientRect();
+        const pos = { x: rect.left, y: rect.top };
+        localStorage.setItem('spotify-pos-' + currentItem.title, JSON.stringify(pos));
+    }
 }
 
 function loadFromLocalStorage(item) {
@@ -1094,6 +1136,97 @@ openDetail = function(item) {
     sbEditToggle.textContent = '✎ edit scrapbook';
     scrapbookToolbar.classList.add('hidden');
     scrapbookCanvas.classList.remove('edit-mode');
+
+    // Spotify player
+    const existingSpotify = document.getElementById('spotifyEmbed');
+    if (existingSpotify) existingSpotify.remove();
+    if (item.spotify) {
+        const wrapper = document.createElement('div');
+        wrapper.id = 'spotifyEmbed';
+        wrapper.className = 'spotify-embed';
+
+        // Load saved position
+        const savedPos = localStorage.getItem('spotify-pos-' + item.title);
+        if (savedPos) {
+            const pos = JSON.parse(savedPos);
+            wrapper.style.left = pos.x + 'px';
+            wrapper.style.top = pos.y + 'px';
+            wrapper.style.right = 'auto';
+            wrapper.style.bottom = 'auto';
+        } else {
+            wrapper.style.left = '30px';
+            wrapper.style.bottom = '30px';
+            wrapper.style.right = 'auto';
+            wrapper.style.top = 'auto';
+        }
+
+        const dragHandle = document.createElement('div');
+        dragHandle.className = 'spotify-drag-handle';
+        dragHandle.textContent = '⋮⋮';
+        if (!editAllowed) dragHandle.style.display = 'none';
+        wrapper.appendChild(dragHandle);
+
+        // Custom player UI
+        const playerUI = document.createElement('div');
+        playerUI.className = 'spotify-custom-player';
+
+        const albumArt = document.createElement('img');
+        albumArt.className = 'spotify-album-art';
+        albumArt.src = item.spotifyArt || '';
+        albumArt.alt = 'Album art';
+
+        const trackInfo = document.createElement('div');
+        trackInfo.className = 'spotify-track-info';
+        const trackTitle = document.createElement('span');
+        trackTitle.className = 'spotify-track-title';
+        trackTitle.textContent = item.spotifyTitle || 'Unknown';
+        const trackArtist = document.createElement('span');
+        trackArtist.className = 'spotify-track-artist';
+        trackArtist.textContent = item.spotifyArtist || 'Unknown';
+        trackInfo.appendChild(trackTitle);
+        trackInfo.appendChild(trackArtist);
+
+        const playBtn = document.createElement('button');
+        playBtn.className = 'spotify-play-btn';
+        playBtn.textContent = '▶';
+
+        playerUI.appendChild(albumArt);
+        playerUI.appendChild(trackInfo);
+        playerUI.appendChild(playBtn);
+        wrapper.appendChild(playerUI);
+
+        // Hidden iframe for actual playback
+        const iframe = document.createElement('iframe');
+        iframe.src = item.spotify;
+        iframe.width = '300';
+        iframe.height = '80';
+        iframe.frameBorder = '0';
+        iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        iframe.className = 'spotify-hidden-iframe';
+        wrapper.appendChild(iframe);
+
+
+        scrapbookCanvas.appendChild(wrapper);
+
+        // Make draggable via handle
+        let isDragging = false, dragOffsetX = 0, dragOffsetY = 0;
+        dragHandle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            dragOffsetX = e.clientX - wrapper.getBoundingClientRect().left;
+            dragOffsetY = e.clientY - wrapper.getBoundingClientRect().top;
+            e.preventDefault();
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            wrapper.style.left = (e.clientX - dragOffsetX) + 'px';
+            wrapper.style.top = (e.clientY - dragOffsetY) + 'px';
+            wrapper.style.right = 'auto';
+            wrapper.style.bottom = 'auto';
+        });
+        document.addEventListener('mouseup', () => { isDragging = false; });
+    }
 
     // Render saved scrapbook data
     renderScrapbook(item);

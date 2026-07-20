@@ -417,6 +417,50 @@ header .subtitle {
     pointer-events: none;
 }
 
+/* Spotify embed */
+.spotify-embed {
+    position: absolute;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 102;
+    pointer-events: all;
+}
+
+.spotify-embed:active {
+    cursor: grabbing;
+}
+
+.spotify-drag-handle {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 4px 0;
+    cursor: grab;
+    user-select: none;
+    letter-spacing: 2px;
+}
+
+.spotify-drag-handle:active {
+    cursor: grabbing;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Spotify player */
+.spotify-custom-player {
+    display: none;
+}
+
+.spotify-hidden-iframe {
+    display: block;
+    width: 300px;
+    height: 80px;
+    border: none;
+    border-radius: 0 0 12px 12px;
+    pointer-events: all;
+}
+
 .back-btn {
     position: fixed;
     top: 40px;
@@ -856,6 +900,39 @@ footer .footer-cta {
 }
 
 .sb-element.selected .sb-delete-btn {
+    display: block;
+}
+
+/* Layer buttons */
+.sb-layer-btn {
+    display: none;
+    position: absolute;
+    top: -10px;
+    padding: 2px 8px;
+    background: rgba(40, 40, 40, 0.9);
+    border: 1px solid rgba(255, 248, 231, 0.4);
+    border-radius: 10px;
+    color: #FFF8E7;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55rem;
+    cursor: pointer;
+    z-index: 200;
+    white-space: nowrap;
+}
+
+.sb-to-front {
+    right: 30px;
+}
+
+.sb-to-back {
+    right: 80px;
+}
+
+.sb-layer-btn:hover {
+    background: rgba(60, 60, 60, 0.95);
+}
+
+.sb-element.selected .sb-layer-btn {
     display: block;
 }
 

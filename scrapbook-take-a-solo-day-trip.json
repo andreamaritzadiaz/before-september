@@ -67,11 +67,29 @@
     },
     {
       "type": "image",
+      "x": 997,
+      "y": 336,
+      "rotation": 5.869765182248663,
+      "src": "images/flower-quote.jpg",
+      "width": 237,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
       "x": 69,
       "y": 407,
       "rotation": 0.23,
       "src": "images/IMG_2913.jpg",
       "width": 252
+    },
+    {
+      "type": "text",
+      "x": 430,
+      "y": 451,
+      "rotation": -0.5837340808707943,
+      "content": "watch me ⟢",
+      "fontSize": 14
     },
     {
       "type": "image",
@@ -139,11 +157,29 @@
     },
     {
       "type": "image",
-      "x": 669,
+      "x": 662,
       "y": 782,
       "rotation": 3.27,
       "src": "images/IMG_2993.jpg",
       "width": 180
+    },
+    {
+      "type": "image",
+      "x": 1254,
+      "y": 842,
+      "rotation": 1.9594440119711738,
+      "src": "images/grow-quote.jpg",
+      "width": 180,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "text",
+      "x": 762,
+      "y": 966,
+      "rotation": 0.8915780870078933,
+      "content": "my handpicked wildflower bouquet <3",
+      "fontSize": 10
     }
   ]
 }

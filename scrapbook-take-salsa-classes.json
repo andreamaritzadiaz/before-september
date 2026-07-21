@@ -2,14 +2,6 @@
   "item": "take salsa classes",
   "scrapbook": [
     {
-      "type": "image",
-      "x": 5,
-      "y": 273,
-      "rotation": -3.937320311957895,
-      "src": "images/salsa-class-1-cropped.jpg",
-      "width": 375
-    },
-    {
       "type": "video",
       "x": 406,
       "y": 23,
@@ -60,6 +52,22 @@
       "src": "images/salsa-class-4.jpg",
       "width": 327,
       "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1,
+      "y": 273,
+      "rotation": -3.937320311957895,
+      "src": "images/salsa-class-1-cropped.jpg",
+      "width": 375
+    },
+    {
+      "type": "text",
+      "x": 1082,
+      "y": 493,
+      "rotation": 0.8855549165712895,
+      "content": "working on adding more swing :')",
+      "fontSize": 11
     },
     {
       "type": "image",

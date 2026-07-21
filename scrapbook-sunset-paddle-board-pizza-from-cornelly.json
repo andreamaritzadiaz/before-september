@@ -11,14 +11,6 @@
     },
     {
       "type": "image",
-      "x": 58,
-      "y": 474,
-      "rotation": 3.44,
-      "src": "images/paddleboarding-5.jpg",
-      "width": 180
-    },
-    {
-      "type": "image",
       "x": 606,
       "y": 76,
       "rotation": -2.1,
@@ -26,12 +18,44 @@
       "width": 365
     },
     {
+      "type": "text",
+      "x": 1070,
+      "y": 109,
+      "rotation": -2.861673857581229,
+      "content": "bambi shark dodododododo",
+      "fontSize": 11
+    },
+    {
+      "type": "text",
+      "x": 233,
+      "y": 167,
+      "rotation": 1.0145806152145367,
+      "content": "tolu <3",
+      "fontSize": 11
+    },
+    {
       "type": "image",
-      "x": 669,
-      "y": 779,
-      "rotation": -0.81,
-      "src": "images/paddleboarding-7.jpg",
-      "width": 371
+      "x": 1075,
+      "y": 182,
+      "rotation": 1.98,
+      "src": "images/paddleboarding-1.jpg",
+      "width": 260
+    },
+    {
+      "type": "image",
+      "x": 756,
+      "y": 366,
+      "rotation": -0.6093029530758951,
+      "src": "images/IMG_7074.jpg",
+      "width": 259
+    },
+    {
+      "type": "image",
+      "x": 1290,
+      "y": 376,
+      "rotation": -0.07,
+      "src": "images/paddleboarding-3.jpg",
+      "width": 223
     },
     {
       "type": "image",
@@ -43,59 +67,53 @@
     },
     {
       "type": "image",
-      "x": 1166,
-      "y": 636,
-      "rotation": -3.03,
-      "src": "images/paddleboarding-9.jpg",
-      "width": 251
+      "x": 6,
+      "y": 439,
+      "rotation": 0.2676505751508693,
+      "src": "images/paddleboarding-5.jpg",
+      "width": 218
     },
     {
       "type": "image",
-      "x": 772,
-      "y": 408,
-      "rotation": -0.07,
-      "src": "images/paddleboarding-3.jpg",
-      "width": 223
-    },
-    {
-      "type": "image",
-      "x": 275,
-      "y": 717,
+      "x": 266,
+      "y": 571,
       "rotation": -3.82,
       "src": "images/paddleboarding-8.jpg",
       "width": 253
     },
     {
       "type": "image",
-      "x": 1075,
-      "y": 182,
-      "rotation": 1.98,
-      "src": "images/paddleboarding-1.jpg",
-      "width": 260
+      "x": 1108,
+      "y": 582,
+      "rotation": -3.03,
+      "src": "images/paddleboarding-9.jpg",
+      "width": 302
+    },
+    {
+      "type": "image",
+      "x": 607,
+      "y": 734,
+      "rotation": -0.81,
+      "src": "images/paddleboarding-7.jpg",
+      "width": 371
     },
     {
       "type": "text",
-      "x": 233,
-      "y": 167,
-      "rotation": 1.0145806152145367,
-      "content": "tolu <3",
-      "fontSize": 11
-    },
-    {
-      "type": "text",
-      "x": 1206,
-      "y": 462,
-      "rotation": -2.861673857581229,
-      "content": "bambi shark dodododododo",
-      "fontSize": 11
-    },
-    {
-      "type": "text",
-      "x": 170,
-      "y": 764,
+      "x": 143,
+      "y": 751,
       "rotation": -1.9176506287294521,
-      "content": "we \ngot \nbahn\n mi's \ninstead",
+      "content": "we \ngot \nbahn\n mi\ninstead\n:)\n",
       "fontSize": 13
+    },
+    {
+      "type": "image",
+      "x": 1289,
+      "y": 144,
+      "rotation": 1.8076587810403604,
+      "src": "images/summer-quote.jpg",
+      "width": 180,
+      "noBorder": true,
+      "noTape": true
     }
   ]
 }

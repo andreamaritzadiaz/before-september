@@ -19,15 +19,20 @@ const bucketList = [
         note: "this one is still on the list .:**.",
         media: [],
         scrapbook: [
-            { type: 'image', x: 52, y: 542, rotation: 3.44, src: 'images/paddleboarding-5.jpg', width: 180 },
-            { type: 'image', x: 638, y: 130, rotation: -2.10, src: 'images/paddleboarding-6.jpg', width: 365 },
-            { type: 'image', x: 606, y: 737, rotation: -0.81, src: 'images/paddleboarding-7.jpg', width: 371 },
-            { type: 'image', x: 417, y: 515, rotation: 2.05, src: 'images/paddleboarding-2.jpg', width: 180 },
-            { type: 'image', x: 1259, y: 689, rotation: -3.03, src: 'images/paddleboarding-9.jpg', width: 251 },
-            { type: 'image', x: 984, y: 505, rotation: -0.07, src: 'images/paddleboarding-3.jpg', width: 223 },
-            { type: 'image', x: 193, y: 69, rotation: 3.43, src: 'images/paddleboarding-4.jpg', width: 276 },
-            { type: 'image', x: 217, y: 761, rotation: -3.82, src: 'images/paddleboarding-8.jpg', width: 253 },
-            { type: 'image', x: 1176, y: 111, rotation: 1.98, src: 'images/paddleboarding-1.jpg', width: 260 }
+            { type: 'image', x: 202, y: 72, rotation: 3.43, src: 'images/paddleboarding-4.jpg', width: 276 },
+            { type: 'image', x: 606, y: 76, rotation: -2.10, src: 'images/paddleboarding-6.jpg', width: 365 },
+            { type: 'text', x: 1070, y: 109, rotation: -2.86, content: 'bambi shark dodododododo', fontSize: 11 },
+            { type: 'text', x: 233, y: 167, rotation: 1.01, content: 'tolu <3', fontSize: 11 },
+            { type: 'image', x: 1075, y: 182, rotation: 1.98, src: 'images/paddleboarding-1.jpg', width: 260 },
+            { type: 'image', x: 756, y: 366, rotation: -0.61, src: 'images/IMG_7074.jpg', width: 259 },
+            { type: 'image', x: 1290, y: 376, rotation: -0.07, src: 'images/paddleboarding-3.jpg', width: 223 },
+            { type: 'image', x: 511, y: 413, rotation: 2.05, src: 'images/paddleboarding-2.jpg', width: 180 },
+            { type: 'image', x: 6, y: 439, rotation: 0.27, src: 'images/paddleboarding-5.jpg', width: 218 },
+            { type: 'image', x: 266, y: 571, rotation: -3.82, src: 'images/paddleboarding-8.jpg', width: 253 },
+            { type: 'image', x: 1108, y: 582, rotation: -3.03, src: 'images/paddleboarding-9.jpg', width: 302 },
+            { type: 'image', x: 607, y: 734, rotation: -0.81, src: 'images/paddleboarding-7.jpg', width: 371 },
+            { type: 'text', x: 143, y: 751, rotation: -1.92, content: 'we \ngot \nbahn\n mi\ninstead\n:)\n', fontSize: 13 },
+            { type: 'image', x: 1289, y: 144, rotation: 1.81, src: 'images/summer-quote.jpg', width: 180, noBorder: true, noTape: true }
         ]
     },
     {
@@ -63,7 +68,9 @@ const bucketList = [
             { type: 'image', x: 285, y: 207, rotation: 2.18, src: 'images/IMG_2865.jpg', width: 304 },
             { type: 'image', x: 1233, y: 258, rotation: 14.85, src: 'images/IMG_2969.jpg', width: 180 },
             { type: 'video', x: 528, y: 296, rotation: 0.89, src: 'images/solo_day_hiking.MOV', width: 445 },
+            { type: 'image', x: 997, y: 336, rotation: 5.87, src: 'images/flower-quote.jpg', width: 237, noBorder: true, noTape: true },
             { type: 'image', x: 69, y: 407, rotation: 0.23, src: 'images/IMG_2913.jpg', width: 252 },
+            { type: 'text', x: 430, y: 451, rotation: -0.58, content: 'watch me ⟢', fontSize: 14 },
             { type: 'image', x: 938, y: 509, rotation: 0.99, src: 'images/IMG_2944.jpg', width: 216 },
             { type: 'image', x: 1191, y: 528, rotation: -2.84, src: 'images/IMG_2985.jpg', width: 246 },
             { type: 'image', x: 330, y: 537, rotation: -0.44, src: 'images/IMG_2889.jpg', width: 214 },
@@ -72,7 +79,9 @@ const bucketList = [
             { type: 'image', x: 32, y: 632, rotation: -1.93, src: 'images/IMG_2888.jpg', width: 180 },
             { type: 'image', x: 298, y: 739, rotation: 2.09, src: 'images/IMG_2928.jpg', width: 300 },
             { type: 'text', x: 974, y: 776, rotation: 0.57, content: 'heading for the blue skies\nand lavender fields \n', fontSize: 12 },
-            { type: 'image', x: 669, y: 782, rotation: 3.27, src: 'images/IMG_2993.jpg', width: 180 }
+            { type: 'image', x: 662, y: 782, rotation: 3.27, src: 'images/IMG_2993.jpg', width: 180 },
+            { type: 'image', x: 1254, y: 842, rotation: 1.96, src: 'images/grow-quote.jpg', width: 180, noBorder: true, noTape: true },
+            { type: 'text', x: 762, y: 966, rotation: 0.89, content: 'my handpicked wildflower bouquet <3', fontSize: 10 }
         ]
     },
     {
@@ -81,7 +90,7 @@ const bucketList = [
         note: "this one is still on the list .:**.",
         media: [],
         scrapbook: [
-            { type: 'image', x: 1029, y: -66, rotation: 3.86, src: 'images/mariners-6.jpg', width: 282 },
+            { type: 'image', x: 1029, y: -66, rotation: 3.86, src: 'images/mariners-6.jpg', width: 282, noBorder: true, noTape: true },
             { type: 'image', x: -10, y: -27, rotation: 0.53, src: 'images/mariners-2.JPG', width: 500 },
             { type: 'image', x: 516, y: 29, rotation: 0.27, src: 'images/mariners-4.JPG', width: 309 },
             { type: 'text', x: 46, y: 88, rotation: -2.63, content: 'seattle mariners vs san francisco giants', fontSize: 13 },
@@ -89,6 +98,7 @@ const bucketList = [
             { type: 'image', x: 319, y: 177, rotation: -1.07, src: 'images/mariners-1.jpg', width: 180, noBorder: true },
             { type: 'text', x: 1107, y: 210, rotation: 0.44, content: 'minji!', fontSize: 9 },
             { type: 'text', x: 1016, y: 270, rotation: 2.07, content: 'hanniel!', fontSize: 9 },
+            { type: 'image', x: 1210, y: 271, rotation: 0, src: 'images/july-quote.webp', width: 180 },
             { type: 'text', x: 930, y: 312, rotation: 1.79, content: 'me!', fontSize: 10 },
             { type: 'video', x: 873, y: 410, rotation: -0.04, src: 'images/mariners-7.MOV', width: 508 },
             { type: 'video', x: 374, y: 507, rotation: 0.23, src: 'images/mariners-8.MOV', width: 489 },
@@ -121,7 +131,8 @@ const bucketList = [
             { type: 'text', x: 467, y: 66, rotation: -2.66, content: '6am practice session', fontSize: 11 },
             { type: 'text', x: 925, y: 79, rotation: 7.73, content: 'practicing before class ⋆', fontSize: 16 },
             { type: 'image', x: 34, y: 100, rotation: -2.98, src: 'images/salsa-class-4.jpg', width: 327, noTape: true },
-            { type: 'image', x: 5, y: 273, rotation: -3.94, src: 'images/salsa-class-1-cropped.jpg', width: 375 },
+            { type: 'image', x: 1, y: 273, rotation: -3.94, src: 'images/salsa-class-1-cropped.jpg', width: 375 },
+            { type: 'text', x: 1082, y: 493, rotation: 0.89, content: "working on adding more swing :')", fontSize: 11 },
             { type: 'image', x: 665, y: 507, rotation: 0.91, src: 'images/salsa-class-2.JPG', width: 284, noTape: true },
             { type: 'image', x: 365, y: 518, rotation: 3.22, src: 'images/salsa-class-3.PNG', width: 257 },
             { type: 'text', x: 123, y: 597, rotation: -5.67, content: 'at the studio ⋆˚꩜｡⋆', fontSize: 20 },

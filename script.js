@@ -1464,6 +1464,14 @@ function renderScrapbookData(scrapbookData) {
             if (bottom > maxBottom) maxBottom = bottom;
         });
 
+        // Include Spotify player position in canvas bounds
+        if (currentItem && currentItem.spotifyPosition) {
+            const spRight = currentItem.spotifyPosition.x + 340;
+            const spBottom = currentItem.spotifyPosition.y + 120;
+            if (spRight > maxRight) maxRight = spRight;
+            if (spBottom > maxBottom) maxBottom = spBottom;
+        }
+
         // Set intrinsic canvas size based on content
         scrapbookCanvas.style.width = maxRight + 'px';
         scrapbookCanvas.style.height = maxBottom + 'px';

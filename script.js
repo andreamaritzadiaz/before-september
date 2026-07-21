@@ -4,14 +4,7 @@ const bucketList = [
         completed: false,
         note: "this one is still on the list *:.",
         media: [],
-        scrapbook: [
-            { type: 'text', content: 'golden hour magic ✨', x: 60, y: 40, fontSize: 22, rotation: -3 },
-            { type: 'sticker', name: '🌞', x: 350, y: 30, scale: 1.3 },
-            { type: 'sticker', name: '⛰️', x: 500, y: 120, scale: 1.1 },
-            { type: 'text', content: 'woke up at 4:30am\nworth every second', x: 80, y: 350, fontSize: 14, rotation: 1.5 },
-            { type: 'sticker', name: '❤️', x: 200, y: 200, scale: 0.9 },
-            { type: 'sticker', name: '☀️', x: 600, y: 300, scale: 1.4 }
-        ]
+        scrapbook: []
     },
     {
         title: "jump off the lake union bridge",

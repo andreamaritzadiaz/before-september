@@ -53,6 +53,7 @@ const bucketList = [
         spotifyTitle: "Butterfly Season",
         spotifyArtist: "Ella Langley",
         spotifyArt: "https://i.scdn.co/image/ab67616d00001e028606848da949bbaddf447d87",
+        spotifyPosition: { x: 897, y: 838 },
         scrapbook: [
             { type: 'image', x: 1216, y: -91, rotation: 2.74, src: 'images/IMG_2960.jpg', width: 279 },
             { type: 'video', x: 940, y: -71, rotation: -3.22, src: 'images/IMG_2847.MOV', width: 240 },
@@ -1547,6 +1548,9 @@ openDetail = function(item) {
             const pos = JSON.parse(savedPos);
             wrapper.style.left = pos.x + 'px';
             wrapper.style.top = pos.y + 'px';
+        } else if (item.spotifyPosition) {
+            wrapper.style.left = item.spotifyPosition.x + 'px';
+            wrapper.style.top = item.spotifyPosition.y + 'px';
         } else {
             wrapper.style.left = '30px';
             wrapper.style.top = '30px';

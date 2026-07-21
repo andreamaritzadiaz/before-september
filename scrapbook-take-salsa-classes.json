@@ -2,6 +2,14 @@
   "item": "take salsa classes",
   "scrapbook": [
     {
+      "type": "image",
+      "x": 5,
+      "y": 273,
+      "rotation": -3.937320311957895,
+      "src": "images/salsa-class-1-cropped.jpg",
+      "width": 375
+    },
+    {
       "type": "video",
       "x": 406,
       "y": 23,
@@ -41,7 +49,7 @@
       "x": 925,
       "y": 79,
       "rotation": 7.725777466536484,
-      "content": "practicing before class ⋆",
+      "content": "practicing before class \u22c6",
       "fontSize": 16
     },
     {
@@ -52,14 +60,6 @@
       "src": "images/salsa-class-4.jpg",
       "width": 327,
       "noTape": true
-    },
-    {
-      "type": "image",
-      "x": 1,
-      "y": 273,
-      "rotation": -3.937320311957895,
-      "src": "images/salsa-class-5.JPG",
-      "width": 375
     },
     {
       "type": "image",
@@ -83,7 +83,7 @@
       "x": 123,
       "y": 597,
       "rotation": -5.673193209163049,
-      "content": "at the studio ⋆˚꩜｡⋆",
+      "content": "at the studio \u22c6\u02da\uaa5c\uff61\u22c6",
       "fontSize": 20
     },
     {

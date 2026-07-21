@@ -127,7 +127,7 @@ const bucketList = [
             { type: 'text', x: 467, y: 66, rotation: -2.66, content: '6am practice session', fontSize: 11 },
             { type: 'text', x: 925, y: 79, rotation: 7.73, content: 'practicing before class ⋆', fontSize: 16 },
             { type: 'image', x: 34, y: 100, rotation: -2.98, src: 'images/salsa-class-4.jpg', width: 327, noTape: true },
-            { type: 'image', x: 1, y: 273, rotation: -3.94, src: 'images/salsa-class-5.JPG', width: 375 },
+            { type: 'image', x: 5, y: 273, rotation: -3.94, src: 'images/salsa-class-1-cropped.jpg', width: 375 },
             { type: 'image', x: 665, y: 507, rotation: 0.91, src: 'images/salsa-class-2.JPG', width: 284, noTape: true },
             { type: 'image', x: 365, y: 518, rotation: 3.22, src: 'images/salsa-class-3.PNG', width: 257 },
             { type: 'text', x: 123, y: 597, rotation: -5.67, content: 'at the studio ⋆˚꩜｡⋆', fontSize: 20 },

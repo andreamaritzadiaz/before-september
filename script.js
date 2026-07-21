@@ -90,6 +90,7 @@ const bucketList = [
         note: "this one is still on the list .:**.",
         media: [],
         scrapbook: [
+            { type: 'video', x: 873, y: 410, rotation: -0.04, src: 'images/mariners-7.MOV', width: 508 },
             { type: 'image', x: 1029, y: -66, rotation: 3.86, src: 'images/mariners-6.jpg', width: 282, noBorder: true, noTape: true },
             { type: 'image', x: -10, y: -27, rotation: 0.53, src: 'images/mariners-2.JPG', width: 500 },
             { type: 'image', x: 516, y: 29, rotation: 0.27, src: 'images/mariners-4.JPG', width: 309 },
@@ -99,7 +100,6 @@ const bucketList = [
             { type: 'text', x: 1107, y: 210, rotation: 0.44, content: 'minji!', fontSize: 9 },
             { type: 'text', x: 1016, y: 270, rotation: 2.07, content: 'hanniel!', fontSize: 9 },
             { type: 'text', x: 930, y: 312, rotation: 1.79, content: 'me!', fontSize: 10 },
-            { type: 'video', x: 873, y: 410, rotation: -0.04, src: 'images/mariners-7.MOV', width: 508 },
             { type: 'video', x: 374, y: 507, rotation: 0.23, src: 'images/mariners-8.MOV', width: 489 },
             { type: 'text', x: 638, y: 547, rotation: 2.13, content: 'friday night fireworks :)', fontSize: 13 },
             { type: 'image', x: 1210, y: 271, rotation: 0, src: 'images/july-quote.webp', width: 180 }

@@ -2,6 +2,14 @@
   "item": "watch the fireworks at a mariners game",
   "scrapbook": [
     {
+      "type": "video",
+      "x": 873,
+      "y": 410,
+      "rotation": -0.04484011555141354,
+      "src": "images/mariners-7.MOV",
+      "width": 508
+    },
+    {
       "type": "image",
       "x": 1029,
       "y": -66,
@@ -75,14 +83,6 @@
       "rotation": 1.7933014086696546,
       "content": "me!",
       "fontSize": 10
-    },
-    {
-      "type": "video",
-      "x": 873,
-      "y": 410,
-      "rotation": -0.04484011555141354,
-      "src": "images/mariners-7.MOV",
-      "width": 508
     },
     {
       "type": "video",

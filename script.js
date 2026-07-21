@@ -451,6 +451,27 @@ function getNonOverlappingPosition(el) {
     return { x: bestX, y: bestY };
 }
 
+// ─── Preload scrapbook media on hover ───
+const preloadedItems = new Set();
+
+function preloadScrapbookMedia(item) {
+    if (preloadedItems.has(item.title)) return;
+    preloadedItems.add(item.title);
+
+    const scrapbook = item.scrapbook || [];
+    scrapbook.forEach(data => {
+        if (data.type === 'image' && data.src && !data.src.startsWith('data:')) {
+            const img = new Image();
+            img.src = data.src;
+        } else if (data.type === 'video' && data.src) {
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = data.src;
+            document.head.appendChild(link);
+        }
+    });
+}
+
 // ─── Floating Items with Mouse Drift ───
 const itemElements = [];
 const itemPositions = [];
@@ -484,10 +505,7 @@ function createFloatingItems() {
         el.style.setProperty('--rotate-end', rotateEnd + 'deg');
 
         el.addEventListener('click', () => openDetail(item));
-        // el.addEventListener('mouseenter', () => {
-        //     playSound(index);
-        //     if (audioCtx.state === 'suspended') audioCtx.resume();
-        // });
+        el.addEventListener('mouseenter', () => preloadScrapbookMedia(item));
 
         itemElements.push(el);
         itemPositions.push({ baseX: pos.x, baseY: pos.y, offsetX: 0, offsetY: 0 });
@@ -785,6 +803,9 @@ function createScrapbookElement(data) {
             const img = document.createElement('img');
             img.src = data.src;
             img.draggable = false;
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.4s ease';
+            img.onload = () => { img.style.opacity = '1'; };
             if (data.cropX != null) {
                 img.style.objectFit = 'none';
                 img.style.objectPosition = `-${data.cropX}px -${data.cropY}px`;
@@ -840,9 +861,13 @@ function createScrapbookElement(data) {
             vid.src = data.src;
             vid.controls = true;
             vid.playsInline = true;
+            vid.preload = 'metadata';
             vid.draggable = false;
             vid.style.width = '100%';
             vid.style.pointerEvents = 'all';
+            vid.style.opacity = '0';
+            vid.style.transition = 'opacity 0.4s ease';
+            vid.onloadeddata = () => { vid.style.opacity = '1'; };
             wrapper.appendChild(vid);
 
             const vidOptions = document.createElement('div');

@@ -1070,6 +1070,8 @@ footer .footer-cta {
     height: 100%;
     object-fit: cover;
     border-radius: 1px;
+    background: rgba(200, 200, 200, 0.15);
+    min-height: 80px;
 }
 
 /* Image option buttons (border/tape/crop) */

@@ -405,6 +405,7 @@ header .subtitle {
     display: flex;
     flex-direction: column;
     align-items: center;
+    visibility: visible;
 }
 
 .detail-view::before {
@@ -418,6 +419,7 @@ header .subtitle {
 .detail-view.hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
 }
 
 /* Spotify embed */

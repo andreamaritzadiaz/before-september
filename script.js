@@ -587,7 +587,12 @@ var openDetail = function(item) {
 
 function closeDetail() {
     detailView.classList.add('hidden');
-    scrapbookCanvas.querySelectorAll('video, audio').forEach(el => { el.pause(); el.currentTime = 0; });
+    scrapbookCanvas.querySelectorAll('video, audio').forEach(el => {
+        el.pause();
+        el.currentTime = 0;
+        el.removeAttribute('src');
+        el.load();
+    });
     const existingSpotify = document.getElementById('spotifyEmbed');
     if (existingSpotify) existingSpotify.remove();
     history.replaceState(null, '', window.location.pathname);

@@ -508,25 +508,34 @@ function updateDrift() {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         const maxDist = 200;
-        const safeZone = 60;
-        const strength = 20;
+        const safeZone = 80;
+        const strength = 15;
         const isHovered = mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
 
         if (isHovered || dist < safeZone) {
-            pos.offsetX *= 0.8;
-            pos.offsetY *= 0.8;
+            pos.offsetX *= 0.7;
+            pos.offsetY *= 0.7;
         } else if (dist < maxDist && dist > safeZone) {
             const force = (1 - (dist - safeZone) / (maxDist - safeZone)) * strength;
             const angle = Math.atan2(dy, dx);
-            pos.offsetX += (Math.cos(angle) * force - pos.offsetX) * 0.06;
-            pos.offsetY += (Math.sin(angle) * force - pos.offsetY) * 0.06;
+            pos.offsetX += (Math.cos(angle) * force - pos.offsetX) * 0.05;
+            pos.offsetY += (Math.sin(angle) * force - pos.offsetY) * 0.05;
         } else {
             pos.offsetX *= 0.95;
             pos.offsetY *= 0.95;
         }
 
-        if (Math.abs(pos.offsetX) > 0.1 || Math.abs(pos.offsetY) > 0.1) {
+        if (Math.abs(pos.offsetX) < 0.1 && Math.abs(pos.offsetY) < 0.1) {
+            el.style.translate = '';
+        } else {
             el.style.translate = `${pos.offsetX}px ${pos.offsetY}px`;
+        }
+
+        // Pause float animation when cursor is close so click target is stable
+        if (dist < safeZone || isHovered) {
+            el.style.animationPlayState = 'paused';
+        } else {
+            el.style.animationPlayState = '';
         }
     });
 

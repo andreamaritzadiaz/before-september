@@ -924,15 +924,12 @@ footer .footer-cta {
 /* Scrapbook Elements */
 .sb-element {
     position: absolute;
+    cursor: grab;
     user-select: none;
     transition: box-shadow 0.2s ease;
 }
 
-.edit-mode .sb-element {
-    cursor: grab;
-}
-
-.edit-mode .sb-element:active {
+.sb-element:active {
     cursor: grabbing;
 }
 

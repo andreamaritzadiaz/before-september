@@ -1036,15 +1036,17 @@ function createScrapbookElement(data) {
     rotateHandle.textContent = '↻';
     wrapper.appendChild(rotateHandle);
 
-    // Event listeners for drag (only in edit mode)
+    // Event listeners for drag (always allow moving, select only in edit mode)
     wrapper.addEventListener('mousedown', (e) => {
-        if (!editMode) return;
         if (e.target === resizeHandle || e.target === rotateHandle || e.target === deleteBtn) return;
         if (wrapper.classList.contains('editing')) return;
         if (isTouchDevice) return;
 
         e.preventDefault();
-        selectElement(wrapper);
+
+        if (editMode) {
+            selectElement(wrapper);
+        }
 
         const canvasRect = scrapbookCanvas.getBoundingClientRect();
         const scale = canvasRect.width / scrapbookCanvas.offsetWidth || 1;

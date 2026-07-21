@@ -801,11 +801,13 @@ function createScrapbookElement(data) {
             if (data.noTape) wrapper.classList.add('no-tape');
             if (data.width) wrapper.style.width = data.width + 'px';
             const img = document.createElement('img');
-            img.src = data.src;
             img.draggable = false;
             img.style.opacity = '0';
             img.style.transition = 'opacity 0.4s ease';
             img.onload = () => { img.style.opacity = '1'; };
+            img.src = data.src;
+            if (img.complete) img.style.opacity = '1';
+            setTimeout(() => { img.style.opacity = '1'; }, 2000);
             if (data.cropX != null) {
                 img.style.objectFit = 'none';
                 img.style.objectPosition = `-${data.cropX}px -${data.cropY}px`;
@@ -868,6 +870,9 @@ function createScrapbookElement(data) {
             vid.style.opacity = '0';
             vid.style.transition = 'opacity 0.4s ease';
             vid.onloadeddata = () => { vid.style.opacity = '1'; };
+            vid.onloadedmetadata = () => { vid.style.opacity = '1'; };
+            if (vid.readyState >= 1) vid.style.opacity = '1';
+            setTimeout(() => { vid.style.opacity = '1'; }, 2000);
             wrapper.appendChild(vid);
 
             const vidOptions = document.createElement('div');

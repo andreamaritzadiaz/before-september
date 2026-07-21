@@ -1,0 +1,98 @@
+{
+  "item": "take salsa classes",
+  "scrapbook": [
+    {
+      "type": "video",
+      "x": 406,
+      "y": 23,
+      "rotation": -2.1269720475098985,
+      "src": "images/salsa-practice-1.MOV",
+      "width": 254,
+      "noTape": true
+    },
+    {
+      "type": "video",
+      "x": 730,
+      "y": 27,
+      "rotation": 0.40806354922164,
+      "src": "images/salsa-practice-2.MOV",
+      "width": 251,
+      "noTape": true
+    },
+    {
+      "type": "video",
+      "x": 1047,
+      "y": 47,
+      "rotation": 6.23870218057428,
+      "src": "images/salsa-practice-3.MOV",
+      "width": 255,
+      "noTape": true
+    },
+    {
+      "type": "text",
+      "x": 467,
+      "y": 66,
+      "rotation": -2.6610481240706143,
+      "content": "6am practice session",
+      "fontSize": 11
+    },
+    {
+      "type": "text",
+      "x": 925,
+      "y": 79,
+      "rotation": 7.725777466536484,
+      "content": "practicing before class ⋆",
+      "fontSize": 16
+    },
+    {
+      "type": "image",
+      "x": 34,
+      "y": 100,
+      "rotation": -2.982396131688782,
+      "src": "images/salsa-class-4.jpg",
+      "width": 327,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1,
+      "y": 273,
+      "rotation": -3.937320311957895,
+      "src": "images/salsa-class-5.JPG",
+      "width": 375
+    },
+    {
+      "type": "image",
+      "x": 665,
+      "y": 507,
+      "rotation": 0.9106807943028645,
+      "src": "images/salsa-class-2.JPG",
+      "width": 284,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 365,
+      "y": 518,
+      "rotation": 3.2232757022031544,
+      "src": "images/salsa-class-3.PNG",
+      "width": 257
+    },
+    {
+      "type": "text",
+      "x": 123,
+      "y": 597,
+      "rotation": -5.673193209163049,
+      "content": "at the studio ⋆˚꩜｡⋆",
+      "fontSize": 20
+    },
+    {
+      "type": "text",
+      "x": 815,
+      "y": 818,
+      "rotation": -0.8260281543929333,
+      "content": "i spotted a lost duck\ni hope he found his way back home\n",
+      "fontSize": 9
+    }
+  ]
+}

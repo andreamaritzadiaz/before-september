@@ -61,29 +61,45 @@ const bucketList = [
         spotifyArtist: "Ella Langley",
         spotifyArt: "https://i.scdn.co/image/ab67616d00001e028606848da949bbaddf447d87",
         scrapbook: [
-            { type: 'image', x: 226, y: 14, rotation: 3.88, src: 'images/IMG_2834.jpg', width: 262 },
+            { type: 'image', x: 1216, y: -91, rotation: 2.74, src: 'images/IMG_2960.jpg', width: 279 },
+            { type: 'video', x: 940, y: -71, rotation: -3.22, src: 'images/IMG_2847.MOV', width: 240 },
+            { type: 'image', x: 307, y: -33, rotation: 3.88, src: 'images/IMG_2834.jpg', width: 262 },
+            { type: 'image', x: 654, y: 30, rotation: -2.41, src: 'images/IMG_2949.jpg', width: 180 },
             { type: 'image', x: 18, y: 49, rotation: 0.13, src: 'images/IMG_2848.jpg', width: 233 },
-            { type: 'video', x: 807, y: 17, rotation: -3.22, src: 'images/IMG_2847.MOV', width: 240 },
-            { type: 'image', x: 32, y: 632, rotation: -1.93, src: 'images/IMG_2888.jpg', width: 180 },
-            { type: 'image', x: 312, y: 672, rotation: 2.09, src: 'images/IMG_2928.jpg', width: 300 },
-            { type: 'image', x: 417, y: 452, rotation: -0.44, src: 'images/IMG_2889.jpg', width: 214 },
+            { type: 'image', x: 285, y: 207, rotation: 2.18, src: 'images/IMG_2865.jpg', width: 304 },
+            { type: 'image', x: 1233, y: 258, rotation: 14.85, src: 'images/IMG_2969.jpg', width: 180 },
+            { type: 'video', x: 528, y: 296, rotation: 0.89, src: 'images/solo_day_hiking.MOV', width: 445 },
             { type: 'image', x: 69, y: 407, rotation: 0.23, src: 'images/IMG_2913.jpg', width: 252 },
-            { type: 'image', x: 709, y: 698, rotation: 3.27, src: 'images/IMG_2993.jpg', width: 180 },
-            { type: 'image', x: 299, y: 189, rotation: 2.18, src: 'images/IMG_2865.jpg', width: 304 },
-            { type: 'image', x: 614, y: 100, rotation: -2.41, src: 'images/IMG_2949.jpg', width: 180 },
-            { type: 'image', x: 664, y: 475, rotation: 2.83, src: 'images/IMG_2987.jpg', width: 242 },
-            { type: 'image', x: 1165, y: 57, rotation: 2.74, src: 'images/IMG_2960.jpg', width: 279 },
             { type: 'image', x: 938, y: 509, rotation: 0.99, src: 'images/IMG_2944.jpg', width: 216 },
             { type: 'image', x: 1191, y: 528, rotation: -2.84, src: 'images/IMG_2985.jpg', width: 246 },
-            { type: 'image', x: 1036, y: 206, rotation: 3.36, src: 'images/IMG_2969.jpg', width: 180 }
+            { type: 'image', x: 330, y: 537, rotation: -0.44, src: 'images/IMG_2889.jpg', width: 214 },
+            { type: 'image', x: 653, y: 577, rotation: 2.83, src: 'images/IMG_2987.jpg', width: 242 },
+            { type: 'text', x: 218, y: 613, rotation: -0.93, content: 'twin falls', fontSize: 13 },
+            { type: 'image', x: 32, y: 632, rotation: -1.93, src: 'images/IMG_2888.jpg', width: 180 },
+            { type: 'image', x: 298, y: 739, rotation: 2.09, src: 'images/IMG_2928.jpg', width: 300 },
+            { type: 'text', x: 974, y: 776, rotation: 0.57, content: 'heading for the blue skies\nand lavender fields \n', fontSize: 12 },
+            { type: 'image', x: 669, y: 782, rotation: 3.27, src: 'images/IMG_2993.jpg', width: 180 }
         ]
     },
     {
         title: "watch the fireworks at a mariners game",
-        completed: false,
+        completed: true,
         note: "this one is still on the list .:**.",
         media: [],
-        scrapbook: []
+        scrapbook: [
+            { type: 'image', x: 1029, y: -66, rotation: 3.86, src: 'images/mariners-6.jpg', width: 282 },
+            { type: 'image', x: -10, y: -27, rotation: 0.53, src: 'images/mariners-2.JPG', width: 500 },
+            { type: 'image', x: 516, y: 29, rotation: 0.27, src: 'images/mariners-4.JPG', width: 309 },
+            { type: 'text', x: 46, y: 88, rotation: -2.63, content: 'seattle mariners vs san francisco giants', fontSize: 13 },
+            { type: 'image', x: 856, y: 157, rotation: -2.13, src: 'images/mariners-3.JPG', width: 298 },
+            { type: 'image', x: 319, y: 177, rotation: -1.07, src: 'images/mariners-1.jpg', width: 180, noBorder: true },
+            { type: 'text', x: 1107, y: 210, rotation: 0.44, content: 'minji!', fontSize: 9 },
+            { type: 'text', x: 1016, y: 270, rotation: 2.07, content: 'hanniel!', fontSize: 9 },
+            { type: 'text', x: 930, y: 312, rotation: 1.79, content: 'me!', fontSize: 10 },
+            { type: 'video', x: 873, y: 410, rotation: -0.04, src: 'images/mariners-7.MOV', width: 508 },
+            { type: 'video', x: 374, y: 507, rotation: 0.23, src: 'images/mariners-8.MOV', width: 489 },
+            { type: 'text', x: 638, y: 547, rotation: 2.13, content: 'friday night fireworks :)', fontSize: 13 }
+        ]
     },
     {
         title: "watch a sounders game",
@@ -101,10 +117,22 @@ const bucketList = [
     },
     {
         title: "take salsa classes",
-        completed: false,
+        completed: true,
         note: "this one is still on the list ^_^",
         media: [],
-        scrapbook: []
+        scrapbook: [
+            { type: 'video', x: 406, y: 23, rotation: -2.13, src: 'images/salsa-practice-1.MOV', width: 254, noTape: true },
+            { type: 'video', x: 730, y: 27, rotation: 0.41, src: 'images/salsa-practice-2.MOV', width: 251, noTape: true },
+            { type: 'video', x: 1047, y: 47, rotation: 6.24, src: 'images/salsa-practice-3.MOV', width: 255, noTape: true },
+            { type: 'text', x: 467, y: 66, rotation: -2.66, content: '6am practice session', fontSize: 11 },
+            { type: 'text', x: 925, y: 79, rotation: 7.73, content: 'practicing before class ⋆', fontSize: 16 },
+            { type: 'image', x: 34, y: 100, rotation: -2.98, src: 'images/salsa-class-4.jpg', width: 327, noTape: true },
+            { type: 'image', x: 1, y: 273, rotation: -3.94, src: 'images/salsa-class-5.JPG', width: 375 },
+            { type: 'image', x: 665, y: 507, rotation: 0.91, src: 'images/salsa-class-2.JPG', width: 284, noTape: true },
+            { type: 'image', x: 365, y: 518, rotation: 3.22, src: 'images/salsa-class-3.PNG', width: 257 },
+            { type: 'text', x: 123, y: 597, rotation: -5.67, content: 'at the studio ⋆˚꩜｡⋆', fontSize: 20 },
+            { type: 'text', x: 815, y: 818, rotation: -0.83, content: 'i spotted a lost duck\ni hope he found his way back home\n', fontSize: 9 }
+        ]
     },
     {
         title: "build one hardware project",
@@ -124,20 +152,38 @@ const mediaGrid = document.getElementById('mediaGrid');
 const backBtn = document.getElementById('backBtn');
 const cursorStar = document.getElementById('cursorStar');
 
+// ─── Detect touch device ───
+const isTouchDevice = window.matchMedia('(hover: none)').matches || window.matchMedia('(pointer: coarse)').matches;
+
 // ─── Custom Star Cursor ───
 let mouseX = 0, mouseY = 0;
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursorStar.style.left = e.clientX + 'px';
-    cursorStar.style.top = e.clientY + 'px';
-    spawnGlowDot(e.clientX, e.clientY);
-});
+if (!isTouchDevice) {
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorStar.style.left = e.clientX + 'px';
+        cursorStar.style.top = e.clientY + 'px';
+        spawnGlowDot(e.clientX, e.clientY);
+    });
+
+    // ─── Hover state for cursor ───
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.classList.contains('floating-item') || e.target.tagName === 'BUTTON' || e.target.tagName === 'A') {
+            cursorStar.classList.add('hovering');
+        }
+    });
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.classList.contains('floating-item') || e.target.tagName === 'BUTTON' || e.target.tagName === 'A') {
+            cursorStar.classList.remove('hovering');
+        }
+    });
+}
 
 // ─── Glow Trail ───
 let lastGlow = 0;
 function spawnGlowDot(x, y) {
+    if (isTouchDevice) return;
     const now = Date.now();
     if (now - lastGlow < 40) return;
     lastGlow = now;
@@ -149,18 +195,6 @@ function spawnGlowDot(x, y) {
     document.body.appendChild(dot);
     setTimeout(() => dot.remove(), 800);
 }
-
-// ─── Hover state for cursor ───
-document.addEventListener('mouseover', (e) => {
-    if (e.target.classList.contains('floating-item') || e.target.tagName === 'BUTTON' || e.target.tagName === 'A') {
-        cursorStar.classList.add('hovering');
-    }
-});
-document.addEventListener('mouseout', (e) => {
-    if (e.target.classList.contains('floating-item') || e.target.tagName === 'BUTTON' || e.target.tagName === 'A') {
-        cursorStar.classList.remove('hovering');
-    }
-});
 
 // ─── Sound Effects (Web Audio) [PAUSED] ───
 /*
@@ -460,8 +494,9 @@ function createFloatingItems() {
     });
 }
 
-// ─── Mouse Drift Effect ───
+// ─── Mouse Drift Effect (desktop only) ───
 function updateDrift() {
+    if (isTouchDevice) return;
     itemElements.forEach((el, i) => {
         const pos = itemPositions[i];
         const rect = el.getBoundingClientRect();
@@ -473,17 +508,18 @@ function updateDrift() {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         const maxDist = 200;
-        const strength = 25;
+        const safeZone = 60;
+        const strength = 20;
         const isHovered = mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
 
-        if (isHovered) {
-            pos.offsetX *= 0.85;
-            pos.offsetY *= 0.85;
-        } else if (dist < maxDist && dist > 0) {
-            const force = (1 - dist / maxDist) * strength;
+        if (isHovered || dist < safeZone) {
+            pos.offsetX *= 0.8;
+            pos.offsetY *= 0.8;
+        } else if (dist < maxDist && dist > safeZone) {
+            const force = (1 - (dist - safeZone) / (maxDist - safeZone)) * strength;
             const angle = Math.atan2(dy, dx);
-            pos.offsetX += (Math.cos(angle) * force - pos.offsetX) * 0.08;
-            pos.offsetY += (Math.sin(angle) * force - pos.offsetY) * 0.08;
+            pos.offsetX += (Math.cos(angle) * force - pos.offsetX) * 0.06;
+            pos.offsetY += (Math.sin(angle) * force - pos.offsetY) * 0.06;
         } else {
             pos.offsetX *= 0.95;
             pos.offsetY *= 0.95;
@@ -520,9 +556,11 @@ var openDetail = function(item) {
 
 function closeDetail() {
     detailView.classList.add('hidden');
+    scrapbookCanvas.querySelectorAll('video, audio').forEach(el => { el.pause(); el.currentTime = 0; });
     const existingSpotify = document.getElementById('spotifyEmbed');
     if (existingSpotify) existingSpotify.remove();
     history.replaceState(null, '', window.location.pathname);
+    if (typeof stopSwirlAnimation === 'function') stopSwirlAnimation();
 }
 
 backBtn.addEventListener('click', closeDetail);
@@ -732,15 +770,62 @@ function createScrapbookElement(data) {
     switch (data.type) {
         case 'image':
             wrapper.classList.add('sb-element-image');
+            if (data.noBorder) wrapper.classList.add('no-border');
+            if (data.noTape) wrapper.classList.add('no-tape');
             if (data.width) wrapper.style.width = data.width + 'px';
             const img = document.createElement('img');
             img.src = data.src;
             img.draggable = false;
+            if (data.cropX != null) {
+                img.style.objectFit = 'none';
+                img.style.objectPosition = `-${data.cropX}px -${data.cropY}px`;
+                img.style.width = data.cropW + 'px';
+                img.style.height = data.cropH + 'px';
+                wrapper.style.width = data.cropW + 'px';
+                wrapper.style.overflow = 'hidden';
+            }
             wrapper.appendChild(img);
+
+            // Image option buttons
+            const imgOptions = document.createElement('div');
+            imgOptions.className = 'sb-image-options';
+
+            const borderBtn = document.createElement('button');
+            borderBtn.className = 'sb-img-opt-btn' + (data.noBorder ? '' : ' active');
+            borderBtn.textContent = 'border';
+            borderBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                wrapper.classList.toggle('no-border');
+                borderBtn.classList.toggle('active');
+            });
+
+            const tapeBtn = document.createElement('button');
+            tapeBtn.className = 'sb-img-opt-btn' + (data.noTape ? '' : ' active');
+            tapeBtn.textContent = 'tape';
+            tapeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                wrapper.classList.toggle('no-tape');
+                tapeBtn.classList.toggle('active');
+            });
+
+            const cropBtn = document.createElement('button');
+            cropBtn.className = 'sb-img-opt-btn';
+            cropBtn.textContent = 'crop';
+            cropBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                startCrop(wrapper, img);
+            });
+
+            imgOptions.appendChild(borderBtn);
+            imgOptions.appendChild(tapeBtn);
+            imgOptions.appendChild(cropBtn);
+            wrapper.appendChild(imgOptions);
             break;
 
         case 'video':
             wrapper.classList.add('sb-element-image');
+            if (data.noBorder) wrapper.classList.add('no-border');
+            if (data.noTape) wrapper.classList.add('no-tape');
             if (data.width) wrapper.style.width = data.width + 'px';
             const vid = document.createElement('video');
             vid.src = data.src;
@@ -750,6 +835,31 @@ function createScrapbookElement(data) {
             vid.style.width = '100%';
             vid.style.pointerEvents = 'all';
             wrapper.appendChild(vid);
+
+            const vidOptions = document.createElement('div');
+            vidOptions.className = 'sb-image-options';
+
+            const vidBorderBtn = document.createElement('button');
+            vidBorderBtn.className = 'sb-img-opt-btn' + (data.noBorder ? '' : ' active');
+            vidBorderBtn.textContent = 'border';
+            vidBorderBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                wrapper.classList.toggle('no-border');
+                vidBorderBtn.classList.toggle('active');
+            });
+
+            const vidTapeBtn = document.createElement('button');
+            vidTapeBtn.className = 'sb-img-opt-btn' + (data.noTape ? '' : ' active');
+            vidTapeBtn.textContent = 'tape';
+            vidTapeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                wrapper.classList.toggle('no-tape');
+                vidTapeBtn.classList.toggle('active');
+            });
+
+            vidOptions.appendChild(vidBorderBtn);
+            vidOptions.appendChild(vidTapeBtn);
+            wrapper.appendChild(vidOptions);
             break;
 
         case 'text':
@@ -809,6 +919,35 @@ function createScrapbookElement(data) {
                 }
             });
             break;
+
+        case 'swirl':
+            wrapper.classList.add('sb-element-swirl');
+            const swirlSize = data.width || 300;
+            wrapper.style.width = swirlSize + 'px';
+            wrapper.style.height = swirlSize + 'px';
+            const swirlC = document.createElement('canvas');
+            swirlC.className = 'sb-swirl-canvas';
+            swirlC.style.width = '100%';
+            swirlC.style.height = '100%';
+            swirlC.style.pointerEvents = 'none';
+            wrapper.appendChild(swirlC);
+
+            initSwirlCanvas(swirlC, swirlSize);
+            activeSwirlCanvases.push(swirlC);
+            startSwirlAnimation();
+
+            // Track mouse relative to this canvas
+            wrapper.addEventListener('mousemove', (e) => {
+                const rect = swirlC.getBoundingClientRect();
+                const scaleRatio = swirlC.width / rect.width;
+                swirlC._swirlMouseX = (e.clientX - rect.left) * scaleRatio;
+                swirlC._swirlMouseY = (e.clientY - rect.top) * scaleRatio;
+            });
+            wrapper.addEventListener('mouseleave', () => {
+                swirlC._swirlMouseX = -9999;
+                swirlC._swirlMouseY = -9999;
+            });
+            break;
     }
 
     // Control handles (only visible when selected in edit mode)
@@ -852,21 +991,26 @@ function createScrapbookElement(data) {
 
     // Event listeners for drag
     wrapper.addEventListener('mousedown', (e) => {
-        if (!editMode) return;
         if (e.target === resizeHandle || e.target === rotateHandle || e.target === deleteBtn) return;
         if (wrapper.classList.contains('editing')) return;
+        if (isTouchDevice) return;
 
         e.preventDefault();
-        selectElement(wrapper);
 
-        const rect = scrapbookCanvas.getBoundingClientRect();
+        if (editMode) {
+            selectElement(wrapper);
+        }
+
+        const canvasRect = scrapbookCanvas.getBoundingClientRect();
+        const scale = canvasRect.width / scrapbookCanvas.offsetWidth || 1;
         dragState = {
             el: wrapper,
             mode: 'move',
             startX: e.clientX,
             startY: e.clientY,
             origX: parseInt(wrapper.style.left),
-            origY: parseInt(wrapper.style.top)
+            origY: parseInt(wrapper.style.top),
+            scale: scale
         };
     });
 
@@ -908,6 +1052,126 @@ function createScrapbookElement(data) {
     return wrapper;
 }
 
+// ─── Crop Tool ───
+function startCrop(wrapper, img) {
+    deselectAll();
+    wrapper.classList.add('selected');
+    selectedElement = wrapper;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'sb-crop-overlay';
+
+    const selection = document.createElement('div');
+    selection.className = 'sb-crop-selection';
+    overlay.appendChild(selection);
+
+    const actions = document.createElement('div');
+    actions.className = 'sb-crop-actions';
+    const confirmBtn = document.createElement('button');
+    confirmBtn.className = 'sb-crop-confirm';
+    confirmBtn.textContent = '✓ crop';
+    const cancelBtn = document.createElement('button');
+    cancelBtn.className = 'sb-crop-cancel';
+    cancelBtn.textContent = '✕ cancel';
+    actions.appendChild(confirmBtn);
+    actions.appendChild(cancelBtn);
+
+    wrapper.appendChild(overlay);
+    wrapper.appendChild(actions);
+
+    let cropStartX = 0, cropStartY = 0, cropping = false;
+
+    overlay.addEventListener('mousedown', (e) => {
+        e.stopPropagation();
+        const rect = overlay.getBoundingClientRect();
+        cropStartX = e.clientX - rect.left;
+        cropStartY = e.clientY - rect.top;
+        selection.style.left = cropStartX + 'px';
+        selection.style.top = cropStartY + 'px';
+        selection.style.width = '0px';
+        selection.style.height = '0px';
+        cropping = true;
+    });
+
+    overlay.addEventListener('mousemove', (e) => {
+        if (!cropping) return;
+        e.stopPropagation();
+        const rect = overlay.getBoundingClientRect();
+        const curX = e.clientX - rect.left;
+        const curY = e.clientY - rect.top;
+        const x = Math.min(cropStartX, curX);
+        const y = Math.min(cropStartY, curY);
+        const w = Math.abs(curX - cropStartX);
+        const h = Math.abs(curY - cropStartY);
+        selection.style.left = x + 'px';
+        selection.style.top = y + 'px';
+        selection.style.width = w + 'px';
+        selection.style.height = h + 'px';
+    });
+
+    overlay.addEventListener('mouseup', (e) => {
+        e.stopPropagation();
+        cropping = false;
+    });
+
+    cancelBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        overlay.remove();
+        actions.remove();
+    });
+
+    confirmBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const selRect = selection.getBoundingClientRect();
+        const overlayRect = overlay.getBoundingClientRect();
+
+        const cropX = selRect.left - overlayRect.left;
+        const cropY = selRect.top - overlayRect.top;
+        const cropW = selRect.width;
+        const cropH = selRect.height;
+
+        if (cropW < 10 || cropH < 10) {
+            overlay.remove();
+            actions.remove();
+            return;
+        }
+
+        // Use canvas to crop the image at full resolution
+        const imgEl = wrapper.querySelector('img');
+        const displayW = imgEl.clientWidth;
+        const displayH = imgEl.clientHeight;
+        const scaleX = imgEl.naturalWidth / displayW;
+        const scaleY = imgEl.naturalHeight / displayH;
+
+        const srcX = cropX * scaleX;
+        const srcY = cropY * scaleY;
+        const srcW = cropW * scaleX;
+        const srcH = cropH * scaleY;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = srcW;
+        canvas.height = srcH;
+        const ctx = canvas.getContext('2d');
+
+        ctx.drawImage(imgEl,
+            srcX, srcY, srcW, srcH,
+            0, 0, srcW, srcH
+        );
+
+        imgEl.src = canvas.toDataURL('image/jpeg', 0.92);
+        imgEl.style.objectFit = '';
+        imgEl.style.objectPosition = '';
+        imgEl.style.width = '';
+        imgEl.style.height = '';
+        wrapper.style.width = cropW + 'px';
+        wrapper.style.overflow = '';
+
+        overlay.remove();
+        actions.remove();
+    });
+}
+
+
 // ─── Mouse move/up for drag/resize/rotate ───
 document.addEventListener('mousemove', (e) => {
     if (!dragState) return;
@@ -915,8 +1179,9 @@ document.addEventListener('mousemove', (e) => {
     const { el, mode, startX, startY } = dragState;
 
     if (mode === 'move') {
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
+        const scale = dragState.scale || 1;
+        const dx = (e.clientX - startX) / scale;
+        const dy = (e.clientY - startY) / scale;
         el.style.left = (dragState.origX + dx) + 'px';
         el.style.top = (dragState.origY + dy) + 'px';
     } else if (mode === 'resize') {
@@ -1019,6 +1284,8 @@ function getCanvasLayout() {
                 mediaSrc = toRelativePath(mediaSrc);
                 base.src = mediaSrc;
                 base.width = parseInt(el.style.width) || 180;
+                if (el.classList.contains('no-border')) base.noBorder = true;
+                if (el.classList.contains('no-tape')) base.noTape = true;
                 break;
             case 'text':
                 base.content = el.querySelector('.sb-text-content')?.textContent || '';
@@ -1036,6 +1303,9 @@ function getCanvasLayout() {
                 audioSrc = toRelativePath(audioSrc);
                 base.src = audioSrc;
                 base.label = el.dataset.label || 'audio clip';
+                break;
+            case 'swirl':
+                base.width = parseInt(el.style.width) || 300;
                 break;
         }
 
@@ -1082,23 +1352,7 @@ function loadFromJsonFile(item) {
 
 sbSave.addEventListener('click', () => {
     saveToLocalStorage();
-
-    // Also export JSON file for persistence
-    const layout = getCanvasLayout();
-    const slug = (currentItem?.title || 'scrapbook').replace(/[^a-z0-9]+/gi, '-').toLowerCase();
-    const exportData = { item: currentItem?.title, scrapbook: layout };
-    const json = JSON.stringify(exportData, null, 2);
-    const blob = new Blob([json], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `scrapbook-${slug}.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-
-    showToast('Saved & exported!');
+    showToast('Saved!');
 });
 
 // ─── Export for publishing ───
@@ -1164,7 +1418,10 @@ function renderScrapbookData(scrapbookData) {
     if (scrapbookData && scrapbookData.length > 0) {
         let maxRight = 0, maxBottom = 0;
 
-        scrapbookData.forEach(data => {
+        // Sort by Y position so mobile flow order matches desktop visual order
+        const sortedData = [...scrapbookData].sort((a, b) => (a.y || 0) - (b.y || 0));
+
+        sortedData.forEach(data => {
             const el = createScrapbookElement(data);
             scrapbookCanvas.appendChild(el);
 
@@ -1222,6 +1479,7 @@ window.addEventListener('resize', () => {
 // ─── Patch openDetail to include scrapbook ───
 const _originalOpenDetail = openDetail;
 openDetail = function(item) {
+    scrapbookCanvas.querySelectorAll('video, audio').forEach(el => { el.pause(); el.currentTime = 0; });
     currentItem = item;
     _originalOpenDetail(item);
 
@@ -1353,6 +1611,140 @@ document.addEventListener('keydown', (e) => {
         updateEmptyState();
     }
 });
+
+// ═══════════════════════════════════════════════════════════════════════
+// PARTICLE SWIRL (placeable scrapbook element)
+// ═══════════════════════════════════════════════════════════════════════
+
+const activeSwirlCanvases = [];
+let swirlAnimRunning = false;
+
+function initSwirlCanvas(canvas, size) {
+    canvas.width = size;
+    canvas.height = size;
+    const particles = [];
+    const cx = size / 2;
+    const cy = size / 2;
+    const maxRadius = size * 0.42;
+
+    const arms = 3;
+    const pointsPerArm = 100;
+    const totalRevolutions = 3;
+
+    for (let arm = 0; arm < arms; arm++) {
+        const armOffset = (arm / arms) * Math.PI * 2;
+        for (let i = 0; i < pointsPerArm; i++) {
+            const t = i / pointsPerArm;
+            const angle = armOffset + t * totalRevolutions * Math.PI * 2;
+            const radius = t * maxRadius;
+            const x = cx + Math.cos(angle) * radius;
+            const y = cy + Math.sin(angle) * radius;
+
+            particles.push({
+                homeX: x, homeY: y,
+                x: x, y: y,
+                vx: 0, vy: 0,
+                size: 1.5 + Math.random() * 1.5,
+                alpha: 0.3 + t * 0.5
+            });
+        }
+    }
+
+    for (let i = 0; i < 60; i++) {
+        const t = Math.random();
+        const angle = Math.random() * Math.PI * 2;
+        const radius = t * maxRadius * 0.9;
+        const x = cx + Math.cos(angle) * radius;
+        const y = cy + Math.sin(angle) * radius;
+
+        particles.push({
+            homeX: x, homeY: y,
+            x: x, y: y,
+            vx: 0, vy: 0,
+            size: 1 + Math.random(),
+            alpha: 0.15 + Math.random() * 0.2
+        });
+    }
+
+    canvas._swirlParticles = particles;
+    canvas._swirlMouseX = -9999;
+    canvas._swirlMouseY = -9999;
+}
+
+function animateAllSwirls() {
+    if (!swirlAnimRunning) return;
+
+    for (const canvas of activeSwirlCanvases) {
+        const ctx = canvas.getContext('2d');
+        const particles = canvas._swirlParticles;
+        if (!particles) continue;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const mx = canvas._swirlMouseX;
+        const my = canvas._swirlMouseY;
+        const repelRadius = 80;
+        const repelStrength = 7;
+        const returnStrength = 0.04;
+        const friction = 0.88;
+
+        for (const p of particles) {
+            const dx = p.x - mx;
+            const dy = p.y - my;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < repelRadius && dist > 0) {
+                const force = (1 - dist / repelRadius) * repelStrength;
+                const angle = Math.atan2(dy, dx);
+                p.vx += Math.cos(angle) * force;
+                p.vy += Math.sin(angle) * force;
+            }
+
+            p.vx += (p.homeX - p.x) * returnStrength;
+            p.vy += (p.homeY - p.y) * returnStrength;
+            p.vx *= friction;
+            p.vy *= friction;
+            p.x += p.vx;
+            p.y += p.vy;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 248, 231, ${p.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    requestAnimationFrame(animateAllSwirls);
+}
+
+function startSwirlAnimation() {
+    if (swirlAnimRunning) return;
+    swirlAnimRunning = true;
+    animateAllSwirls();
+}
+
+function stopSwirlAnimation() {
+    swirlAnimRunning = false;
+    activeSwirlCanvases.length = 0;
+}
+
+// Add swirl button to toolbar
+const sbAddSwirl = document.createElement('button');
+sbAddSwirl.className = 'sb-tool-btn';
+sbAddSwirl.textContent = '🌀 swirl';
+sbAddSwirl.title = 'Add interactive particle swirl';
+sbAddSwirl.addEventListener('click', () => {
+    const el = createScrapbookElement({
+        type: 'swirl',
+        x: 100 + Math.random() * 200,
+        y: 100 + Math.random() * 150,
+        width: 300,
+        rotation: 0
+    });
+    scrapbookCanvas.appendChild(el);
+    updateEmptyState();
+});
+scrapbookToolbar.insertBefore(sbAddSwirl, sbSave);
 
 // ─── Restore detail view from URL hash on load ───
 if (window.location.hash) {

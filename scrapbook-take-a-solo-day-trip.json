@@ -3,11 +3,35 @@
   "scrapbook": [
     {
       "type": "image",
-      "x": 226,
-      "y": 14,
+      "x": 1216,
+      "y": -91,
+      "rotation": 2.74,
+      "src": "images/IMG_2960.jpg",
+      "width": 279
+    },
+    {
+      "type": "video",
+      "x": 940,
+      "y": -71,
+      "rotation": -3.22,
+      "src": "images/IMG_2847.MOV",
+      "width": 240
+    },
+    {
+      "type": "image",
+      "x": 307,
+      "y": -33,
       "rotation": 3.88,
       "src": "images/IMG_2834.jpg",
       "width": 262
+    },
+    {
+      "type": "image",
+      "x": 654,
+      "y": 30,
+      "rotation": -2.41,
+      "src": "images/IMG_2949.jpg",
+      "width": 180
     },
     {
       "type": "image",
@@ -18,36 +42,28 @@
       "width": 233
     },
     {
-      "type": "video",
-      "x": 807,
-      "y": 17,
-      "rotation": -3.22,
-      "src": "images/IMG_2847.MOV",
-      "width": 240
+      "type": "image",
+      "x": 285,
+      "y": 207,
+      "rotation": 2.18,
+      "src": "images/IMG_2865.jpg",
+      "width": 304
     },
     {
       "type": "image",
-      "x": 32,
-      "y": 632,
-      "rotation": -1.93,
-      "src": "images/IMG_2888.jpg",
+      "x": 1233,
+      "y": 258,
+      "rotation": 14.850627909334236,
+      "src": "images/IMG_2969.jpg",
       "width": 180
     },
     {
-      "type": "image",
-      "x": 298,
-      "y": 671,
-      "rotation": 2.09,
-      "src": "images/IMG_2928.jpg",
-      "width": 300
-    },
-    {
-      "type": "image",
-      "x": 417,
-      "y": 452,
-      "rotation": -0.44,
-      "src": "images/IMG_2889.jpg",
-      "width": 214
+      "type": "video",
+      "x": 528,
+      "y": 296,
+      "rotation": 0.8864253415683958,
+      "src": "images/solo_day_hiking.MOV",
+      "width": 445
     },
     {
       "type": "image",
@@ -56,46 +72,6 @@
       "rotation": 0.23,
       "src": "images/IMG_2913.jpg",
       "width": 252
-    },
-    {
-      "type": "image",
-      "x": 709,
-      "y": 698,
-      "rotation": 3.27,
-      "src": "images/IMG_2993.jpg",
-      "width": 180
-    },
-    {
-      "type": "image",
-      "x": 299,
-      "y": 189,
-      "rotation": 2.18,
-      "src": "images/IMG_2865.jpg",
-      "width": 304
-    },
-    {
-      "type": "image",
-      "x": 614,
-      "y": 100,
-      "rotation": -2.41,
-      "src": "images/IMG_2949.jpg",
-      "width": 180
-    },
-    {
-      "type": "image",
-      "x": 664,
-      "y": 475,
-      "rotation": 2.83,
-      "src": "images/IMG_2987.jpg",
-      "width": 242
-    },
-    {
-      "type": "image",
-      "x": 1165,
-      "y": 57,
-      "rotation": 2.74,
-      "src": "images/IMG_2960.jpg",
-      "width": 279
     },
     {
       "type": "image",
@@ -115,11 +91,19 @@
     },
     {
       "type": "image",
-      "x": 1036,
-      "y": 206,
-      "rotation": 3.36,
-      "src": "images/IMG_2969.jpg",
-      "width": 180
+      "x": 330,
+      "y": 537,
+      "rotation": -0.44,
+      "src": "images/IMG_2889.jpg",
+      "width": 214
+    },
+    {
+      "type": "image",
+      "x": 653,
+      "y": 577,
+      "rotation": 2.83,
+      "src": "images/IMG_2987.jpg",
+      "width": 242
     },
     {
       "type": "text",
@@ -130,12 +114,36 @@
       "fontSize": 13
     },
     {
+      "type": "image",
+      "x": 32,
+      "y": 632,
+      "rotation": -1.93,
+      "src": "images/IMG_2888.jpg",
+      "width": 180
+    },
+    {
+      "type": "image",
+      "x": 298,
+      "y": 739,
+      "rotation": 2.09,
+      "src": "images/IMG_2928.jpg",
+      "width": 300
+    },
+    {
       "type": "text",
       "x": 974,
       "y": 776,
       "rotation": 0.5699817503024607,
       "content": "heading for the blue skies\nand lavender fields \n",
       "fontSize": 12
+    },
+    {
+      "type": "image",
+      "x": 669,
+      "y": 782,
+      "rotation": 3.27,
+      "src": "images/IMG_2993.jpg",
+      "width": 180
     }
   ]
 }

@@ -1,0 +1,102 @@
+{
+  "item": "watch the fireworks at a mariners game",
+  "scrapbook": [
+    {
+      "type": "image",
+      "x": 1029,
+      "y": -66,
+      "rotation": 3.864212253523398,
+      "src": "images/mariners-6.jpg",
+      "width": 282
+    },
+    {
+      "type": "image",
+      "x": -10,
+      "y": -27,
+      "rotation": 0.5250576001432075,
+      "src": "images/mariners-2.JPG",
+      "width": 500
+    },
+    {
+      "type": "image",
+      "x": 516,
+      "y": 29,
+      "rotation": 0.27451837517406386,
+      "src": "images/mariners-4.JPG",
+      "width": 309
+    },
+    {
+      "type": "text",
+      "x": 46,
+      "y": 88,
+      "rotation": -2.63077085169615,
+      "content": "seattle mariners vs san francisco giants",
+      "fontSize": 13
+    },
+    {
+      "type": "image",
+      "x": 856,
+      "y": 157,
+      "rotation": -2.127196318322376,
+      "src": "images/mariners-3.JPG",
+      "width": 298
+    },
+    {
+      "type": "image",
+      "x": 319,
+      "y": 177,
+      "rotation": -1.074044276385318,
+      "src": "images/mariners-1.jpg",
+      "width": 180,
+      "noBorder": true
+    },
+    {
+      "type": "text",
+      "x": 1107,
+      "y": 210,
+      "rotation": 0.43563716621483306,
+      "content": "minji!",
+      "fontSize": 9
+    },
+    {
+      "type": "text",
+      "x": 1016,
+      "y": 270,
+      "rotation": 2.0695365650718367,
+      "content": "hanniel!",
+      "fontSize": 9
+    },
+    {
+      "type": "text",
+      "x": 930,
+      "y": 312,
+      "rotation": 1.7933014086696546,
+      "content": "me!",
+      "fontSize": 10
+    },
+    {
+      "type": "video",
+      "x": 873,
+      "y": 410,
+      "rotation": -0.04484011555141354,
+      "src": "images/mariners-7.MOV",
+      "width": 508
+    },
+    {
+      "type": "video",
+      "x": 374,
+      "y": 507,
+      "rotation": 0.22651073041942915,
+      "src": "images/mariners-8.MOV",
+      "width": 489
+    },
+    {
+      "type": "text",
+      "x": 638,
+      "y": 547,
+      "rotation": 2.1341745025294045,
+      "content": "friday night fireworks :)",
+      "fontSize": 13
+    }
+  ]
+}

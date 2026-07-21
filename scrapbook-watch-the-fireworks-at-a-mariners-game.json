@@ -69,14 +69,6 @@
       "fontSize": 9
     },
     {
-      "type": "image",
-      "x": 1210,
-      "y": 271,
-      "rotation": 0.0011226736212934796,
-      "src": "images/july-quote.webp",
-      "width": 180
-    },
-    {
       "type": "text",
       "x": 930,
       "y": 312,
@@ -107,6 +99,14 @@
       "rotation": 2.1341745025294045,
       "content": "friday night fireworks :)",
       "fontSize": 13
+    },
+    {
+      "type": "image",
+      "x": 1210,
+      "y": 271,
+      "rotation": 0.0011226736212934796,
+      "src": "images/july-quote.webp",
+      "width": 180
     }
   ]
 }

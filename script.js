@@ -458,10 +458,9 @@ function preloadScrapbookMedia(item) {
             const img = new Image();
             img.src = data.src;
         } else if (data.type === 'video' && data.src) {
-            const link = document.createElement('link');
-            link.rel = 'prefetch';
-            link.href = data.src;
-            document.head.appendChild(link);
+            const vid = document.createElement('video');
+            vid.preload = 'auto';
+            vid.src = data.src;
         }
     });
 }
@@ -857,16 +856,15 @@ function createScrapbookElement(data) {
             vid.src = data.src;
             vid.controls = true;
             vid.playsInline = true;
-            vid.preload = 'metadata';
+            vid.preload = 'auto';
             vid.draggable = false;
             vid.style.width = '100%';
             vid.style.pointerEvents = 'all';
             vid.style.opacity = '0';
             vid.style.transition = 'opacity 0.4s ease';
-            vid.onloadeddata = () => { vid.style.opacity = '1'; };
-            vid.onloadedmetadata = () => { vid.style.opacity = '1'; };
-            if (vid.readyState >= 1) vid.style.opacity = '1';
-            setTimeout(() => { vid.style.opacity = '1'; }, 2000);
+            vid.oncanplaythrough = () => { vid.style.opacity = '1'; };
+            if (vid.readyState >= 4) vid.style.opacity = '1';
+            setTimeout(() => { vid.style.opacity = '1'; }, 5000);
             wrapper.appendChild(vid);
 
             const vidOptions = document.createElement('div');

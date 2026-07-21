@@ -489,7 +489,8 @@ function createFloatingItems() {
     bucketList.forEach((item, index) => {
         const el = document.createElement('div');
         el.className = 'floating-item';
-        el.textContent = item.title;
+        if (item.completed) el.classList.add('has-memories');
+        el.textContent = item.title + (item.completed ? ' ⋆˚꩜｡⋆' : '');
 
         container.appendChild(el);
         const pos = getNonOverlappingPosition(el);
@@ -1465,10 +1466,13 @@ function renderScrapbookData(scrapbookData) {
     if (scrapbookData && scrapbookData.length > 0) {
         let maxRight = 0, maxBottom = 0;
 
-        // Sort by Y position so mobile flow order matches desktop visual order
-        const sortedData = [...scrapbookData].sort((a, b) => (a.y || 0) - (b.y || 0));
+        // On mobile, sort by Y for flow layout; on desktop, preserve array order (z-order)
+        const isMobile = window.innerWidth <= 768;
+        const renderData = isMobile
+            ? [...scrapbookData].sort((a, b) => (a.y || 0) - (b.y || 0))
+            : scrapbookData;
 
-        sortedData.forEach(data => {
+        renderData.forEach(data => {
             const el = createScrapbookElement(data);
             scrapbookCanvas.appendChild(el);
 

@@ -376,11 +376,19 @@ header .subtitle {
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.12);
 }
 
+.floating-item.has-memories {
+    background: #fdf6e8;
+}
+
 .floating-item:hover {
     transform: scale(1.06) translateY(-3px) rotate(0.5deg);
     box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.18);
     background: #ffffff;
     animation-play-state: paused;
+}
+
+.floating-item.has-memories:hover {
+    background: #fdf6e8;
 }
 
 @keyframes float {

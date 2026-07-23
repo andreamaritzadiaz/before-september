@@ -70,7 +70,7 @@ const bucketList = [
             { type: 'video', x: 528, y: 296, rotation: 0.89, src: 'images/solo_day_hiking.MOV', width: 445 },
             { type: 'image', x: 997, y: 336, rotation: 5.87, src: 'images/flower-quote.jpg', width: 237, noBorder: true, noTape: true },
             { type: 'image', x: 69, y: 407, rotation: 0.23, src: 'images/IMG_2913.jpg', width: 252 },
-            { type: 'text', x: 430, y: 451, rotation: -0.58, content: 'watch me ⟢', fontSize: 14 },
+            { type: 'text', x: 535, y: 580, rotation: -0.58, content: 'watch me ⟢', fontSize: 14 },
             { type: 'image', x: 938, y: 509, rotation: 0.99, src: 'images/IMG_2944.jpg', width: 216 },
             { type: 'image', x: 1191, y: 528, rotation: -2.84, src: 'images/IMG_2985.jpg', width: 246 },
             { type: 'image', x: 330, y: 537, rotation: -0.44, src: 'images/IMG_2889.jpg', width: 214 },
@@ -132,7 +132,7 @@ const bucketList = [
             { type: 'text', x: 925, y: 79, rotation: 7.73, content: 'practicing before class ⋆', fontSize: 16 },
             { type: 'image', x: 34, y: 100, rotation: -2.98, src: 'images/salsa-class-4.jpg', width: 327, noTape: true },
             { type: 'image', x: 1, y: 273, rotation: -3.94, src: 'images/salsa-class-1-cropped.jpg', width: 375 },
-            { type: 'text', x: 1082, y: 493, rotation: 0.89, content: "working on adding more swing :')", fontSize: 11 },
+            { type: 'text', x: 1060, y: 60, rotation: 0.89, content: "working on adding more swing :')", fontSize: 11 },
             { type: 'image', x: 665, y: 507, rotation: 0.91, src: 'images/salsa-class-2.JPG', width: 284, noTape: true },
             { type: 'image', x: 365, y: 518, rotation: 3.22, src: 'images/salsa-class-3.PNG', width: 257 },
             { type: 'text', x: 123, y: 597, rotation: -5.67, content: 'at the studio ⋆˚꩜｡⋆', fontSize: 20 },
@@ -1466,39 +1466,132 @@ function renderScrapbookData(scrapbookData) {
     if (scrapbookData && scrapbookData.length > 0) {
         let maxRight = 0, maxBottom = 0;
 
-        // On mobile, sort by Y for flow layout; on desktop, preserve array order (z-order)
         const isMobile = window.innerWidth <= 768;
-        const renderData = isMobile
-            ? [...scrapbookData].sort((a, b) => (a.y || 0) - (b.y || 0))
-            : scrapbookData;
 
-        renderData.forEach(data => {
-            const el = createScrapbookElement(data);
-            scrapbookCanvas.appendChild(el);
+        if (isMobile) {
+            renderScrapbookMobile(scrapbookData);
+        } else {
+            scrapbookData.forEach(data => {
+                const el = createScrapbookElement(data);
+                scrapbookCanvas.appendChild(el);
 
-            const right = (data.x || 0) + (data.width || 250) + 40;
-            const bottom = (data.y || 0) + (data.width || 250) + 40;
-            if (right > maxRight) maxRight = right;
-            if (bottom > maxBottom) maxBottom = bottom;
-        });
+                const right = (data.x || 0) + (data.width || 250) + 40;
+                const bottom = (data.y || 0) + (data.width || 250) + 40;
+                if (right > maxRight) maxRight = right;
+                if (bottom > maxBottom) maxBottom = bottom;
+            });
 
-        // Include Spotify player position in canvas bounds
-        if (currentItem && currentItem.spotifyPosition) {
-            const spRight = currentItem.spotifyPosition.x + 340;
-            const spBottom = currentItem.spotifyPosition.y + 120;
-            if (spRight > maxRight) maxRight = spRight;
-            if (spBottom > maxBottom) maxBottom = spBottom;
+            // Include Spotify player position in canvas bounds
+            if (currentItem && currentItem.spotifyPosition) {
+                const spRight = currentItem.spotifyPosition.x + 340;
+                const spBottom = currentItem.spotifyPosition.y + 120;
+                if (spRight > maxRight) maxRight = spRight;
+                if (spBottom > maxBottom) maxBottom = spBottom;
+            }
+
+            scrapbookCanvas.style.width = maxRight + 'px';
+            scrapbookCanvas.style.height = maxBottom + 'px';
+            scaleScrapbookCanvas(maxRight, maxBottom);
         }
-
-        // Set intrinsic canvas size based on content
-        scrapbookCanvas.style.width = maxRight + 'px';
-        scrapbookCanvas.style.height = maxBottom + 'px';
-
-        // Scale canvas to fit viewport
-        scaleScrapbookCanvas(maxRight, maxBottom);
     }
 
     updateEmptyState();
+}
+
+// ─── Mobile: pair text annotations with nearest image ───
+function renderScrapbookMobile(scrapbookData) {
+    const images = scrapbookData.filter(d => d.type === 'image' || d.type === 'video');
+    const texts = scrapbookData.filter(d => d.type === 'text');
+    const others = scrapbookData.filter(d => d.type !== 'image' && d.type !== 'video' && d.type !== 'text');
+
+    // For each text, find the nearest image by center-to-center distance
+    const textAssignments = new Map(); // imageIndex -> [textData, ...]
+
+    const orphanedTexts = [];
+
+    texts.forEach(textData => {
+        const tx = (textData.x || 0);
+        const ty = (textData.y || 0);
+
+        let closestIdx = -1;
+        let closestDist = Infinity;
+
+        images.forEach((imgData, idx) => {
+            const imgX = imgData.x || 0;
+            const imgY = imgData.y || 0;
+            const imgW = imgData.width || 180;
+            const imgH = imgW * 0.75;
+
+            // Distance from text point to image bounding box
+            const dx = Math.max(0, imgX - tx, tx - (imgX + imgW));
+            const dy = Math.max(0, imgY - ty, ty - (imgY + imgH));
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < closestDist) {
+                closestDist = dist;
+                closestIdx = idx;
+            }
+        });
+
+        if (closestIdx >= 0 && closestDist < 400) {
+            if (!textAssignments.has(closestIdx)) textAssignments.set(closestIdx, []);
+            textAssignments.get(closestIdx).push(textData);
+        } else {
+            orphanedTexts.push(textData);
+        }
+    });
+
+    // Sort images by Y for vertical flow
+    const sortedImages = images
+        .map((data, origIdx) => ({ data, origIdx }))
+        .sort((a, b) => (a.data.y || 0) - (b.data.y || 0));
+
+    // Render images with overlays
+    sortedImages.forEach(({ data, origIdx }) => {
+        const el = createScrapbookElement(data);
+        el.style.position = 'relative';
+        scrapbookCanvas.appendChild(el);
+
+        // Add text overlays for this image
+        const assignedTexts = textAssignments.get(origIdx) || [];
+        assignedTexts.forEach(textData => {
+            const overlay = document.createElement('div');
+            overlay.className = 'sb-text-overlay';
+            overlay.textContent = textData.content;
+            overlay.style.fontSize = (textData.fontSize || 11) + 'px';
+
+            // Determine placement on the image based on relative position
+            const imgW = data.width || 180;
+            const imgH = imgW * 0.75;
+            const relX = ((textData.x || 0) - (data.x || 0)) / imgW;
+            const relY = ((textData.y || 0) - (data.y || 0)) / imgH;
+
+            // Clamp and convert to percentage-based position
+            const clampedX = Math.max(0.02, Math.min(0.85, relX));
+            const clampedY = Math.max(0.02, Math.min(0.9, relY));
+
+            overlay.style.left = (clampedX * 100) + '%';
+            overlay.style.top = (clampedY * 100) + '%';
+
+            if (textData.rotation) {
+                overlay.style.transform = `rotate(${textData.rotation}deg)`;
+            }
+
+            el.appendChild(overlay);
+        });
+    });
+
+    // Render orphaned texts (too far from any image) as standalone
+    orphanedTexts.sort((a, b) => (a.y || 0) - (b.y || 0)).forEach(data => {
+        const el = createScrapbookElement(data);
+        scrapbookCanvas.appendChild(el);
+    });
+
+    // Render stickers and other non-text elements
+    others.sort((a, b) => (a.y || 0) - (b.y || 0)).forEach(data => {
+        const el = createScrapbookElement(data);
+        scrapbookCanvas.appendChild(el);
+    });
 }
 
 // ─── Responsive Scaling ───

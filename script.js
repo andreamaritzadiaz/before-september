@@ -145,6 +145,13 @@ const bucketList = [
         note: "this one is still on the list .:**.",
         media: [],
         scrapbook: []
+    },
+    {
+        title: "volunteer for a good cause",
+        completed: false,
+        note: "this one is still on the list *:.",
+        media: [],
+        scrapbook: []
     }
 ];
 
@@ -791,12 +798,23 @@ sbAddAudio.addEventListener('click', () => {
 });
 
 // ─── Create Scrapbook Element DOM ───
+let sbElementCount = 0;
+
 function createScrapbookElement(data) {
     const wrapper = document.createElement('div');
     wrapper.className = 'sb-element';
     wrapper.dataset.type = data.type;
     wrapper.style.left = data.x + 'px';
     wrapper.style.top = data.y + 'px';
+
+    const delay = sbElementCount * 120;
+    sbElementCount++;
+    setTimeout(() => {
+        wrapper.classList.add('sb-wiggle');
+        wrapper.addEventListener('animationend', () => {
+            wrapper.classList.remove('sb-wiggle');
+        }, { once: true });
+    }, delay);
 
     const rotation = data.rotation || 0;
     const scale = data.scale || 1;
@@ -1458,6 +1476,7 @@ function renderScrapbook(item) {
 
 function renderScrapbookData(scrapbookData) {
     // Clear again in case async loaded
+    sbElementCount = 0;
     scrapbookCanvas.querySelectorAll('.sb-element').forEach(el => el.remove());
     scrapbookCanvas.style.width = '';
     scrapbookCanvas.style.height = '';
@@ -1909,3 +1928,4 @@ if (window.location.hash) {
     );
     if (match) openDetail(match);
 }
+

@@ -168,8 +168,11 @@ body {
 }
 
 @media (max-width: 768px) {
-    body {
+    html, body {
         overflow-x: hidden;
+    }
+
+    body {
         overflow-y: auto;
     }
 }
@@ -584,10 +587,37 @@ footer .footer-link {
     text-decoration: none;
     border-bottom: 1.5px dotted rgba(255, 248, 231, 0.7);
     padding-bottom: 1px;
+    position: relative;
+    display: inline-block;
 }
 
 footer .footer-link:hover {
-    border-bottom-color: #FFF8E7;
+    border-bottom-color: transparent;
+}
+
+footer .footer-link svg.circle-draw {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 16px);
+    height: calc(100% + 14px);
+    pointer-events: none;
+    overflow: visible;
+}
+
+footer .footer-link svg.circle-draw ellipse {
+    fill: none;
+    stroke: #FFF8E7;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    transition: stroke-dashoffset 0.6s ease;
+}
+
+footer .footer-link:hover svg.circle-draw ellipse {
+    stroke-dashoffset: 0;
 }
 
 footer .footer-bottom-line {
@@ -644,7 +674,7 @@ footer .footer-cta {
         top: 12px;
         left: auto;
         transform: none;
-        padding: 80px 5% 20px;
+        padding: 24px 5% 20px;
         z-index: 10;
     }
 
@@ -937,6 +967,16 @@ footer .footer-cta {
     cursor: grab;
     user-select: none;
     transition: box-shadow 0.2s ease;
+}
+
+.sb-element.sb-wiggle {
+    animation: sbWiggle 1.2s ease-in-out 1;
+}
+
+@keyframes sbWiggle {
+    0%, 100% { translate: 0 0; rotate: 0deg; }
+    30% { translate: 0 -1px; rotate: -0.5deg; }
+    60% { translate: 0 0.5px; rotate: 0.3deg; }
 }
 
 .sb-element:active {
@@ -1445,10 +1485,13 @@ footer .footer-cta {
     }
 
     .detail-view {
+        overflow-x: hidden;
         overflow-y: auto;
     }
 
     .detail-content {
         padding-top: 20px;
+        overflow-x: hidden;
     }
 }
+

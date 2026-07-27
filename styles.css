@@ -620,6 +620,16 @@ footer .footer-link:hover svg.circle-draw ellipse {
     stroke-dashoffset: 0;
 }
 
+@media (hover: none) {
+    footer .footer-link svg.circle-draw {
+        display: none;
+    }
+
+    footer .footer-link:hover {
+        border-bottom-color: rgba(255, 248, 231, 0.7);
+    }
+}
+
 footer .footer-bottom-line {
     margin-top: 4px;
     font-size: 0.75rem;

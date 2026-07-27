@@ -192,20 +192,40 @@ if (!isTouchDevice) {
     });
 }
 
-// ─── Glow Trail ───
+// ─── Glow Trail (pool-based) ───
+const GLOW_POOL_SIZE = 20;
+const glowPool = [];
+let glowPoolIndex = 0;
 let lastGlow = 0;
+
+// Pre-create glow dot elements at init time
+if (!isTouchDevice) {
+    for (let i = 0; i < GLOW_POOL_SIZE; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'glow-dot';
+        dot.style.opacity = '0';
+        document.body.appendChild(dot);
+        glowPool.push(dot);
+    }
+}
+
 function spawnGlowDot(x, y) {
     if (isTouchDevice) return;
     const now = Date.now();
     if (now - lastGlow < 40) return;
     lastGlow = now;
 
-    const dot = document.createElement('div');
-    dot.className = 'glow-dot';
+    const dot = glowPool[glowPoolIndex];
+    glowPoolIndex = (glowPoolIndex + 1) % GLOW_POOL_SIZE;
+
     dot.style.left = x + 'px';
     dot.style.top = y + 'px';
-    document.body.appendChild(dot);
-    setTimeout(() => dot.remove(), 800);
+
+    // Restart the CSS animation by removing and re-adding it
+    dot.style.animation = 'none';
+    dot.offsetHeight; // force reflow to reset animation
+    dot.style.animation = '';
+    dot.style.opacity = '';
 }
 
 // ─── Sound Effects (Web Audio) [PAUSED] ───
@@ -525,8 +545,11 @@ function createFloatingItems() {
 }
 
 // ─── Mouse Drift Effect (desktop only) ───
+let driftPaused = false;
+
 function updateDrift() {
     if (isTouchDevice) return;
+    if (driftPaused) { requestAnimationFrame(updateDrift); return; }
     itemElements.forEach((el, i) => {
         const pos = itemPositions[i];
         const rect = el.getBoundingClientRect();
@@ -575,6 +598,7 @@ requestAnimationFrame(updateDrift);
 
 // ─── Detail View ───
 var openDetail = function(item) {
+    driftPaused = true;
     detailTitle.textContent = item.title;
     detailNote.textContent = item.note;
 
@@ -594,6 +618,7 @@ var openDetail = function(item) {
 }
 
 function closeDetail() {
+    driftPaused = false;
     detailView.classList.add('hidden');
     scrapbookCanvas.querySelectorAll('video, audio').forEach(el => {
         el.pause();

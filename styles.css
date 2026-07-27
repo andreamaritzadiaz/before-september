@@ -755,7 +755,7 @@ footer .footer-cta {
         left: 0;
         right: 0;
         padding: 14px 5% 20px;
-        background: linear-gradient(to top, rgba(26, 26, 26, 0.95) 60%, transparent);
+        background: linear-gradient(to top, rgba(26, 26, 26, 0.8) 30%, transparent);
         z-index: 50;
     }
 

@@ -889,17 +889,17 @@ function createScrapbookElement(data) {
             if (data.noTape) wrapper.classList.add('no-tape');
             if (data.width) wrapper.style.width = data.width + 'px';
             const vid = document.createElement('video');
-            vid.src = data.src;
+            vid.src = data.src + '#t=0.001';
             vid.controls = true;
             vid.playsInline = true;
-            vid.preload = 'auto';
+            vid.preload = 'metadata';
             vid.draggable = false;
             vid.style.width = '100%';
             vid.style.pointerEvents = 'all';
             vid.style.opacity = '0';
             vid.style.transition = 'opacity 0.4s ease';
-            vid.oncanplaythrough = () => { vid.style.opacity = '1'; };
-            if (vid.readyState >= 4) vid.style.opacity = '1';
+            vid.onloadeddata = () => { vid.style.opacity = '1'; };
+            if (vid.readyState >= 2) vid.style.opacity = '1';
             setTimeout(() => { vid.style.opacity = '1'; }, 5000);
             wrapper.appendChild(vid);
 

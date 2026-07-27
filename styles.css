@@ -751,12 +751,9 @@ footer .footer-cta {
 
     footer {
         position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 14px 5% 20px;
-        background: linear-gradient(to top, rgba(26, 26, 26, 0.8) 30%, transparent);
-        z-index: 50;
+        bottom: 24px;
+        left: 5%;
+        padding: 0;
     }
 
     .detail-content h2 {

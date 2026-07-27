@@ -128,7 +128,7 @@ const bucketList = [
             { type: 'video', x: 406, y: 23, rotation: -2.13, src: 'images/salsa-practice-1.MOV', width: 254, noTape: true },
             { type: 'video', x: 730, y: 27, rotation: 0.41, src: 'images/salsa-practice-2.MOV', width: 251, noTape: true },
             { type: 'video', x: 1047, y: 47, rotation: 6.24, src: 'images/salsa-practice-3.MOV', width: 255, noTape: true },
-            { type: 'text', x: 467, y: -20, rotation: -2.66, content: '6am practice session', fontSize: 11 },
+            { type: 'text', x: 467, y: 30, rotation: -2.66, content: '6am practice session', fontSize: 11, mobilePosition: 'bottom' },
             { type: 'text', x: 925, y: 79, rotation: 7.73, content: 'practicing before class ⋆', fontSize: 16 },
             { type: 'image', x: 34, y: 100, rotation: -2.98, src: 'images/salsa-class-4.jpg', width: 327, noTape: true },
             { type: 'image', x: 1, y: 273, rotation: -3.94, src: 'images/salsa-class-1-cropped.jpg', width: 375 },
@@ -1591,7 +1591,11 @@ function renderScrapbookMobile(scrapbookData) {
             const clampedY = Math.max(-0.08, Math.min(0.9, relY));
 
             overlay.style.left = (clampedX * 100) + '%';
-            overlay.style.top = (clampedY * 100) + '%';
+            if (textData.mobilePosition === 'bottom') {
+                overlay.style.bottom = '4%';
+            } else {
+                overlay.style.top = (clampedY * 100) + '%';
+            }
 
             if (textData.rotation) {
                 overlay.style.transform = `rotate(${textData.rotation}deg)`;

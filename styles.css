@@ -541,7 +541,7 @@ header .subtitle {
     color: #FFF8E7;
     line-height: 1.8;
     font-style: italic;
-    margin-top: 20px;
+    margin-top: 12px;
     background: rgba(0, 0, 0, 0.35);
     border: 2px dotted rgba(255, 248, 231, 0.6);
     border-radius: 8px;
@@ -1503,11 +1503,11 @@ footer .footer-cta {
         overflow-x: hidden;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
-        padding: 40px 20px 80px;
+        padding: 60px 20px 80px;
     }
 
     .detail-content {
-        padding-top: 20px;
+        padding-top: 10px;
         overflow: visible;
         min-height: auto;
         height: auto;

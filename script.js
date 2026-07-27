@@ -1588,7 +1588,7 @@ function renderScrapbookMobile(scrapbookData) {
 
             // Clamp and convert to percentage-based position
             const clampedX = Math.max(0.02, Math.min(0.85, relX));
-            const clampedY = Math.max(-0.08, Math.min(0.9, relY));
+            const clampedY = Math.max(0.02, Math.min(0.9, relY));
 
             overlay.style.left = (clampedX * 100) + '%';
             if (textData.mobilePosition === 'bottom') {

@@ -830,6 +830,7 @@ function createScrapbookElement(data) {
             if (data.width) wrapper.style.width = data.width + 'px';
             const img = document.createElement('img');
             img.draggable = false;
+            img.loading = 'lazy';
             img.style.opacity = '0';
             img.style.transition = 'opacity 0.4s ease';
             img.onload = () => { img.style.opacity = '1'; };

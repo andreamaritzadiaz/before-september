@@ -836,7 +836,7 @@ function createScrapbookElement(data) {
             img.onload = () => { img.style.opacity = '1'; };
             img.src = data.src;
             if (img.complete) img.style.opacity = '1';
-            setTimeout(() => { img.style.opacity = '1'; }, 2000);
+            setTimeout(() => { img.style.opacity = '1'; }, 8000);
             if (data.cropX != null) {
                 img.style.objectFit = 'none';
                 img.style.objectPosition = `-${data.cropX}px -${data.cropY}px`;

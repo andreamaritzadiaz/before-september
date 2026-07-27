@@ -1487,19 +1487,24 @@ footer .footer-cta {
     }
 
     .detail-view {
+        position: fixed;
+        inset: 0;
         display: block;
         overflow-x: hidden;
-        overflow-y: auto;
+        overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
+        padding: 40px 20px 80px;
     }
 
     .detail-content {
         padding-top: 20px;
-        overflow-x: hidden;
+        overflow: visible;
         min-height: auto;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
 }
 

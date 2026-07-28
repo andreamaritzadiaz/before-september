@@ -600,7 +600,12 @@ requestAnimationFrame(updateDrift);
 var openDetail = function(item) {
     driftPaused = true;
     detailTitle.textContent = item.title;
-    detailNote.textContent = item.note;
+    detailNote.innerHTML = '';
+    if (!item.completed) {
+        typeStatusNote(item.note);
+    } else {
+        detailNote.textContent = item.note;
+    }
 
     mediaGrid.innerHTML = '';
     if (item.completed && item.media.length > 0) {
@@ -615,6 +620,32 @@ var openDetail = function(item) {
     detailView.classList.remove('hidden');
     const slug = item.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
     history.replaceState(null, '', '#' + slug);
+}
+
+let typeTimer = null;
+function typeStatusNote(text) {
+    if (typeTimer) clearInterval(typeTimer);
+    const label = document.createElement('span');
+    label.className = 'status-label';
+    label.textContent = 'currently: ';
+    const typed = document.createElement('span');
+    typed.className = 'status-typed';
+    typed.textContent = '';
+    detailNote.innerHTML = '';
+    detailNote.appendChild(label);
+    detailNote.appendChild(typed);
+    let i = 0;
+    typeTimer = setInterval(() => {
+        if (i < text.length) {
+            typed.textContent += text[i];
+            i++;
+        } else {
+            clearInterval(typeTimer);
+            typeTimer = null;
+            typed.style.borderRight = 'none';
+            typed.style.animation = 'none';
+        }
+    }, 45);
 }
 
 function closeDetail() {

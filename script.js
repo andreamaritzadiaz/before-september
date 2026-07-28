@@ -624,10 +624,10 @@ var openDetail = function(item) {
 
 let typeTimer = null;
 const rainbowColors = [
-    '#b5179e', '#7209b7', '#560bad', '#480ca8',
-    '#3a0ca3', '#3f37c9', '#4361ee', '#4895ef',
-    '#0077b6', '#00838f', '#2e7d32', '#558b2f',
-    '#9e6c00', '#c2185b'
+    '#d45d79', '#b56bb5', '#7e7ec9', '#5a9ec9',
+    '#4a9e8f', '#6a9e5a', '#c4965a', '#d47a6a',
+    '#c95a8a', '#9a6ab5', '#5a85b5', '#5aab8a',
+    '#8aab5a', '#d4856a'
 ];
 
 function typeStatusNote(text) {

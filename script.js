@@ -623,6 +623,13 @@ var openDetail = function(item) {
 }
 
 let typeTimer = null;
+const rainbowColors = [
+    '#b5179e', '#7209b7', '#560bad', '#480ca8',
+    '#3a0ca3', '#3f37c9', '#4361ee', '#4895ef',
+    '#0077b6', '#00838f', '#2e7d32', '#558b2f',
+    '#9e6c00', '#c2185b'
+];
+
 function typeStatusNote(text) {
     if (typeTimer) clearInterval(typeTimer);
     const label = document.createElement('span');
@@ -630,14 +637,16 @@ function typeStatusNote(text) {
     label.textContent = 'currently: ';
     const typed = document.createElement('span');
     typed.className = 'status-typed';
-    typed.textContent = '';
     detailNote.innerHTML = '';
     detailNote.appendChild(label);
     detailNote.appendChild(typed);
     let i = 0;
     typeTimer = setInterval(() => {
         if (i < text.length) {
-            typed.textContent += text[i];
+            const ch = document.createElement('span');
+            ch.textContent = text[i];
+            ch.style.color = rainbowColors[i % rainbowColors.length];
+            typed.appendChild(ch);
             i++;
         } else {
             clearInterval(typeTimer);

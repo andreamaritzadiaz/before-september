@@ -562,6 +562,10 @@ header .subtitle {
     animation: blink 0.8s step-end infinite;
 }
 
+.status-note .status-typed span {
+    transition: color 0.3s ease;
+}
+
 @keyframes blink {
     0%, 100% { border-color: rgba(26, 26, 26, 0.55); }
     50% { border-color: transparent; }

@@ -2,14 +2,14 @@ const bucketList = [
     {
         title: "sunrise hike before work day",
         completed: false,
-        note: "this one is still on the list *:.",
+        note: "waiting for a morning I don't hit snooze",
         media: [],
         scrapbook: []
     },
     {
         title: "jump off the lake union bridge",
         completed: false,
-        note: "this one is still on the list ^_^",
+        note: "building up the courage...",
         media: [],
         scrapbook: []
     },
@@ -38,14 +38,14 @@ const bucketList = [
     {
         title: "run a summer 5k",
         completed: false,
-        note: "this one is still on the list =)",
+        note: "looking for a good one to sign up for",
         media: [],
         scrapbook: []
     },
     {
         title: "go camping in the washington forest",
         completed: false,
-        note: "this one is still on the list *:.",
+        note: "still picking a campsite",
         media: [],
         scrapbook: []
     },
@@ -108,14 +108,14 @@ const bucketList = [
     {
         title: "watch a sounders game",
         completed: false,
-        note: "this one is still on the list =)",
+        note: "checking the schedule for a good match",
         media: [],
         scrapbook: []
     },
     {
         title: "go tide pooling",
         completed: false,
-        note: "this one is still on the list *:.",
+        note: "waiting for a low tide weekend",
         media: [],
         scrapbook: []
     },
@@ -142,14 +142,14 @@ const bucketList = [
     {
         title: "build one hardware project",
         completed: false,
-        note: "this one is still on the list .:**.",
+        note: "parts are on the way",
         media: [],
         scrapbook: []
     },
     {
         title: "volunteer for a good cause",
         completed: false,
-        note: "this one is still on the list *:.",
+        note: "researching local orgs",
         media: [],
         scrapbook: []
     }

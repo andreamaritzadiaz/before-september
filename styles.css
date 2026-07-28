@@ -537,16 +537,19 @@ header .subtitle {
 }
 
 .status-note {
-    font-size: 0.9rem;
-    color: #FFF8E7;
-    line-height: 1.8;
-    font-style: italic;
-    margin-top: 12px;
-    background: rgba(0, 0, 0, 0.35);
-    border: 2px dotted rgba(255, 248, 231, 0.6);
-    border-radius: 8px;
-    padding: 10px 14px;
-    display: block;
+    font-family: 'Hedvig Letters Serif', serif;
+    font-size: 0.85rem;
+    color: #1a1a1a;
+    line-height: 1.5;
+    font-style: normal;
+    margin-top: 16px;
+    background: #ffffff;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 20px;
+    display: inline-block;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.12);
+    letter-spacing: 0.01em;
 }
 
 .media-grid {

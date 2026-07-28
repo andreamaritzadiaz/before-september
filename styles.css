@@ -553,7 +553,8 @@ header .subtitle {
 }
 
 .status-note .status-label {
-    font-style: italic;
+    font-style: normal;
+    color: #1a1a1a;
 }
 
 .status-note .status-typed {

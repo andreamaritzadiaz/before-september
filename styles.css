@@ -659,6 +659,12 @@ footer .footer-cta {
     letter-spacing: 0.05em;
 }
 
+@media (min-width: 769px) and (max-width: 1200px) {
+    .sb-element-text {
+        zoom: 1.2;
+    }
+}
+
 @media (min-width: 1600px) {
     .detail-view {
         padding: 60px 80px;

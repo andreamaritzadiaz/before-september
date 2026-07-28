@@ -1692,7 +1692,7 @@ function scaleScrapbookCanvas(naturalWidth, naturalHeight) {
     }
 
     const containerWidth = detailView.clientWidth - 80;
-    const scale = Math.max(0.85, Math.min(1.4, containerWidth / canvasNaturalWidth));
+    const scale = Math.min(1.4, containerWidth / canvasNaturalWidth);
 
     scrapbookCanvas.style.transform = `scale(${scale})`;
     scrapbookCanvas.style.height = canvasNaturalHeight + 'px';

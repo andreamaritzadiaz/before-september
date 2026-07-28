@@ -768,14 +768,8 @@ footer .footer-cta {
         animation: none;
     }
 
-    .page-border::before {
-        left: 12px;
-        right: 12px;
-    }
-
-    .page-border::after {
-        top: 12px;
-        bottom: 12px;
+    .page-border {
+        display: none;
     }
 
     footer {

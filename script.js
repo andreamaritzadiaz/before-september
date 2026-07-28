@@ -143,6 +143,7 @@ const bucketList = [
         title: "build one hardware project",
         completed: false,
         note: "parts are on the way",
+        noPrefix: true,
         media: [],
         scrapbook: []
     },
@@ -602,7 +603,7 @@ var openDetail = function(item) {
     detailTitle.textContent = item.title;
     detailNote.innerHTML = '';
     if (!item.completed) {
-        typeStatusNote(item.note);
+        typeStatusNote(item.note, item.noPrefix);
     } else {
         detailNote.textContent = item.note;
     }
@@ -630,15 +631,17 @@ const rainbowColors = [
     '#8aab5a', '#d4856a'
 ];
 
-function typeStatusNote(text) {
+function typeStatusNote(text, noPrefix) {
     if (typeTimer) clearInterval(typeTimer);
-    const label = document.createElement('span');
-    label.className = 'status-label';
-    label.textContent = 'currently: ';
+    detailNote.innerHTML = '';
+    if (!noPrefix) {
+        const label = document.createElement('span');
+        label.className = 'status-label';
+        label.textContent = 'currently: ';
+        detailNote.appendChild(label);
+    }
     const typed = document.createElement('span');
     typed.className = 'status-typed';
-    detailNote.innerHTML = '';
-    detailNote.appendChild(label);
     detailNote.appendChild(typed);
     let i = 0;
     typeTimer = setInterval(() => {

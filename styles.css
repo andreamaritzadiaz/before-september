@@ -773,6 +773,7 @@ footer .footer-cta {
         bottom: auto;
         left: auto;
         padding: 10px 20px 24px;
+        font-size: 0.85rem;
     }
 
     .detail-content h2 {
@@ -851,7 +852,7 @@ footer .footer-cta {
     }
 
     footer {
-        font-size: 0.65rem;
+        font-size: 0.8rem;
     }
 
     .status-note {

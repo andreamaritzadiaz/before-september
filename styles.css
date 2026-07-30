@@ -1501,6 +1501,14 @@ footer .footer-cta {
         width: auto !important;
     }
 
+    .spotify-embed {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100%;
+        max-width: 300px;
+    }
+
     .scrapbook-toolbar {
         gap: 6px;
         padding: 8px 12px;

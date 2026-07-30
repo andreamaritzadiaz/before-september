@@ -1507,6 +1507,7 @@ footer .footer-cta {
         top: auto !important;
         width: 100%;
         max-width: 300px;
+        order: var(--spotify-mobile-order, 999);
     }
 
     .scrapbook-toolbar {

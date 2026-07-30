@@ -59,6 +59,7 @@ const bucketList = [
         spotifyArtist: "Ella Langley",
         spotifyArt: "https://i.scdn.co/image/ab67616d00001e028606848da949bbaddf447d87",
         spotifyPosition: { x: 897, y: 838 },
+        spotifyMobileOrder: 33,
         scrapbook: [
             { type: 'image', x: 1216, y: -91, rotation: 2.74, src: 'images/IMG_2960.jpg', width: 279 },
             { type: 'video', x: 940, y: -71, rotation: -3.22, src: 'images/IMG_2847.MOV', width: 240 },
@@ -1626,9 +1627,10 @@ function renderScrapbookMobile(scrapbookData) {
         .sort((a, b) => (a.data.y || 0) - (b.data.y || 0));
 
     // Render images with overlays
-    sortedImages.forEach(({ data, origIdx }) => {
+    sortedImages.forEach(({ data, origIdx }, sortedIdx) => {
         const el = createScrapbookElement(data);
         el.style.position = 'relative';
+        el.style.order = sortedIdx * 2;
         scrapbookCanvas.appendChild(el);
 
         // Add text overlays for this image
@@ -1667,12 +1669,14 @@ function renderScrapbookMobile(scrapbookData) {
     // Render orphaned texts (too far from any image) as standalone
     orphanedTexts.sort((a, b) => (a.y || 0) - (b.y || 0)).forEach(data => {
         const el = createScrapbookElement(data);
+        el.style.order = 9000;
         scrapbookCanvas.appendChild(el);
     });
 
     // Render stickers and other non-text elements
     others.sort((a, b) => (a.y || 0) - (b.y || 0)).forEach(data => {
         const el = createScrapbookElement(data);
+        el.style.order = 9000;
         scrapbookCanvas.appendChild(el);
     });
 }
@@ -1806,6 +1810,9 @@ openDetail = function(item) {
         wrapper.appendChild(iframe);
 
 
+        if (item.spotifyMobileOrder != null) {
+            wrapper.style.setProperty('--spotify-mobile-order', item.spotifyMobileOrder);
+        }
         scrapbookCanvas.appendChild(wrapper);
 
         // Make draggable via handle (position relative to canvas)

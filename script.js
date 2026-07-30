@@ -624,12 +624,6 @@ var openDetail = function(item) {
 }
 
 let typeTimer = null;
-const rainbowColors = [
-    '#d45d79', '#b56bb5', '#7e7ec9', '#5a9ec9',
-    '#4a9e8f', '#6a9e5a', '#c4965a', '#d47a6a',
-    '#c95a8a', '#9a6ab5', '#5a85b5', '#5aab8a',
-    '#8aab5a', '#d4856a'
-];
 
 function typeStatusNote(text, noPrefix) {
     if (typeTimer) clearInterval(typeTimer);
@@ -646,10 +640,7 @@ function typeStatusNote(text, noPrefix) {
     let i = 0;
     typeTimer = setInterval(() => {
         if (i < text.length) {
-            const ch = document.createElement('span');
-            ch.textContent = text[i];
-            ch.style.color = rainbowColors[i % rainbowColors.length];
-            typed.appendChild(ch);
+            typed.textContent += text[i];
             i++;
         } else {
             clearInterval(typeTimer);

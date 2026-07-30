@@ -539,7 +539,7 @@ header .subtitle {
 .status-note {
     font-family: 'Hedvig Letters Serif', serif;
     font-size: 0.85rem;
-    color: rgba(26, 26, 26, 0.55);
+    color: #1a1a1a;
     line-height: 1.5;
     font-style: normal;
     margin-top: 16px;
@@ -559,16 +559,12 @@ header .subtitle {
 
 .status-note .status-typed {
     display: inline;
-    border-right: 2px solid rgba(26, 26, 26, 0.55);
+    border-right: 2px solid #1a1a1a;
     animation: blink 0.8s step-end infinite;
 }
 
-.status-note .status-typed span {
-    transition: color 0.3s ease;
-}
-
 @keyframes blink {
-    0%, 100% { border-color: rgba(26, 26, 26, 0.55); }
+    0%, 100% { border-color: #1a1a1a; }
     50% { border-color: transparent; }
 }
 

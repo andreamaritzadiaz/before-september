@@ -674,10 +674,17 @@ function closeDetail() {
     if (typeof stopSwirlAnimation === 'function') stopSwirlAnimation();
 }
 
-backBtn.addEventListener('click', () => history.back());
+function goBack() {
+    if (!detailView.classList.contains('hidden')) {
+        closeDetail();
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+}
+
+backBtn.addEventListener('click', goBack);
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !detailView.classList.contains('hidden')) history.back();
+    if (e.key === 'Escape') goBack();
 });
 
 window.addEventListener('popstate', () => {

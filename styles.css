@@ -581,11 +581,13 @@ header .subtitle {
 
 /* Dot star interactive element */
 .dot-star {
-    width: 380px;
-    height: 380px;
-    margin-top: 40px;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: all;
     touch-action: none;
+    z-index: 101;
 }
 
 .dot-star.hidden {

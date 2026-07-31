@@ -2015,27 +2015,33 @@ const DOT_PATTERN = [[0.233,0.032],[0.267,0.032],[0.233,0.042],[0.25,0.042],[0.2
 
 function initDotStar() {
     const dpr = window.devicePixelRatio || 1;
-    const size = 400;
-    dotStarCanvas.width = size * dpr;
-    dotStarCanvas.height = size * dpr;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    dotStarCanvas.width = w * dpr;
+    dotStarCanvas.height = h * dpr;
     dotStarCtx.scale(dpr, dpr);
     dotStarParticles = [];
 
+    const patternSize = Math.min(w, h) * 0.6;
+    const offsetX = (w - patternSize) / 2;
+    const offsetY = (h - patternSize) / 2;
+
     DOT_PATTERN.forEach(([nx, ny]) => {
-        const x = nx * size;
-        const y = ny * size;
+        const x = offsetX + nx * patternSize;
+        const y = offsetY + ny * patternSize;
         dotStarParticles.push({
             homeX: x, homeY: y,
             x: x, y: y,
             vx: 0, vy: 0,
-            size: 1.5 + Math.random() * 1
+            size: 2 + Math.random() * 1.5
         });
     });
 }
 
 function animateDotStar() {
-    const size = 400;
-    dotStarCtx.clearRect(0, 0, size, size);
+    const w = dotStarCanvas.width / (window.devicePixelRatio || 1);
+    const h = dotStarCanvas.height / (window.devicePixelRatio || 1);
+    dotStarCtx.clearRect(0, 0, w, h);
 
     const repelRadius = 80;
     const repelStrength = 2;
@@ -2071,11 +2077,8 @@ function animateDotStar() {
 }
 
 dotStarCanvas.addEventListener('pointermove', (e) => {
-    const rect = dotStarCanvas.getBoundingClientRect();
-    const scaleX = dotStarCanvas.width / (window.devicePixelRatio || 1) / rect.width;
-    const scaleY = dotStarCanvas.height / (window.devicePixelRatio || 1) / rect.height;
-    dotStarMouseX = (e.clientX - rect.left) * scaleX;
-    dotStarMouseY = (e.clientY - rect.top) * scaleY;
+    dotStarMouseX = e.clientX;
+    dotStarMouseY = e.clientY;
 });
 
 dotStarCanvas.addEventListener('pointerleave', () => {

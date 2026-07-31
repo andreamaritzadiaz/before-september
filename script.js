@@ -726,7 +726,7 @@ function openAbout() {
 function closeDetail() {
     driftPaused = false;
     document.title = 'before september';
-    sbEditToggle.style.display = '';
+    sbEditToggle.style.display = editAllowed ? '' : 'none';
     detailView.classList.add('hidden');
     scrapbookCanvas.querySelectorAll('video, audio').forEach(el => {
         el.pause();

@@ -639,7 +639,7 @@ var openDetail = function(item) {
 
     detailView.classList.remove('hidden');
     const slug = itemSlug(item);
-    history.pushState({ detail: slug }, '', '#' + slug);
+    history.pushState({ detail: slug }, '', '/' + slug);
 }
 
 let typeTimer = null;
@@ -695,7 +695,7 @@ function closeDetail() {
 function goBack() {
     if (!detailView.classList.contains('hidden')) {
         closeDetail();
-        history.replaceState(null, '', window.location.pathname + window.location.search);
+        history.replaceState(null, '', '/');
     }
 }
 
@@ -706,11 +706,11 @@ document.addEventListener('keydown', (e) => {
 });
 
 window.addEventListener('popstate', () => {
-    if (!window.location.hash && !detailView.classList.contains('hidden')) {
+    const path = window.location.pathname.replace(/^\//, '');
+    if (!path && !detailView.classList.contains('hidden')) {
         closeDetail();
-    } else if (window.location.hash) {
-        const hash = window.location.hash.slice(1);
-        const match = bucketList.find(item => itemSlug(item) === hash);
+    } else if (path) {
+        const match = bucketList.find(item => itemSlug(item) === path);
         if (match) openDetail(match);
     }
 });
@@ -2146,10 +2146,21 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') showDotStar(false);
 });
 
-// ─── Restore detail view from URL hash on load ───
-if (window.location.hash) {
-    const hash = window.location.hash.slice(1);
-    const match = bucketList.find(item => itemSlug(item) === hash);
-    if (match) openDetail(match);
+// ─── Restore detail view from URL path on load ───
+const redirectPath = sessionStorage.getItem('redirect');
+if (redirectPath) {
+    sessionStorage.removeItem('redirect');
+    const slug = redirectPath.replace(/^\//, '');
+    const match = bucketList.find(item => itemSlug(item) === slug);
+    if (match) {
+        history.replaceState({ detail: slug }, '', '/' + slug);
+        openDetail(match);
+    }
+} else {
+    const initialPath = window.location.pathname.replace(/^\//, '');
+    if (initialPath) {
+        const match = bucketList.find(item => itemSlug(item) === initialPath);
+        if (match) openDetail(match);
+    }
 }
 

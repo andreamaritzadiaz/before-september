@@ -622,7 +622,7 @@ var openDetail = function(item) {
 
     detailView.classList.remove('hidden');
     const slug = item.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
-    history.replaceState(null, '', '#' + slug);
+    history.pushState({ detail: slug }, '', '#' + slug);
 }
 
 let typeTimer = null;
@@ -670,14 +670,26 @@ function closeDetail() {
     });
     const existingSpotify = document.getElementById('spotifyEmbed');
     if (existingSpotify) existingSpotify.remove();
-    history.replaceState(null, '', window.location.pathname);
+    history.replaceState(null, '', window.location.pathname + window.location.search);
     if (typeof stopSwirlAnimation === 'function') stopSwirlAnimation();
 }
 
-backBtn.addEventListener('click', closeDetail);
+backBtn.addEventListener('click', () => history.back());
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeDetail();
+    if (e.key === 'Escape' && !detailView.classList.contains('hidden')) history.back();
+});
+
+window.addEventListener('popstate', () => {
+    if (!window.location.hash && !detailView.classList.contains('hidden')) {
+        closeDetail();
+    } else if (window.location.hash) {
+        const hash = window.location.hash.slice(1);
+        const match = bucketList.find(item =>
+            item.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase() === hash
+        );
+        if (match) openDetail(match);
+    }
 });
 
 createFloatingItems();

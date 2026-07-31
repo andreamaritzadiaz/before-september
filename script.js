@@ -652,7 +652,7 @@ function typeStatusNote(text, noPrefix, showEmoji) {
             if (showEmoji) {
                 const smiley = document.createElement('span');
                 smiley.className = 'status-smiley';
-                smiley.textContent = ' ☺';
+                smiley.textContent = ' :)';
                 typed.appendChild(smiley);
             }
         }

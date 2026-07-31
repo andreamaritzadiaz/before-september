@@ -700,7 +700,7 @@ function typeStatusNote(text, noPrefix, showEmoji) {
 
 function openAbout() {
     driftPaused = true;
-    detailTitle.textContent = 'about this project';
+    detailTitle.textContent = '✴ about this project';
     document.title = 'about | before september';
     detailNote.innerHTML = '';
 

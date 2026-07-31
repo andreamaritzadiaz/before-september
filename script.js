@@ -2000,6 +2000,163 @@ sbAddSwirl.addEventListener('click', () => {
 });
 scrapbookToolbar.insertBefore(sbAddSwirl, sbSave);
 
+// ═══════════════════════════════════════════════════════════════════════
+// DOT STAR — interactive particle star for empty pages
+// ═══════════════════════════════════════════════════════════════════════
+
+const dotStarCanvas = document.getElementById('dotStar');
+const dotStarCtx = dotStarCanvas.getContext('2d');
+let dotStarParticles = [];
+let dotStarAnimFrame = null;
+let dotStarMouseX = -9999;
+let dotStarMouseY = -9999;
+
+function initDotStar() {
+    const dpr = window.devicePixelRatio || 1;
+    const size = 300;
+    dotStarCanvas.width = size * dpr;
+    dotStarCanvas.height = size * dpr;
+    dotStarCtx.scale(dpr, dpr);
+    dotStarParticles = [];
+
+    const cx = size / 2;
+    const cy = size / 2;
+    const points = 5;
+    const outerR = 120;
+    const innerR = 48;
+
+    // Generate dots along star outline
+    for (let i = 0; i < points * 2; i++) {
+        const angle = (i * Math.PI) / points - Math.PI / 2;
+        const nextAngle = ((i + 1) * Math.PI) / points - Math.PI / 2;
+        const r1 = i % 2 === 0 ? outerR : innerR;
+        const r2 = (i + 1) % 2 === 0 ? outerR : innerR;
+        const x1 = cx + Math.cos(angle) * r1;
+        const y1 = cy + Math.sin(angle) * r1;
+        const x2 = cx + Math.cos(nextAngle) * r2;
+        const y2 = cy + Math.sin(nextAngle) * r2;
+
+        const edgeDots = 12;
+        for (let j = 0; j <= edgeDots; j++) {
+            const t = j / edgeDots;
+            const x = x1 + (x2 - x1) * t + (Math.random() - 0.5) * 4;
+            const y = y1 + (y2 - y1) * t + (Math.random() - 0.5) * 4;
+            dotStarParticles.push({
+                homeX: x, homeY: y,
+                x: x, y: y,
+                vx: 0, vy: 0,
+                size: 2 + Math.random() * 2
+            });
+        }
+    }
+
+    // Fill interior with scattered dots
+    for (let i = 0; i < 80; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const dist = Math.random() * outerR * 0.7;
+        const x = cx + Math.cos(angle) * dist + (Math.random() - 0.5) * 6;
+        const y = cy + Math.sin(angle) * dist + (Math.random() - 0.5) * 6;
+        // Only add if roughly inside the star
+        if (isInsideStar(x - cx, y - cy, outerR, innerR, points)) {
+            dotStarParticles.push({
+                homeX: x, homeY: y,
+                x: x, y: y,
+                vx: 0, vy: 0,
+                size: 1.5 + Math.random() * 2
+            });
+        }
+    }
+}
+
+function isInsideStar(px, py, outerR, innerR, points) {
+    const angle = Math.atan2(py, px) + Math.PI / 2;
+    const dist = Math.sqrt(px * px + py * py);
+    const sector = (Math.PI * 2) / (points * 2);
+    const idx = ((angle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
+    const sectorIdx = Math.floor(idx / sector);
+    const t = (idx % sector) / sector;
+    const r1 = sectorIdx % 2 === 0 ? outerR : innerR;
+    const r2 = sectorIdx % 2 === 0 ? innerR : outerR;
+    const maxR = r1 + (r2 - r1) * t;
+    return dist < maxR * 0.85;
+}
+
+function animateDotStar() {
+    const size = 300;
+    dotStarCtx.clearRect(0, 0, size, size);
+
+    const repelRadius = 70;
+    const repelStrength = 5;
+    const returnStrength = 0.035;
+    const friction = 0.9;
+
+    for (const p of dotStarParticles) {
+        const dx = p.x - dotStarMouseX;
+        const dy = p.y - dotStarMouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < repelRadius && dist > 0) {
+            const force = (1 - dist / repelRadius) * repelStrength;
+            const angle = Math.atan2(dy, dx);
+            p.vx += Math.cos(angle) * force;
+            p.vy += Math.sin(angle) * force;
+        }
+
+        p.vx += (p.homeX - p.x) * returnStrength;
+        p.vy += (p.homeY - p.y) * returnStrength;
+        p.vx *= friction;
+        p.vy *= friction;
+        p.x += p.vx;
+        p.y += p.vy;
+
+        dotStarCtx.beginPath();
+        dotStarCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        dotStarCtx.fillStyle = '#1a1a1a';
+        dotStarCtx.fill();
+    }
+
+    dotStarAnimFrame = requestAnimationFrame(animateDotStar);
+}
+
+dotStarCanvas.addEventListener('pointermove', (e) => {
+    const rect = dotStarCanvas.getBoundingClientRect();
+    dotStarMouseX = e.clientX - rect.left;
+    dotStarMouseY = e.clientY - rect.top;
+});
+
+dotStarCanvas.addEventListener('pointerleave', () => {
+    dotStarMouseX = -9999;
+    dotStarMouseY = -9999;
+});
+
+function showDotStar(show) {
+    if (show) {
+        dotStarCanvas.classList.remove('hidden');
+        initDotStar();
+        animateDotStar();
+    } else {
+        dotStarCanvas.classList.add('hidden');
+        if (dotStarAnimFrame) {
+            cancelAnimationFrame(dotStarAnimFrame);
+            dotStarAnimFrame = null;
+        }
+    }
+}
+
+// Patch openDetail to show/hide dot star
+const _openDetailForDotStar = openDetail;
+openDetail = function(item) {
+    _openDetailForDotStar(item);
+    const hasScrapbook = item.scrapbook && item.scrapbook.length > 0;
+    showDotStar(!item.completed && !hasScrapbook);
+};
+
+// Clean up on close
+backBtn.addEventListener('click', () => showDotStar(false));
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') showDotStar(false);
+});
+
 // ─── Restore detail view from URL hash on load ───
 if (window.location.hash) {
     const hash = window.location.hash.slice(1);

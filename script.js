@@ -1,6 +1,7 @@
 const bucketList = [
     {
         title: "sunrise hike before work day",
+        slug: "sunrise-hike",
         completed: false,
         note: "waiting for a morning I don't hit snooze",
         media: [],
@@ -8,6 +9,7 @@ const bucketList = [
     },
     {
         title: "jump off the lake union bridge",
+        slug: "lake-union-bridge",
         completed: false,
         note: "building up the courage...",
         media: [],
@@ -15,6 +17,7 @@ const bucketList = [
     },
     {
         title: "sunset paddle board & pizza from cornelly",
+        slug: "paddle-board",
         completed: true,
         note: "this one is still on the list .:**.",
         media: [],
@@ -37,6 +40,7 @@ const bucketList = [
     },
     {
         title: "run a summer 5k",
+        slug: "summer-5k",
         completed: false,
         note: "looking for a good one to sign up for",
         media: [],
@@ -44,6 +48,7 @@ const bucketList = [
     },
     {
         title: "go camping in the washington forest",
+        slug: "camping",
         completed: false,
         note: "still picking a campsite",
         media: [],
@@ -51,6 +56,7 @@ const bucketList = [
     },
     {
         title: "take a solo day trip",
+        slug: "solo-day-trip",
         completed: true,
         note: "this one is still on the list ^_^",
         media: [],
@@ -87,6 +93,7 @@ const bucketList = [
     },
     {
         title: "watch the fireworks at a mariners game",
+        slug: "mariners",
         completed: true,
         note: "this one is still on the list .:**.",
         media: [],
@@ -108,6 +115,7 @@ const bucketList = [
     },
     {
         title: "watch a sounders game",
+        slug: "sounders",
         completed: false,
         note: "checking the schedule for a good match",
         media: [],
@@ -115,6 +123,7 @@ const bucketList = [
     },
     {
         title: "go tide pooling",
+        slug: "tide-pooling",
         completed: false,
         note: "waiting for a low tide weekend",
         media: [],
@@ -122,6 +131,7 @@ const bucketList = [
     },
     {
         title: "take salsa classes",
+        slug: "salsa",
         completed: true,
         note: "this one is still on the list ^_^",
         media: [],
@@ -142,6 +152,7 @@ const bucketList = [
     },
     {
         title: "build one hardware project",
+        slug: "hardware",
         completed: false,
         note: "parts are on the way",
         noPrefix: true,
@@ -150,6 +161,7 @@ const bucketList = [
     },
     {
         title: "volunteer for a good cause",
+        slug: "volunteer",
         completed: false,
         note: "researching local orgs",
         noteEmoji: true,
@@ -600,9 +612,14 @@ function updateDrift() {
 requestAnimationFrame(updateDrift);
 
 // ─── Detail View ───
+function itemSlug(item) {
+    return item.slug || item.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+}
+
 var openDetail = function(item) {
     driftPaused = true;
     detailTitle.textContent = item.title;
+    document.title = item.title + ' | before september';
     detailNote.innerHTML = '';
     if (!item.completed) {
         typeStatusNote(item.note, item.noPrefix, item.noteEmoji);
@@ -621,7 +638,7 @@ var openDetail = function(item) {
     }
 
     detailView.classList.remove('hidden');
-    const slug = item.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+    const slug = itemSlug(item);
     history.pushState({ detail: slug }, '', '#' + slug);
 }
 
@@ -661,6 +678,7 @@ function typeStatusNote(text, noPrefix, showEmoji) {
 
 function closeDetail() {
     driftPaused = false;
+    document.title = 'before september';
     detailView.classList.add('hidden');
     scrapbookCanvas.querySelectorAll('video, audio').forEach(el => {
         el.pause();
@@ -692,9 +710,7 @@ window.addEventListener('popstate', () => {
         closeDetail();
     } else if (window.location.hash) {
         const hash = window.location.hash.slice(1);
-        const match = bucketList.find(item =>
-            item.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase() === hash
-        );
+        const match = bucketList.find(item => itemSlug(item) === hash);
         if (match) openDetail(match);
     }
 });
@@ -2133,9 +2149,7 @@ document.addEventListener('keydown', (e) => {
 // ─── Restore detail view from URL hash on load ───
 if (window.location.hash) {
     const hash = window.location.hash.slice(1);
-    const match = bucketList.find(item =>
-        item.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase() === hash
-    );
+    const match = bucketList.find(item => itemSlug(item) === hash);
     if (match) openDetail(match);
 }
 

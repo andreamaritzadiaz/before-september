@@ -152,6 +152,7 @@ const bucketList = [
         title: "volunteer for a good cause",
         completed: false,
         note: "researching local orgs",
+        noteEmoji: true,
         media: [],
         scrapbook: []
     }
@@ -604,7 +605,7 @@ var openDetail = function(item) {
     detailTitle.textContent = item.title;
     detailNote.innerHTML = '';
     if (!item.completed) {
-        typeStatusNote(item.note, item.noPrefix);
+        typeStatusNote(item.note, item.noPrefix, item.noteEmoji);
     } else {
         detailNote.textContent = item.note;
     }
@@ -626,7 +627,7 @@ var openDetail = function(item) {
 
 let typeTimer = null;
 
-function typeStatusNote(text, noPrefix) {
+function typeStatusNote(text, noPrefix, showEmoji) {
     if (typeTimer) clearInterval(typeTimer);
     detailNote.innerHTML = '';
     if (!noPrefix) {
@@ -648,6 +649,12 @@ function typeStatusNote(text, noPrefix) {
             typeTimer = null;
             typed.style.borderRight = 'none';
             typed.style.animation = 'none';
+            if (showEmoji) {
+                const smiley = document.createElement('span');
+                smiley.className = 'status-smiley';
+                smiley.textContent = ' ☺';
+                typed.appendChild(smiley);
+            }
         }
     }, 45);
 }

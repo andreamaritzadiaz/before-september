@@ -561,7 +561,7 @@ function createFloatingItems() {
     // About page link
     const aboutEl = document.createElement('div');
     aboutEl.className = 'floating-item about-item';
-    aboutEl.textContent = 'about this project';
+    aboutEl.textContent = '✴ about this project';
     container.appendChild(aboutEl);
     const aboutPos = getNonOverlappingPosition(aboutEl);
     aboutEl.style.left = aboutPos.x + 'px';

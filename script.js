@@ -2015,7 +2015,7 @@ const DOT_PATTERN = [[0.233,0.032],[0.267,0.032],[0.233,0.042],[0.25,0.042],[0.2
 
 function initDotStar() {
     const dpr = window.devicePixelRatio || 1;
-    const size = 300;
+    const size = 400;
     dotStarCanvas.width = size * dpr;
     dotStarCanvas.height = size * dpr;
     dotStarCtx.scale(dpr, dpr);
@@ -2028,13 +2028,13 @@ function initDotStar() {
             homeX: x, homeY: y,
             x: x, y: y,
             vx: 0, vy: 0,
-            size: 2 + Math.random() * 1.5
+            size: 1.5 + Math.random() * 1
         });
     });
 }
 
 function animateDotStar() {
-    const size = 300;
+    const size = 400;
     dotStarCtx.clearRect(0, 0, size, size);
 
     const repelRadius = 80;
@@ -2063,7 +2063,7 @@ function animateDotStar() {
 
         dotStarCtx.beginPath();
         dotStarCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        dotStarCtx.fillStyle = '#1a1a1a';
+        dotStarCtx.fillStyle = '#FFF8E7';
         dotStarCtx.fill();
     }
 
@@ -2072,8 +2072,10 @@ function animateDotStar() {
 
 dotStarCanvas.addEventListener('pointermove', (e) => {
     const rect = dotStarCanvas.getBoundingClientRect();
-    dotStarMouseX = e.clientX - rect.left;
-    dotStarMouseY = e.clientY - rect.top;
+    const scaleX = 400 / rect.width;
+    const scaleY = 400 / rect.height;
+    dotStarMouseX = (e.clientX - rect.left) * scaleX;
+    dotStarMouseY = (e.clientY - rect.top) * scaleY;
 });
 
 dotStarCanvas.addEventListener('pointerleave', () => {

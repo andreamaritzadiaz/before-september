@@ -581,8 +581,8 @@ header .subtitle {
 
 /* Dot star interactive element */
 .dot-star {
-    width: 220px;
-    height: 220px;
+    width: 380px;
+    height: 380px;
     margin-top: 40px;
     pointer-events: all;
     touch-action: none;

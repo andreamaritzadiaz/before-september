@@ -2072,8 +2072,8 @@ function animateDotStar() {
 
 dotStarCanvas.addEventListener('pointermove', (e) => {
     const rect = dotStarCanvas.getBoundingClientRect();
-    const scaleX = 400 / rect.width;
-    const scaleY = 400 / rect.height;
+    const scaleX = dotStarCanvas.width / (window.devicePixelRatio || 1) / rect.width;
+    const scaleY = dotStarCanvas.height / (window.devicePixelRatio || 1) / rect.height;
     dotStarMouseX = (e.clientX - rect.left) * scaleX;
     dotStarMouseY = (e.clientY - rect.top) * scaleY;
 });

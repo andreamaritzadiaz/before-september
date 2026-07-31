@@ -557,6 +557,28 @@ function createFloatingItems() {
         itemElements.push(el);
         itemPositions.push({ baseX: pos.x, baseY: pos.y, offsetX: 0, offsetY: 0 });
     });
+
+    // About page link
+    const aboutEl = document.createElement('div');
+    aboutEl.className = 'floating-item about-item';
+    aboutEl.textContent = 'about this project';
+    container.appendChild(aboutEl);
+    const aboutPos = getNonOverlappingPosition(aboutEl);
+    aboutEl.style.left = aboutPos.x + 'px';
+    aboutEl.style.top = aboutPos.y + 'px';
+    const aboutDuration = 4 + Math.random() * 3;
+    const aboutDelay = Math.random() * -5;
+    const aboutFloat = -8 - Math.random() * 12;
+    const aboutRotStart = (Math.random() - 0.5) * 2;
+    const aboutRotEnd = (Math.random() - 0.5) * 2;
+    aboutEl.style.setProperty('--duration', aboutDuration + 's');
+    aboutEl.style.setProperty('--delay', aboutDelay + 's');
+    aboutEl.style.setProperty('--float-distance', aboutFloat + 'px');
+    aboutEl.style.setProperty('--rotate-start', aboutRotStart + 'deg');
+    aboutEl.style.setProperty('--rotate-end', aboutRotEnd + 'deg');
+    aboutEl.addEventListener('click', openAbout);
+    itemElements.push(aboutEl);
+    itemPositions.push({ baseX: aboutPos.x, baseY: aboutPos.y, offsetX: 0, offsetY: 0 });
 }
 
 // ─── Mouse Drift Effect (desktop only) ───
@@ -676,9 +698,35 @@ function typeStatusNote(text, noPrefix, showEmoji) {
     }, 45);
 }
 
+function openAbout() {
+    driftPaused = true;
+    detailTitle.textContent = 'about this project';
+    document.title = 'about | before september';
+    detailNote.innerHTML = '';
+
+    const aboutContent = document.createElement('div');
+    aboutContent.className = 'about-content';
+    aboutContent.innerHTML = `
+        <p>hi, i'm andrea :)</p>
+        <p>i made this site as a way to hold myself accountable to actually doing the things i keep saying i want to do "this summer." it's part bucket list, part scrapbook, part love letter to seattle summers.</p>
+        <p>every item on this list is something that makes me feel alive, connected, or just plain happy. as i check them off, i'll add photos and little notes so i can look back and remember how it felt.</p>
+        <p>built with html, css, vanilla js, and a lot of late-night tweaking.</p>
+    `;
+    detailNote.appendChild(aboutContent);
+
+    mediaGrid.innerHTML = '';
+    scrapbookCanvas.querySelectorAll('.sb-element').forEach(el => el.remove());
+    scrapbookEmpty.classList.add('hidden');
+    sbEditToggle.style.display = 'none';
+    detailView.classList.remove('hidden');
+    detailView.style.overflowY = 'hidden';
+    history.pushState({ detail: 'about' }, '', '/about');
+}
+
 function closeDetail() {
     driftPaused = false;
     document.title = 'before september';
+    sbEditToggle.style.display = '';
     detailView.classList.add('hidden');
     scrapbookCanvas.querySelectorAll('video, audio').forEach(el => {
         el.pause();
@@ -709,6 +757,8 @@ window.addEventListener('popstate', () => {
     const path = window.location.pathname.replace(/^\//, '');
     if (!path && !detailView.classList.contains('hidden')) {
         closeDetail();
+    } else if (path === 'about') {
+        openAbout();
     } else if (path) {
         const match = bucketList.find(item => itemSlug(item) === path);
         if (match) openDetail(match);
@@ -2148,19 +2198,17 @@ document.addEventListener('keydown', (e) => {
 
 // ─── Restore detail view from URL path on load ───
 const redirectPath = sessionStorage.getItem('redirect');
-if (redirectPath) {
-    sessionStorage.removeItem('redirect');
-    const slug = redirectPath.replace(/^\//, '');
-    const match = bucketList.find(item => itemSlug(item) === slug);
+const loadPath = redirectPath ? redirectPath.replace(/^\//, '') : window.location.pathname.replace(/^\//, '');
+if (redirectPath) sessionStorage.removeItem('redirect');
+
+if (loadPath === 'about') {
+    if (redirectPath) history.replaceState({ detail: 'about' }, '', '/about');
+    openAbout();
+} else if (loadPath) {
+    const match = bucketList.find(item => itemSlug(item) === loadPath);
     if (match) {
-        history.replaceState({ detail: slug }, '', '/' + slug);
+        if (redirectPath) history.replaceState({ detail: loadPath }, '', '/' + loadPath);
         openDetail(match);
-    }
-} else {
-    const initialPath = window.location.pathname.replace(/^\//, '');
-    if (initialPath) {
-        const match = bucketList.find(item => itemSlug(item) === initialPath);
-        if (match) openDetail(match);
     }
 }
 

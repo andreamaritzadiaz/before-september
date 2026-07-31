@@ -395,6 +395,28 @@ header .subtitle {
     background: #fdf6e8;
 }
 
+.floating-item.about-item {
+    background: #f8e8f0;
+}
+
+.floating-item.about-item:hover {
+    background: #f8e8f0;
+}
+
+.about-content {
+    font-family: 'Hedvig Letters Serif', serif;
+    font-size: 0.9rem;
+    color: #FFF8E7;
+    line-height: 1.8;
+    text-align: left;
+    max-width: 500px;
+    margin-top: 16px;
+}
+
+.about-content p {
+    margin-bottom: 14px;
+}
+
 @keyframes float {
     0%, 100% {
         transform: translateY(0px) rotate(var(--rotate-start));

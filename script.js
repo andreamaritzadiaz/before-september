@@ -2086,9 +2086,9 @@ function animateDotStar() {
     dotStarCtx.clearRect(0, 0, size, size);
 
     const repelRadius = 70;
-    const repelStrength = 5;
-    const returnStrength = 0.035;
-    const friction = 0.9;
+    const repelStrength = 4;
+    const returnStrength = 0.012;
+    const friction = 0.95;
 
     for (const p of dotStarParticles) {
         const dx = p.x - dotStarMouseX;

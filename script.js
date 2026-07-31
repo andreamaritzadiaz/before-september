@@ -1728,9 +1728,11 @@ openDetail = function(item) {
     if (hasScrapbook) {
         detailNote.style.display = 'none';
         scrapbookEmpty.classList.add('hidden');
+        detailView.style.overflowY = '';
     } else {
         detailNote.style.display = '';
         scrapbookEmpty.classList.remove('hidden');
+        detailView.style.overflowY = 'hidden';
     }
 
     // Reset edit mode

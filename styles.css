@@ -447,8 +447,8 @@ header .subtitle {
 
 .about-gif-element {
     cursor: grab;
-    width: 200px;
-    height: 260px;
+    width: 280px;
+    height: 360px;
     position: absolute;
     overflow: visible;
 }

@@ -714,7 +714,7 @@ function openAbout() {
     // Add letter as a draggable scrapbook element
     const letterEl = document.createElement('div');
     letterEl.className = 'sb-element about-letter';
-    letterEl.style.left = '80px';
+    letterEl.style.left = '380px';
     letterEl.style.top = '30px';
     letterEl.style.transform = 'rotate(1deg)';
     letterEl.dataset.rotation = '1';
@@ -730,9 +730,9 @@ function openAbout() {
     // Add gif as a draggable scrapbook element
     const gifEl = document.createElement('div');
     gifEl.className = 'sb-element sb-element-image about-gif-element';
-    gifEl.style.left = '500px';
-    gifEl.style.top = '40px';
-    gifEl.style.width = '200px';
+    gifEl.style.left = '80px';
+    gifEl.style.top = '30px';
+    gifEl.style.width = '280px';
     gifEl.dataset.type = 'image';
     gifEl.dataset.rotation = '-3';
     gifEl.dataset.scale = '1';

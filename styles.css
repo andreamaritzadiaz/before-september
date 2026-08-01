@@ -411,26 +411,6 @@ header .subtitle {
     text-align: left;
     max-width: 500px;
     margin-top: 16px;
-    animation: paperUnfold 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-    transform-origin: top center;
-}
-
-@keyframes paperUnfold {
-    0% {
-        opacity: 0;
-        transform: scaleY(0.1) scaleX(0.8) rotateX(60deg);
-    }
-    40% {
-        opacity: 1;
-        transform: scaleY(0.6) scaleX(0.95) rotateX(15deg);
-    }
-    70% {
-        transform: scaleY(0.9) scaleX(1) rotateX(-3deg);
-    }
-    100% {
-        opacity: 1;
-        transform: scaleY(1) scaleX(1) rotateX(0deg);
-    }
 }
 
 .about-content p {

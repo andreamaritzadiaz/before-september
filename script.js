@@ -753,7 +753,7 @@ function openAbout() {
     // Add instagram text element below gif
     const igEl = document.createElement('div');
     igEl.className = 'sb-element sb-element-text about-ig';
-    igEl.style.left = (startX - 60) + 'px';
+    igEl.style.left = (startX - 20) + 'px';
     igEl.style.top = '440px';
     igEl.style.transform = 'rotate(1.5deg)';
     igEl.dataset.rotation = '1.5';

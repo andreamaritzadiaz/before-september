@@ -761,35 +761,26 @@ function openAbout() {
     igEl.innerHTML = `<span class="sb-text-content">follow me on instagram: <a href="https://instagram.com/andreadesignthings" target="_blank">@andreadesignthings</a></span>`;
     scrapbookCanvas.appendChild(igEl);
 
-    // Make all elements draggable
+    // Make all elements draggable (desktop only)
     let aboutDrag = null;
     let aboutDragEl = null;
-    [letterEl, gifEl, igEl].forEach(el => {
-        el.addEventListener('mousedown', (e) => {
-            e.preventDefault();
-            const canvasRect = scrapbookCanvas.getBoundingClientRect();
-            const scale = canvasRect.width / scrapbookCanvas.offsetWidth || 1;
-            aboutDragEl = el;
-            aboutDrag = {
-                startX: e.clientX,
-                startY: e.clientY,
-                origX: parseInt(el.style.left),
-                origY: parseInt(el.style.top),
-                scale: scale
-            };
+    if (!isTouchDevice) {
+        [letterEl, gifEl, igEl].forEach(el => {
+            el.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                const canvasRect = scrapbookCanvas.getBoundingClientRect();
+                const scale = canvasRect.width / scrapbookCanvas.offsetWidth || 1;
+                aboutDragEl = el;
+                aboutDrag = {
+                    startX: e.clientX,
+                    startY: e.clientY,
+                    origX: parseInt(el.style.left),
+                    origY: parseInt(el.style.top),
+                    scale: scale
+                };
+            });
         });
-        el.addEventListener('touchstart', (e) => {
-            const touch = e.touches[0];
-            aboutDragEl = el;
-            aboutDrag = {
-                startX: touch.clientX,
-                startY: touch.clientY,
-                origX: parseInt(el.style.left),
-                origY: parseInt(el.style.top),
-                scale: 1
-            };
-        }, { passive: true });
-    });
+    }
     document.addEventListener('mousemove', (e) => {
         if (!aboutDrag) return;
         const dx = (e.clientX - aboutDrag.startX) / aboutDrag.scale;
@@ -797,16 +788,7 @@ function openAbout() {
         aboutDragEl.style.left = (aboutDrag.origX + dx) + 'px';
         aboutDragEl.style.top = (aboutDrag.origY + dy) + 'px';
     });
-    document.addEventListener('touchmove', (e) => {
-        if (!aboutDrag) return;
-        const touch = e.touches[0];
-        const dx = touch.clientX - aboutDrag.startX;
-        const dy = touch.clientY - aboutDrag.startY;
-        aboutDragEl.style.left = (aboutDrag.origX + dx) + 'px';
-        aboutDragEl.style.top = (aboutDrag.origY + dy) + 'px';
-    }, { passive: true });
     document.addEventListener('mouseup', () => { aboutDrag = null; });
-    document.addEventListener('touchend', () => { aboutDrag = null; });
     detailView.classList.remove('hidden');
     detailView.style.overflowY = window.innerWidth <= 768 ? '' : 'hidden';
     history.pushState({ detail: 'about' }, '', '/about');

@@ -711,11 +711,16 @@ function openAbout() {
     scrapbookEmpty.classList.add('hidden');
     sbEditToggle.style.display = 'none';
 
+    // Calculate centered positions
+    const viewWidth = detailView.clientWidth;
+    const totalWidth = 280 + 50 + 380; // gif + gap + letter
+    const startX = Math.max(40, (viewWidth - totalWidth) / 2);
+
     // Add letter as a draggable scrapbook element
     const letterEl = document.createElement('div');
     letterEl.className = 'sb-element about-letter';
-    letterEl.style.left = '480px';
-    letterEl.style.top = '180px';
+    letterEl.style.left = (startX + 280 + 50) + 'px';
+    letterEl.style.top = '120px';
     letterEl.style.transform = 'rotate(1deg)';
     letterEl.dataset.rotation = '1';
     letterEl.dataset.scale = '1';
@@ -730,8 +735,8 @@ function openAbout() {
     // Add gif as a draggable scrapbook element
     const gifEl = document.createElement('div');
     gifEl.className = 'sb-element sb-element-image about-gif-element';
-    gifEl.style.left = '220px';
-    gifEl.style.top = '80px';
+    gifEl.style.left = startX + 'px';
+    gifEl.style.top = '20px';
     gifEl.style.width = '280px';
     gifEl.dataset.type = 'image';
     gifEl.dataset.rotation = '-3';

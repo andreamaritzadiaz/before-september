@@ -445,6 +445,15 @@ header .subtitle {
     margin-bottom: 0;
 }
 
+.about-ig {
+    cursor: grab;
+}
+
+.about-ig a {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
 .about-gif-element {
     cursor: grab;
     width: 280px;

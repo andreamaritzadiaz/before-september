@@ -750,10 +750,21 @@ function openAbout() {
     `;
     scrapbookCanvas.appendChild(gifEl);
 
-    // Make both elements draggable
+    // Add instagram text element below gif
+    const igEl = document.createElement('div');
+    igEl.className = 'sb-element sb-element-text about-ig';
+    igEl.style.left = startX + 'px';
+    igEl.style.top = '440px';
+    igEl.style.transform = 'rotate(1.5deg)';
+    igEl.dataset.rotation = '1.5';
+    igEl.dataset.scale = '1';
+    igEl.innerHTML = `<span class="sb-text-content">follow me on instagram: <a href="https://instagram.com/andreadesignthings" target="_blank" class="footer-link">@andreadesignthings<svg class="circle-draw" viewBox="0 0 100 40" preserveAspectRatio="none"><ellipse cx="50" cy="20" rx="46" ry="16"/></svg></a></span>`;
+    scrapbookCanvas.appendChild(igEl);
+
+    // Make all elements draggable
     let aboutDrag = null;
     let aboutDragEl = null;
-    [letterEl, gifEl].forEach(el => {
+    [letterEl, gifEl, igEl].forEach(el => {
         el.addEventListener('mousedown', (e) => {
             e.preventDefault();
             const canvasRect = scrapbookCanvas.getBoundingClientRect();

@@ -406,23 +406,15 @@ header .subtitle {
 .about-content {
     font-family: 'Hedvig Letters Serif', serif;
     font-size: 0.9rem;
-    color: #1a1a1a;
+    color: #FFF8E7;
     line-height: 1.8;
     text-align: left;
     max-width: 500px;
     margin-top: 16px;
-    background: #ffffff;
-    padding: 24px 28px;
-    border-radius: 2px;
-    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .about-content p {
     margin-bottom: 14px;
-}
-
-.about-content p:last-child {
-    margin-bottom: 0;
 }
 
 @keyframes float {

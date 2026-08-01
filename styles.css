@@ -418,7 +418,7 @@ header .subtitle {
     width: 200px;
     height: 260px;
     position: absolute;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .about-gif-element .about-gif-frame {

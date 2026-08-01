@@ -790,7 +790,7 @@ function openAbout() {
     });
     document.addEventListener('mouseup', () => { aboutDrag = null; });
     detailView.classList.remove('hidden');
-    detailView.style.overflowY = window.innerWidth <= 768 ? '' : 'hidden';
+    detailView.style.overflowY = window.innerWidth <= 768 ? 'scroll' : 'hidden';
     history.pushState({ detail: 'about' }, '', '/about');
 }
 

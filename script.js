@@ -707,16 +707,28 @@ function openAbout() {
     const aboutContent = document.createElement('div');
     aboutContent.className = 'about-content';
     aboutContent.innerHTML = `
-        <div class="about-gif">
-            <img src="images/me-in-sf.jpg" alt="me in sf" class="about-gif-frame">
-            <img src="images/me-in-sf-2.jpg" alt="me in sf" class="about-gif-frame">
-        </div>
         <p>hi, i'm andrea :)</p>
         <p>i made this site as a way to hold myself accountable to actually doing the things i keep saying i want to do "this summer." it's part bucket list, part scrapbook, part love letter to seattle summers.</p>
         <p>every item on this list is something that makes me feel alive, connected, or just plain happy. as i check them off, i'll add photos and little notes so i can look back and remember how it felt.</p>
         <p>built with html, css, vanilla js, and a lot of late-night tweaking.</p>
     `;
     detailNote.appendChild(aboutContent);
+
+    // Add gif as a draggable scrapbook element
+    const gifEl = document.createElement('div');
+    gifEl.className = 'sb-element sb-element-image about-gif-element';
+    gifEl.style.left = '600px';
+    gifEl.style.top = '20px';
+    gifEl.style.width = '200px';
+    gifEl.dataset.type = 'image';
+    gifEl.dataset.rotation = '-3';
+    gifEl.dataset.scale = '1';
+    gifEl.style.transform = 'rotate(-3deg)';
+    gifEl.innerHTML = `
+        <img src="images/me-in-sf.jpg" alt="me in sf" class="about-gif-frame about-gif-frame-1">
+        <img src="images/me-in-sf-2.jpg" alt="me in sf" class="about-gif-frame about-gif-frame-2">
+    `;
+    scrapbookCanvas.appendChild(gifEl);
 
     mediaGrid.innerHTML = '';
     scrapbookCanvas.querySelectorAll('.sb-element').forEach(el => el.remove());

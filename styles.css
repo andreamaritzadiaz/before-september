@@ -413,33 +413,39 @@ header .subtitle {
     margin-top: 16px;
 }
 
-.about-gif {
-    position: relative;
-    width: 200px;
-    height: 250px;
-    margin: 0 auto 20px;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.12);
+.about-gif-element {
+    cursor: grab;
 }
 
-.about-gif-frame {
+.about-gif-element .about-gif-frame {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: gifFlip 1.2s step-end infinite;
+    border-radius: 1px;
 }
 
-.about-gif-frame:nth-child(2) {
-    animation-delay: 0.6s;
-    opacity: 0;
+.about-gif-frame-1 {
+    animation: gifFrame1 1.6s step-end infinite;
 }
 
-@keyframes gifFlip {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+.about-gif-frame-2 {
+    animation: gifFrame2 1.6s step-end infinite;
+}
+
+@keyframes gifFrame1 {
+    0% { opacity: 1; }
+    35% { opacity: 1; }
+    35.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes gifFrame2 {
+    0% { opacity: 0; }
+    35% { opacity: 0; }
+    35.01% { opacity: 1; }
+    100% { opacity: 1; }
 }
 
 .about-content p {

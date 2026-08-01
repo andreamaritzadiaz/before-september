@@ -721,7 +721,7 @@ function openAbout() {
     const letterEl = document.createElement('div');
     letterEl.className = 'sb-element about-letter';
     letterEl.style.left = (startX + 280 + 50) + 'px';
-    letterEl.style.top = '120px';
+    letterEl.style.top = '160px';
     letterEl.style.transform = 'rotate(1deg)';
     letterEl.dataset.rotation = '1';
     letterEl.dataset.scale = '1';
@@ -737,7 +737,7 @@ function openAbout() {
     const gifEl = document.createElement('div');
     gifEl.className = 'sb-element sb-element-image about-gif-element';
     gifEl.style.left = startX + 'px';
-    gifEl.style.top = '20px';
+    gifEl.style.top = '60px';
     gifEl.style.width = '280px';
     gifEl.dataset.type = 'image';
     gifEl.dataset.rotation = '-3';

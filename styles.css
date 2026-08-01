@@ -403,14 +403,46 @@ header .subtitle {
     background: #f8e8f0;
 }
 
-.about-content {
+.about-letter {
     font-family: 'Hedvig Letters Serif', serif;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #1a1a1a;
     line-height: 1.8;
     text-align: left;
-    max-width: 500px;
-    margin-top: 16px;
+    max-width: 380px;
+    padding: 24px 28px;
+    background: #ffffff;
+    border-radius: 2px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.12);
+    cursor: grab;
+    position: absolute;
+    overflow: visible;
+}
+
+.about-letter::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-1deg);
+    width: 50px;
+    height: 16px;
+    background: rgba(255, 230, 150, 0.6);
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.about-letter:active {
+    cursor: grabbing;
+}
+
+.about-letter p {
+    margin-bottom: 14px;
+}
+
+.about-letter p:last-child {
+    margin-bottom: 0;
 }
 
 .about-gif-element {
@@ -452,9 +484,6 @@ header .subtitle {
     100% { opacity: 1; }
 }
 
-.about-content p {
-    margin-bottom: 14px;
-}
 
 @keyframes float {
     0%, 100% {

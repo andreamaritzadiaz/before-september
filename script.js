@@ -704,26 +704,34 @@ function openAbout() {
     document.title = 'about | before september';
     detailNote.innerHTML = '';
 
-    const aboutContent = document.createElement('div');
-    aboutContent.className = 'about-content';
-    aboutContent.innerHTML = `
-        <p>hi, i'm andrea :)</p>
-        <p>i made this site as a way to hold myself accountable to actually doing the things i keep saying i want to do "this summer." it's part bucket list, part scrapbook, part love letter to seattle summers.</p>
-        <p>every item on this list is something that makes me feel alive, connected, or just plain happy. as i check them off, i'll add photos and little notes so i can look back and remember how it felt.</p>
-        <p>built with html, css, vanilla js, and a lot of late-night tweaking.</p>
-    `;
-    detailNote.appendChild(aboutContent);
+    detailNote.style.display = 'none';
 
     mediaGrid.innerHTML = '';
     scrapbookCanvas.querySelectorAll('.sb-element').forEach(el => el.remove());
     scrapbookEmpty.classList.add('hidden');
     sbEditToggle.style.display = 'none';
 
+    // Add letter as a draggable scrapbook element
+    const letterEl = document.createElement('div');
+    letterEl.className = 'sb-element about-letter';
+    letterEl.style.left = '80px';
+    letterEl.style.top = '30px';
+    letterEl.style.transform = 'rotate(1deg)';
+    letterEl.dataset.rotation = '1';
+    letterEl.dataset.scale = '1';
+    letterEl.innerHTML = `
+        <p>hi, i'm andrea :)</p>
+        <p>i made this site as a way to hold myself accountable to actually doing the things i keep saying i want to do "this summer." it's part bucket list, part scrapbook, part love letter to seattle summers.</p>
+        <p>every item on this list is something that makes me feel alive, connected, or just plain happy. as i check them off, i'll add photos and little notes so i can look back and remember how it felt.</p>
+        <p>built with html, css, vanilla js, and a lot of late-night tweaking.</p>
+    `;
+    scrapbookCanvas.appendChild(letterEl);
+
     // Add gif as a draggable scrapbook element
     const gifEl = document.createElement('div');
     gifEl.className = 'sb-element sb-element-image about-gif-element';
-    gifEl.style.left = '600px';
-    gifEl.style.top = '20px';
+    gifEl.style.left = '500px';
+    gifEl.style.top = '40px';
     gifEl.style.width = '200px';
     gifEl.dataset.type = 'image';
     gifEl.dataset.rotation = '-3';
@@ -735,47 +743,52 @@ function openAbout() {
     `;
     scrapbookCanvas.appendChild(gifEl);
 
-    // Make gif draggable
-    let gifDrag = null;
-    gifEl.addEventListener('mousedown', (e) => {
-        e.preventDefault();
-        const canvasRect = scrapbookCanvas.getBoundingClientRect();
-        const scale = canvasRect.width / scrapbookCanvas.offsetWidth || 1;
-        gifDrag = {
-            startX: e.clientX,
-            startY: e.clientY,
-            origX: parseInt(gifEl.style.left),
-            origY: parseInt(gifEl.style.top),
-            scale: scale
-        };
+    // Make both elements draggable
+    let aboutDrag = null;
+    let aboutDragEl = null;
+    [letterEl, gifEl].forEach(el => {
+        el.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            const canvasRect = scrapbookCanvas.getBoundingClientRect();
+            const scale = canvasRect.width / scrapbookCanvas.offsetWidth || 1;
+            aboutDragEl = el;
+            aboutDrag = {
+                startX: e.clientX,
+                startY: e.clientY,
+                origX: parseInt(el.style.left),
+                origY: parseInt(el.style.top),
+                scale: scale
+            };
+        });
+        el.addEventListener('touchstart', (e) => {
+            const touch = e.touches[0];
+            aboutDragEl = el;
+            aboutDrag = {
+                startX: touch.clientX,
+                startY: touch.clientY,
+                origX: parseInt(el.style.left),
+                origY: parseInt(el.style.top),
+                scale: 1
+            };
+        }, { passive: true });
     });
-    gifEl.addEventListener('touchstart', (e) => {
-        const touch = e.touches[0];
-        gifDrag = {
-            startX: touch.clientX,
-            startY: touch.clientY,
-            origX: parseInt(gifEl.style.left),
-            origY: parseInt(gifEl.style.top),
-            scale: 1
-        };
-    }, { passive: true });
     document.addEventListener('mousemove', (e) => {
-        if (!gifDrag) return;
-        const dx = (e.clientX - gifDrag.startX) / gifDrag.scale;
-        const dy = (e.clientY - gifDrag.startY) / gifDrag.scale;
-        gifEl.style.left = (gifDrag.origX + dx) + 'px';
-        gifEl.style.top = (gifDrag.origY + dy) + 'px';
+        if (!aboutDrag) return;
+        const dx = (e.clientX - aboutDrag.startX) / aboutDrag.scale;
+        const dy = (e.clientY - aboutDrag.startY) / aboutDrag.scale;
+        aboutDragEl.style.left = (aboutDrag.origX + dx) + 'px';
+        aboutDragEl.style.top = (aboutDrag.origY + dy) + 'px';
     });
     document.addEventListener('touchmove', (e) => {
-        if (!gifDrag) return;
+        if (!aboutDrag) return;
         const touch = e.touches[0];
-        const dx = touch.clientX - gifDrag.startX;
-        const dy = touch.clientY - gifDrag.startY;
-        gifEl.style.left = (gifDrag.origX + dx) + 'px';
-        gifEl.style.top = (gifDrag.origY + dy) + 'px';
+        const dx = touch.clientX - aboutDrag.startX;
+        const dy = touch.clientY - aboutDrag.startY;
+        aboutDragEl.style.left = (aboutDrag.origX + dx) + 'px';
+        aboutDragEl.style.top = (aboutDrag.origY + dy) + 'px';
     }, { passive: true });
-    document.addEventListener('mouseup', () => { gifDrag = null; });
-    document.addEventListener('touchend', () => { gifDrag = null; });
+    document.addEventListener('mouseup', () => { aboutDrag = null; });
+    document.addEventListener('touchend', () => { aboutDrag = null; });
     detailView.classList.remove('hidden');
     detailView.style.overflowY = 'hidden';
     history.pushState({ detail: 'about' }, '', '/about');

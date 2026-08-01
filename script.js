@@ -702,6 +702,7 @@ function typeStatusNote(text, noPrefix, showEmoji) {
 function openAbout() {
     driftPaused = true;
     detailTitle.textContent = '✴︎ about this project';
+    detailTitle.parentElement.classList.add('about-strip');
     document.title = 'about | before september';
     detailNote.innerHTML = '';
 
@@ -804,6 +805,7 @@ function closeDetail() {
     driftPaused = false;
     document.title = 'before september';
     sbEditToggle.style.display = editAllowed ? '' : 'none';
+    detailTitle.parentElement.classList.remove('has-memories', 'about-strip');
     detailView.classList.add('hidden');
     scrapbookCanvas.querySelectorAll('video, audio').forEach(el => {
         el.pause();

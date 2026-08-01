@@ -622,6 +622,10 @@ header .subtitle {
     background: #fdf6e8;
 }
 
+.detail-strip.about-strip {
+    background: #f8e8f0;
+}
+
 .detail-content h2 {
     font-family: 'Hedvig Letters Serif', serif;
     font-size: 0.9rem;

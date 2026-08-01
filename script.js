@@ -714,6 +714,11 @@ function openAbout() {
     `;
     detailNote.appendChild(aboutContent);
 
+    mediaGrid.innerHTML = '';
+    scrapbookCanvas.querySelectorAll('.sb-element').forEach(el => el.remove());
+    scrapbookEmpty.classList.add('hidden');
+    sbEditToggle.style.display = 'none';
+
     // Add gif as a draggable scrapbook element
     const gifEl = document.createElement('div');
     gifEl.className = 'sb-element sb-element-image about-gif-element';
@@ -729,11 +734,6 @@ function openAbout() {
         <img src="images/me-in-sf-2.jpg" alt="me in sf" class="about-gif-frame about-gif-frame-2">
     `;
     scrapbookCanvas.appendChild(gifEl);
-
-    mediaGrid.innerHTML = '';
-    scrapbookCanvas.querySelectorAll('.sb-element').forEach(el => el.remove());
-    scrapbookEmpty.classList.add('hidden');
-    sbEditToggle.style.display = 'none';
     detailView.classList.remove('hidden');
     detailView.style.overflowY = 'hidden';
     history.pushState({ detail: 'about' }, '', '/about');

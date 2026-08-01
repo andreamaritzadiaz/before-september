@@ -452,6 +452,11 @@ header .subtitle {
 .about-ig a {
     color: #1a1a1a;
     text-decoration: none;
+    border-bottom: none;
+}
+
+.about-ig .circle-draw ellipse {
+    stroke: #1a1a1a;
 }
 
 .about-gif-element {

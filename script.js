@@ -730,10 +730,52 @@ function openAbout() {
     gifEl.dataset.scale = '1';
     gifEl.style.transform = 'rotate(-3deg)';
     gifEl.innerHTML = `
-        <img src="images/me-in-sf.jpg" alt="me in sf" class="about-gif-frame about-gif-frame-1">
-        <img src="images/me-in-sf-2.jpg" alt="me in sf" class="about-gif-frame about-gif-frame-2">
+        <img src="images/me-in-sf.jpg" alt="me in sf" class="about-gif-frame about-gif-frame-1" draggable="false">
+        <img src="images/me-in-sf-2.jpg" alt="me in sf" class="about-gif-frame about-gif-frame-2" draggable="false">
     `;
     scrapbookCanvas.appendChild(gifEl);
+
+    // Make gif draggable
+    let gifDrag = null;
+    gifEl.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        const canvasRect = scrapbookCanvas.getBoundingClientRect();
+        const scale = canvasRect.width / scrapbookCanvas.offsetWidth || 1;
+        gifDrag = {
+            startX: e.clientX,
+            startY: e.clientY,
+            origX: parseInt(gifEl.style.left),
+            origY: parseInt(gifEl.style.top),
+            scale: scale
+        };
+    });
+    gifEl.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        gifDrag = {
+            startX: touch.clientX,
+            startY: touch.clientY,
+            origX: parseInt(gifEl.style.left),
+            origY: parseInt(gifEl.style.top),
+            scale: 1
+        };
+    }, { passive: true });
+    document.addEventListener('mousemove', (e) => {
+        if (!gifDrag) return;
+        const dx = (e.clientX - gifDrag.startX) / gifDrag.scale;
+        const dy = (e.clientY - gifDrag.startY) / gifDrag.scale;
+        gifEl.style.left = (gifDrag.origX + dx) + 'px';
+        gifEl.style.top = (gifDrag.origY + dy) + 'px';
+    });
+    document.addEventListener('touchmove', (e) => {
+        if (!gifDrag) return;
+        const touch = e.touches[0];
+        const dx = touch.clientX - gifDrag.startX;
+        const dy = touch.clientY - gifDrag.startY;
+        gifEl.style.left = (gifDrag.origX + dx) + 'px';
+        gifEl.style.top = (gifDrag.origY + dy) + 'px';
+    }, { passive: true });
+    document.addEventListener('mouseup', () => { gifDrag = null; });
+    document.addEventListener('touchend', () => { gifDrag = null; });
     detailView.classList.remove('hidden');
     detailView.style.overflowY = 'hidden';
     history.pushState({ detail: 'about' }, '', '/about');

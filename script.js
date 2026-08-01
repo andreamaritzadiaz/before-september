@@ -758,7 +758,7 @@ function openAbout() {
     igEl.style.transform = 'rotate(1.5deg)';
     igEl.dataset.rotation = '1.5';
     igEl.dataset.scale = '1';
-    igEl.innerHTML = `<span class="sb-text-content">follow me on instagram: <a href="https://instagram.com/andreadesignthings" target="_blank" class="footer-link">@andreadesignthings<svg class="circle-draw" viewBox="0 0 100 40" preserveAspectRatio="none"><ellipse cx="50" cy="20" rx="46" ry="16"/></svg></a></span>`;
+    igEl.innerHTML = `<span class="sb-text-content">follow me on instagram: <a href="https://instagram.com/andreadesignthings" target="_blank">@andreadesignthings</a></span>`;
     scrapbookCanvas.appendChild(igEl);
 
     // Make all elements draggable

@@ -618,6 +618,10 @@ header .subtitle {
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.12);
 }
 
+.detail-strip.has-memories {
+    background: #fdf6e8;
+}
+
 .detail-content h2 {
     font-family: 'Hedvig Letters Serif', serif;
     font-size: 0.9rem;

@@ -641,6 +641,7 @@ function itemSlug(item) {
 var openDetail = function(item) {
     driftPaused = true;
     detailTitle.textContent = item.title;
+    detailTitle.parentElement.classList.toggle('has-memories', !!item.completed);
     document.title = item.title + ' | before september';
     detailNote.innerHTML = '';
     if (!item.completed) {

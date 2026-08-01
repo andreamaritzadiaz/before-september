@@ -1591,6 +1591,16 @@ footer .footer-cta {
         min-height: 0;
     }
 
+    .about-gif-element {
+        height: 400px;
+        max-width: 300px;
+    }
+
+    .about-gif-element .about-gif-frame {
+        height: 100% !important;
+        object-fit: cover;
+    }
+
     /* Hide standalone text elements on mobile (they become overlays) */
     .sb-element-text.mobile-hidden {
         display: none !important;

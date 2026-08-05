@@ -699,6 +699,18 @@ function typeStatusNote(text, noPrefix, showEmoji) {
     }, 45);
 }
 
+let aboutDrag = null;
+let aboutDragEl = null;
+
+document.addEventListener('mousemove', (e) => {
+    if (!aboutDrag) return;
+    const dx = (e.clientX - aboutDrag.startX) / aboutDrag.scale;
+    const dy = (e.clientY - aboutDrag.startY) / aboutDrag.scale;
+    aboutDragEl.style.left = (aboutDrag.origX + dx) + 'px';
+    aboutDragEl.style.top = (aboutDrag.origY + dy) + 'px';
+});
+document.addEventListener('mouseup', () => { aboutDrag = null; });
+
 function openAbout() {
     driftPaused = true;
     detailTitle.textContent = '✴︎ about this project';
@@ -746,7 +758,7 @@ function openAbout() {
     gifEl.style.transform = 'rotate(-3deg)';
     gifEl.innerHTML = `
         <img src="images/me-in-sf.jpg" alt="me in sf" class="about-gif-frame about-gif-frame-1" draggable="false">
-        <img src="images/me-in-sf-2.jpg" alt="me in sf" class="about-gif-frame about-gif-frame-2" draggable="false">
+        <img src="images/me-in-sf-2.jpg?v=2" alt="me in sf" class="about-gif-frame about-gif-frame-2" draggable="false">
     `;
     scrapbookCanvas.appendChild(gifEl);
 
@@ -762,8 +774,6 @@ function openAbout() {
     scrapbookCanvas.appendChild(igEl);
 
     // Make all elements draggable (desktop only)
-    let aboutDrag = null;
-    let aboutDragEl = null;
     if (!isTouchDevice) {
         [letterEl, gifEl, igEl].forEach(el => {
             el.addEventListener('mousedown', (e) => {
@@ -781,14 +791,6 @@ function openAbout() {
             });
         });
     }
-    document.addEventListener('mousemove', (e) => {
-        if (!aboutDrag) return;
-        const dx = (e.clientX - aboutDrag.startX) / aboutDrag.scale;
-        const dy = (e.clientY - aboutDrag.startY) / aboutDrag.scale;
-        aboutDragEl.style.left = (aboutDrag.origX + dx) + 'px';
-        aboutDragEl.style.top = (aboutDrag.origY + dy) + 'px';
-    });
-    document.addEventListener('mouseup', () => { aboutDrag = null; });
     detailView.classList.remove('hidden');
     detailView.style.overflowY = window.innerWidth <= 768 ? 'scroll' : 'hidden';
     history.pushState({ detail: 'about' }, '', '/about');
@@ -2259,7 +2261,8 @@ const _openDetailForDotStar = openDetail;
 openDetail = function(item) {
     _openDetailForDotStar(item);
     const hasScrapbook = item.scrapbook && item.scrapbook.length > 0;
-    showDotStar(!item.completed && !hasScrapbook);
+    const isMobile = window.innerWidth <= 768;
+    showDotStar(!isMobile && !item.completed && !hasScrapbook);
 };
 
 // Clean up on close

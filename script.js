@@ -740,9 +740,10 @@ function openAbout() {
     letterEl.dataset.scale = '1';
     letterEl.innerHTML = `
         <p>hi, i'm andrea :)</p>
-        <p>i made this site as a way to hold myself accountable to actually doing the things i keep saying i want to do "this summer." it's part bucket list, part scrapbook, part love letter to seattle summers.</p>
-        <p>every item on this list is something that makes me feel alive, connected, or just plain happy. as i check them off, i'll add photos and little notes so i can look back and remember how it felt.</p>
-        <p>built with html, css, vanilla js, and a lot of late-night tweaking.</p>
+        <p>i made this site as a way to hold myself accountable to actually doing the things i keep saying i want to do this summer. it's part bucket list, part scrapbook, part love letter to seattle summers. 💌</p>
+        <p>every item on the list is something that makes me feel alive, connected, or just happy. as i check them off, i'll add any digital artifacts, like photos, videos, or audio, so i can look back and remember how it felt.</p>
+        <p>i hope you are having a wonderful summer and collect lots of memories this season.</p>
+        <p style="font-size: 0.72rem; opacity: 0.7; margin-top: 6px;">built with html, css, vanilla js, and a lot of late-night tweaking.</p>
     `;
     scrapbookCanvas.appendChild(letterEl);
 

@@ -746,6 +746,7 @@ function openAbout() {
         <p style="font-size: 0.72rem; opacity: 0.7; margin-top: 6px;">built with html, css, vanilla js, and a lot of late-night tweaking.</p>
     `;
     scrapbookCanvas.appendChild(letterEl);
+    setTimeout(() => { letterEl.classList.add('sb-wiggle'); letterEl.addEventListener('animationend', () => letterEl.classList.remove('sb-wiggle'), { once: true }); }, 120);
 
     // Add gif as a draggable scrapbook element
     const gifEl = document.createElement('div');
@@ -762,6 +763,7 @@ function openAbout() {
         <img src="images/me-in-sf-2.jpg?v=2" alt="me in sf" class="about-gif-frame about-gif-frame-2" draggable="false">
     `;
     scrapbookCanvas.appendChild(gifEl);
+    setTimeout(() => { gifEl.classList.add('sb-wiggle'); gifEl.addEventListener('animationend', () => gifEl.classList.remove('sb-wiggle'), { once: true }); }, 240);
 
     // Add instagram text element below gif
     const igEl = document.createElement('div');
@@ -771,8 +773,9 @@ function openAbout() {
     igEl.style.transform = 'rotate(1.5deg)';
     igEl.dataset.rotation = '1.5';
     igEl.dataset.scale = '1';
-    igEl.innerHTML = `<span class="sb-text-content">follow me on instagram: <a href="https://instagram.com/andreadesignthings" target="_blank">@andreadesignthings</a></span>`;
+    igEl.innerHTML = `<span class="sb-text-content">follow me on instagram: <a href="https://instagram.com/andreadesignthings" target="_blank">@andreadesignthings<img class="ig-preview" src="images/instagram.jpg" alt="Instagram preview" draggable="false"></a></span>`;
     scrapbookCanvas.appendChild(igEl);
+    setTimeout(() => { igEl.classList.add('sb-wiggle'); igEl.addEventListener('animationend', () => igEl.classList.remove('sb-wiggle'), { once: true }); }, 360);
 
     // Make all elements draggable (desktop only)
     if (!isTouchDevice) {

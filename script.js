@@ -773,7 +773,7 @@ function openAbout() {
     igEl.style.transform = 'rotate(1.5deg)';
     igEl.dataset.rotation = '1.5';
     igEl.dataset.scale = '1';
-    igEl.innerHTML = `<span class="sb-text-content">follow me on instagram: <a href="https://instagram.com/andreadesignthings" target="_blank">@andreadesignthings<img class="ig-preview" src="images/instagram.jpg" alt="Instagram preview" draggable="false"></a></span>`;
+    igEl.innerHTML = `<span class="sb-text-content">tinker with me on <a href="https://instagram.com/andreadesignthings" target="_blank">@andreadesignthings<img class="ig-preview" src="images/instagram.jpg" alt="Instagram preview" draggable="false"></a></span>`;
     scrapbookCanvas.appendChild(igEl);
     setTimeout(() => { igEl.classList.add('sb-wiggle'); igEl.addEventListener('animationend', () => igEl.classList.remove('sb-wiggle'), { once: true }); }, 360);
 
@@ -845,6 +845,11 @@ window.addEventListener('popstate', () => {
 
 createFloatingItems();
 window.addEventListener('resize', createFloatingItems);
+
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
 
 
 // ─── Font Toggle ───

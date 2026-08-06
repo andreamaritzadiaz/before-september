@@ -474,7 +474,7 @@ header .subtitle {
     bottom: calc(100% + 12px);
     left: 50%;
     transform: translateX(-50%) scale(0.95);
-    width: 220px;
+    width: 250px;
     border-radius: 8px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
     opacity: 0;
@@ -1643,6 +1643,10 @@ footer .footer-cta {
         height: auto !important;
         object-fit: contain;
         min-height: 0;
+    }
+
+    .about-letter {
+        max-width: 92%;
     }
 
     .about-gif-element {

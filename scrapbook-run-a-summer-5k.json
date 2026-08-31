@@ -1,0 +1,185 @@
+{
+  "item": "run a summer 5k",
+  "scrapbook": [
+    {
+      "type": "image",
+      "x": 1372,
+      "y": 295,
+      "rotation": -4.654700738871231,
+      "src": "images/IMG_4696.jpg",
+      "width": 279,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 39,
+      "y": 49,
+      "rotation": -1.8904817313537725,
+      "src": "images/IMG_4681.jpg",
+      "width": 305,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 510,
+      "y": 809,
+      "rotation": 2.12618208868074,
+      "src": "images/IMG_4698.jpg",
+      "width": 191
+    },
+    {
+      "type": "image",
+      "x": 425,
+      "y": 434,
+      "rotation": -1.2211976557140165,
+      "src": "images/IMG_4694.jpg",
+      "width": 235
+    },
+    {
+      "type": "image",
+      "x": 41,
+      "y": 614,
+      "rotation": 0.7878769179599843,
+      "src": "images/IMG_4682.jpg",
+      "width": 229,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 270,
+      "y": 807,
+      "rotation": -8.53306934099087,
+      "src": "images/IMG_4703.jpg",
+      "width": 207
+    },
+    {
+      "type": "image",
+      "x": 745,
+      "y": 469,
+      "rotation": -1.674400131540322,
+      "src": "images/IMG_4705.jpg",
+      "width": 306
+    },
+    {
+      "type": "image",
+      "x": 379,
+      "y": 77,
+      "rotation": 0.7968981849964667,
+      "src": "images/IMG_4736.jpg",
+      "width": 451,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1180,
+      "y": 637,
+      "rotation": 7.173655991396456,
+      "src": "images/IMG_4707.jpg",
+      "width": 328
+    },
+    {
+      "type": "image",
+      "x": 1118,
+      "y": 329,
+      "rotation": 3.592874084489444,
+      "src": "images/IMG_4686.jpg",
+      "width": 186,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "video",
+      "x": 870,
+      "y": 48,
+      "rotation": -2.8449968133645847,
+      "src": "images/IMG_4684.MP4#t=0.001",
+      "width": 235
+    },
+    {
+      "type": "text",
+      "x": 1051,
+      "y": 743,
+      "rotation": 0.6602319363022853,
+      "content": "my 2nd fastest 5k :)",
+      "fontSize": 16
+    },
+    {
+      "type": "image",
+      "x": 1168,
+      "y": 40,
+      "rotation": 5.328825270997996,
+      "src": "images/IMG_4688.jpg",
+      "width": 377
+    },
+    {
+      "type": "text",
+      "x": 1132,
+      "y": 49,
+      "rotation": -1.4290220059775933,
+      "content": "lake washington ",
+      "fontSize": 18
+    },
+    {
+      "type": "text",
+      "x": 29,
+      "y": 485,
+      "rotation": 0.9250963638230585,
+      "content": "latina power to me means strength <3 \nit means choosing to wake up everyday \nand show up for yourself and your community",
+      "fontSize": 15
+    },
+    {
+      "type": "text",
+      "x": 1534,
+      "y": 367,
+      "rotation": 7.743835817400068,
+      "content": "jess : )",
+      "fontSize": 18
+    },
+    {
+      "type": "text",
+      "x": 447,
+      "y": 472,
+      "rotation": -1.1892884066237066,
+      "content": "aileen!",
+      "fontSize": 18
+    },
+    {
+      "type": "text",
+      "x": 799,
+      "y": 870,
+      "rotation": 1.5650196440898856,
+      "content": "conchas and horchata\ncold brew\n",
+      "fontSize": 18
+    },
+    {
+      "type": "image",
+      "x": 91,
+      "y": 878,
+      "rotation": 5.428801674170705,
+      "src": "images/honduras-stamp-2.jpg",
+      "width": 112
+    },
+    {
+      "type": "image",
+      "x": 1507,
+      "y": 696,
+      "rotation": -2.6068957558525634,
+      "src": "images/honduras-stamp.jpg",
+      "width": 141
+    },
+    {
+      "type": "image",
+      "x": 253,
+      "y": 588,
+      "rotation": -2.173029433881517,
+      "src": "images/honduras.jpg",
+      "width": 153,
+      "noBorder": true,
+      "noTape": true
+    }
+  ]
+}

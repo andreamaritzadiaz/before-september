@@ -56,13 +56,13 @@ const bucketList = [
             { type: 'image', x: 1180, y: 637, rotation: 7.17, src: 'images/IMG_4707.jpg', width: 328 },
             { type: 'image', x: 1118, y: 329, rotation: 3.59, src: 'images/IMG_4686.jpg', width: 186, noBorder: true, noTape: true },
             { type: 'video', x: 870, y: 48, rotation: -2.84, src: 'images/IMG_4684.MP4#t=0.001', width: 235 },
-            { type: 'text', x: 1051, y: 743, rotation: 0.66, content: 'my 2nd fastest 5k :)', fontSize: 16 },
+            { type: 'text', x: 1051, y: 743, rotation: 0.66, content: 'my 2nd fastest 5k :)', fontSize: 16, mobileAttachTo: 'images/IMG_4686.jpg' },
             { type: 'image', x: 1168, y: 40, rotation: 5.33, src: 'images/IMG_4688.jpg', width: 377 },
-            { type: 'text', x: 1132, y: 49, rotation: -1.43, content: 'lake washington ', fontSize: 18 },
-            { type: 'text', x: 29, y: 485, rotation: 0.93, content: 'latina power to me means strength <3 \nit means choosing to wake up everyday \nand show up for yourself and your community', fontSize: 15 },
+            { type: 'text', x: 1132, y: 49, rotation: -1.43, content: 'lake washington ', fontSize: 18, mobileAttachTo: 'images/IMG_4688.jpg' },
+            { type: 'text', x: 29, y: 485, rotation: 0.93, content: 'latina power to me means strength <3 \nit means choosing to wake up everyday \nand show up for yourself and your community', fontSize: 15, mobileAttachTo: 'images/IMG_4681.jpg' },
             { type: 'text', x: 1534, y: 367, rotation: 7.74, content: 'jess : )', fontSize: 18 },
             { type: 'text', x: 447, y: 472, rotation: -1.19, content: 'aileen!', fontSize: 18 },
-            { type: 'text', x: 799, y: 870, rotation: 1.57, content: 'conchas and horchata\ncold brew\n', fontSize: 18 },
+            { type: 'text', x: 799, y: 870, rotation: 1.57, content: 'conchas and horchata\ncold brew\n', fontSize: 18, mobileAttachTo: 'images/IMG_4705.jpg' },
             { type: 'image', x: 91, y: 878, rotation: 5.43, src: 'images/honduras-stamp-2.jpg', width: 112 },
             { type: 'image', x: 1507, y: 696, rotation: -2.61, src: 'images/honduras-stamp.jpg', width: 141 },
             { type: 'image', x: 253, y: 588, rotation: -2.17, src: 'images/honduras.jpg', width: 153, noBorder: true, noTape: true }
@@ -1146,7 +1146,8 @@ function createScrapbookElement(data) {
             if (data.noTape) wrapper.classList.add('no-tape');
             if (data.width) wrapper.style.width = data.width + 'px';
             const vid = document.createElement('video');
-            vid.src = data.src + '#t=0.001';
+            vid.src = data.src.includes('#t=') ? data.src : data.src + '#t=0.001';
+            vid.muted = true;
             vid.controls = true;
             vid.playsInline = true;
             vid.preload = 'metadata';
@@ -1787,6 +1788,16 @@ function renderScrapbookMobile(scrapbookData) {
     const orphanedTexts = [];
 
     texts.forEach(textData => {
+        // Explicit mobile pairing: attach this text to a specific image by src
+        if (textData.mobileAttachTo) {
+            const attachIdx = images.findIndex(img => img.src === textData.mobileAttachTo);
+            if (attachIdx >= 0) {
+                if (!textAssignments.has(attachIdx)) textAssignments.set(attachIdx, []);
+                textAssignments.get(attachIdx).push(textData);
+                return;
+            }
+        }
+
         const tx = (textData.x || 0);
         const ty = (textData.y || 0);
 

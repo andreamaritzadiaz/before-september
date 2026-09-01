@@ -1,0 +1,148 @@
+{
+  "item": "volunteer for a good cause",
+  "scrapbook": [
+    {
+      "type": "image",
+      "x": 671,
+      "y": 378,
+      "rotation": 0.7206986757359664,
+      "src": "images/background-colors.png",
+      "width": 637,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1240,
+      "y": 581,
+      "rotation": 0.6886433565658132,
+      "src": "images/IMG_4786.jpg",
+      "width": 308,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 28,
+      "y": 28,
+      "rotation": 0.4009849223665656,
+      "src": "images/IMG_4776.jpg",
+      "width": 306
+    },
+    {
+      "type": "image",
+      "x": 1144,
+      "y": 385,
+      "rotation": 0.863128850172604,
+      "src": "images/IMG_4777.jpg",
+      "width": 253,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 353,
+      "y": 615,
+      "rotation": 0.1679697836409133,
+      "src": "images/IMG_4778.jpg",
+      "width": 256
+    },
+    {
+      "type": "image",
+      "x": 1158,
+      "y": 42,
+      "rotation": -0.1760108160738998,
+      "src": "images/IMG_4783.jpg",
+      "width": 240,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 25,
+      "y": 455,
+      "rotation": 0.40237110885554994,
+      "src": "images/IMG_4785.jpg",
+      "width": 296,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 355,
+      "y": 254,
+      "rotation": 0.6054419635923507,
+      "src": "images/IMG_4792.jpg",
+      "width": 259
+    },
+    {
+      "type": "image",
+      "x": 636,
+      "y": 598,
+      "rotation": 0.839428100954664,
+      "src": "images/IMG_4780.jpg",
+      "width": 221,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "video",
+      "x": 703,
+      "y": 36,
+      "rotation": 0.37689663707283216,
+      "src": "images/i_love_seattle.mov#t=0.001",
+      "width": 428,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 353,
+      "y": 40,
+      "rotation": 0.5361188258068514,
+      "src": "images/i-love-seattle.png",
+      "width": 335,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 641,
+      "y": 384,
+      "rotation": 0.44566869832290035,
+      "src": "images/i-love-seattle-2.png",
+      "width": 348,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": -38,
+      "y": 351,
+      "rotation": 3.412228163824441,
+      "src": "images/butterfly-removebg-preview.png",
+      "width": 180,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1045,
+      "y": 391,
+      "rotation": 0.16889088389010176,
+      "src": "images/heart-removebg-preview.png",
+      "width": 147,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1335,
+      "y": 366,
+      "rotation": 7.657444470695498,
+      "src": "images/rainbow-2-removebg-preview.png",
+      "width": 282,
+      "noBorder": true,
+      "noTape": true
+    }
+  ]
+}

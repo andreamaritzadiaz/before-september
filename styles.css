@@ -1299,7 +1299,13 @@ footer .footer-cta {
 .sb-element-image.no-border {
     padding: 0;
     background: transparent;
-    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.25);
+    box-shadow: none;
+}
+
+/* Cutout images: no placeholder fill behind the transparent areas */
+.sb-element-image.no-border img,
+.sb-element-image.no-border video {
+    background: transparent;
 }
 
 .sb-element-image::before {
@@ -1629,6 +1635,24 @@ footer .footer-cta {
         transform: none !important;
         width: 90% !important;
         max-width: 350px;
+    }
+
+    /* Decorative backdrop shown behind a single photo */
+    .sb-mobile-bg-frame {
+        width: 90%;
+        max-width: 380px;
+        padding: 26px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .sb-mobile-bg-frame .sb-element {
+        width: 100% !important;
+        max-width: none !important;
     }
 
     .sb-element-image {

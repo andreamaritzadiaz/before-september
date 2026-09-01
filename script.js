@@ -45,27 +45,27 @@ const bucketList = [
         note: "this one is still on the list ^_^",
         media: [],
         scrapbook: [
-            { type: 'image', x: 1372, y: 295, rotation: -4.65, src: 'images/IMG_4696.jpg', width: 279, noBorder: true, noTape: true },
-            { type: 'image', x: 39, y: 49, rotation: -1.89, src: 'images/IMG_4681.jpg', width: 305, noBorder: true, noTape: true },
-            { type: 'image', x: 510, y: 809, rotation: 2.13, src: 'images/IMG_4698.jpg', width: 191 },
-            { type: 'image', x: 425, y: 434, rotation: -1.22, src: 'images/IMG_4694.jpg', width: 235 },
-            { type: 'image', x: 41, y: 614, rotation: 0.79, src: 'images/IMG_4682.jpg', width: 229, noBorder: true, noTape: true },
-            { type: 'image', x: 270, y: 807, rotation: -8.53, src: 'images/IMG_4703.jpg', width: 207 },
-            { type: 'image', x: 745, y: 469, rotation: -1.67, src: 'images/IMG_4705.jpg', width: 306 },
-            { type: 'image', x: 379, y: 77, rotation: 0.80, src: 'images/IMG_4736.jpg', width: 451, noBorder: true, noTape: true },
-            { type: 'image', x: 1180, y: 637, rotation: 7.17, src: 'images/IMG_4707.jpg', width: 328 },
-            { type: 'image', x: 1118, y: 329, rotation: 3.59, src: 'images/IMG_4686.jpg', width: 186, noBorder: true, noTape: true },
-            { type: 'video', x: 870, y: 48, rotation: -2.84, src: 'images/IMG_4684.MP4#t=0.001', width: 235 },
-            { type: 'text', x: 1051, y: 743, rotation: 0.66, content: 'my 2nd fastest 5k :)', fontSize: 16, mobileAttachTo: 'images/IMG_4686.jpg' },
-            { type: 'image', x: 1168, y: 40, rotation: 5.33, src: 'images/IMG_4688.jpg', width: 377 },
-            { type: 'text', x: 1132, y: 49, rotation: -1.43, content: 'lake washington ', fontSize: 18, mobileAttachTo: 'images/IMG_4688.jpg' },
-            { type: 'text', x: 29, y: 485, rotation: 0.93, content: 'latina power to me means strength <3 \nit means choosing to wake up everyday \nand show up for yourself and your community', fontSize: 15, mobileAttachTo: 'images/IMG_4681.jpg' },
-            { type: 'text', x: 1534, y: 367, rotation: 7.74, content: 'jess : )', fontSize: 18 },
-            { type: 'text', x: 447, y: 472, rotation: -1.19, content: 'aileen!', fontSize: 18 },
-            { type: 'text', x: 799, y: 870, rotation: 1.57, content: 'conchas and horchata\ncold brew\n', fontSize: 18, mobileAttachTo: 'images/IMG_4705.jpg' },
-            { type: 'image', x: 91, y: 878, rotation: 5.43, src: 'images/honduras-stamp-2.jpg', width: 112 },
-            { type: 'image', x: 1507, y: 696, rotation: -2.61, src: 'images/honduras-stamp.jpg', width: 141 },
-            { type: 'image', x: 253, y: 588, rotation: -2.17, src: 'images/honduras.jpg', width: 153, noBorder: true, noTape: true }
+            { type: 'image', x: 668, y: 888, rotation: 0.42, src: 'images/IMG_4705.jpg', width: 411 },
+            { type: 'image', x: 1108, y: 473, rotation: 0.00, src: 'images/IMG_4696.jpg', width: 288, noBorder: true, noTape: true },
+            { type: 'image', x: 39, y: 49, rotation: -0.03, src: 'images/IMG_4681.jpg', width: 408, noBorder: true, noTape: true },
+            { type: 'image', x: 353, y: 988, rotation: -0.01, src: 'images/IMG_4698.jpg', width: 286 },
+            { type: 'image', x: 488, y: 474, rotation: 0.42, src: 'images/IMG_4694.jpg', width: 294 },
+            { type: 'image', x: 38, y: 711, rotation: -0.06, src: 'images/IMG_4682.jpg', width: 290, noBorder: true, noTape: true },
+            { type: 'image', x: 795, y: 477, rotation: 0.10, src: 'images/IMG_4703.jpg', width: 291 },
+            { type: 'image', x: 477, y: 51, rotation: -0.53, src: 'images/IMG_4736.jpg', width: 564, noBorder: true, noTape: true },
+            { type: 'image', x: 1476, y: 904, rotation: 0.09, src: 'images/IMG_4707.jpg', width: 391 },
+            { type: 'video', x: 1102, y: 886, rotation: 0.04, src: 'images/IMG_4684.MP4#t=0.001', width: 358 },
+            { type: 'text', x: 1593, y: 244, rotation: 0.66, content: 'my 2nd fastest 5k :)', fontSize: 20, mobileAttachTo: 'images/IMG_4686.jpg', mobileCaption: true },
+            { type: 'image', x: 1062, y: 48, rotation: 0.03, src: 'images/IMG_4688.jpg', width: 523 },
+            { type: 'text', x: 1111, y: 87, rotation: -1.43, content: 'lake washington ', fontSize: 18, mobileAttachTo: 'images/IMG_4688.jpg' },
+            { type: 'text', x: 35, y: 590, rotation: -0.18, content: 'latina power to me means strength <3 \nit means choosing to wake up everyday \nand show up for yourself and your community', fontSize: 18, mobileAttachTo: 'images/IMG_4681.jpg', mobileCaption: true },
+            { type: 'text', x: 1274, y: 514, rotation: 7.74, content: 'jess : )', fontSize: 18 },
+            { type: 'text', x: 537, y: 541, rotation: -1.19, content: 'aileen!', fontSize: 18 },
+            { type: 'text', x: 847, y: 1200, rotation: 1.57, content: 'conchas and horchata\ncold brew\n', fontSize: 19, mobileAttachTo: 'images/IMG_4705.jpg' },
+            { type: 'image', x: 349, y: 714, rotation: 0.27, src: 'images/honduras-stamp-2.jpg', width: 162 },
+            { type: 'image', x: 1626, y: 38, rotation: 0.06, src: 'images/honduras-stamp.jpg', width: 141 },
+            { type: 'image', x: 1554, y: 321, rotation: 0.27, src: 'images/IMG_4686.jpg', width: 256, noBorder: true, noTape: true },
+            { type: 'image', x: 1427, y: 561, rotation: 1.18, src: 'images/honduras.jpg', width: 153, noBorder: true, noTape: true }
         ]
     },
     {
@@ -184,11 +184,27 @@ const bucketList = [
     {
         title: "volunteer for a good cause",
         slug: "volunteer",
-        completed: false,
-        note: "researching local orgs",
+        completed: true,
+        note: "this one is still on the list ^_^",
         noteEmoji: true,
         media: [],
-        scrapbook: []
+        scrapbook: [
+            { type: 'image', x: 671, y: 378, rotation: 0.72, src: 'images/background-colors.png', width: 637, noBorder: true, noTape: true, mobileBackgroundFor: 'images/IMG_4780.jpg' },
+            { type: 'image', x: 1240, y: 581, rotation: 0.69, src: 'images/IMG_4786.jpg', width: 308, noBorder: true, noTape: true },
+            { type: 'image', x: 28, y: 28, rotation: 0.40, src: 'images/IMG_4776.jpg', width: 306 },
+            { type: 'image', x: 1144, y: 385, rotation: 0.86, src: 'images/IMG_4777.jpg', width: 253, noBorder: true, noTape: true },
+            { type: 'image', x: 353, y: 615, rotation: 0.17, src: 'images/IMG_4778.jpg', width: 256 },
+            { type: 'image', x: 1158, y: 42, rotation: -0.18, src: 'images/IMG_4783.jpg', width: 240, noBorder: true, noTape: true },
+            { type: 'image', x: 25, y: 455, rotation: 0.40, src: 'images/IMG_4785.jpg', width: 296, noBorder: true, noTape: true },
+            { type: 'image', x: 355, y: 254, rotation: 0.61, src: 'images/IMG_4792.jpg', width: 259 },
+            { type: 'image', x: 636, y: 598, rotation: 0.84, src: 'images/IMG_4780.jpg', width: 221, noBorder: true, noTape: true },
+            { type: 'video', x: 703, y: 36, rotation: 0.38, src: 'images/i_love_seattle.mov#t=0.001', width: 428, noTape: true },
+            { type: 'image', x: 353, y: 40, rotation: 0.54, src: 'images/i-love-seattle.png', width: 335, noBorder: true, noTape: true },
+            { type: 'image', x: 641, y: 384, rotation: 0.45, src: 'images/i-love-seattle-2.png', width: 348, noBorder: true, noTape: true },
+            { type: 'image', x: -38, y: 351, rotation: 3.41, src: 'images/butterfly-removebg-preview.png', width: 180, noBorder: true, noTape: true },
+            { type: 'image', x: 1045, y: 391, rotation: 0.17, src: 'images/heart-removebg-preview.png', width: 147, noBorder: true, noTape: true },
+            { type: 'image', x: 1335, y: 366, rotation: 7.66, src: 'images/rainbow-2-removebg-preview.png', width: 282, noBorder: true, noTape: true }
+        ]
     }
 ];
 
@@ -958,6 +974,31 @@ sbEditToggle.addEventListener('click', () => {
     }
 });
 
+// Detect whether an image has any transparent pixels (a cutout with no
+// background) by sampling a downscaled copy on an offscreen canvas.
+function detectTransparency(src, cb) {
+    const img = new Image();
+    img.onload = () => {
+        const w = Math.min(img.naturalWidth || 1, 80);
+        const h = Math.max(1, Math.round((img.naturalHeight || 1) * (w / (img.naturalWidth || 1))));
+        const canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        ctx.drawImage(img, 0, 0, w, h);
+        let transparent = false;
+        try {
+            const data = ctx.getImageData(0, 0, w, h).data;
+            for (let i = 3; i < data.length; i += 4) {
+                if (data[i] < 250) { transparent = true; break; }
+            }
+        } catch (e) { /* tainted canvas — treat as opaque */ }
+        cb(transparent);
+    };
+    img.onerror = () => cb(false);
+    img.src = src;
+}
+
 // ─── Add Photo/Video ───
 sbAddPhoto.addEventListener('click', () => {
     const input = document.createElement('input');
@@ -966,22 +1007,40 @@ sbAddPhoto.addEventListener('click', () => {
     input.multiple = true;
     input.onchange = (e) => {
         Array.from(e.target.files).forEach(file => {
-            const reader = new FileReader();
-            reader.onload = (ev) => {
-                const isVideo = file.type.startsWith('video');
+            const isVideo = file.type.startsWith('video');
+            const addEl = (src, cutout) => {
                 const el = createScrapbookElement({
                     type: isVideo ? 'video' : 'image',
-                    src: ev.target.result,
+                    src,
                     x: 50 + Math.random() * 200,
                     y: 50 + Math.random() * 150,
                     width: 180,
-                    rotation: (Math.random() - 0.5) * 8
+                    rotation: (Math.random() - 0.5) * 8,
+                    // Transparent images render as clean cutouts (no frame or tape)
+                    noBorder: cutout || undefined,
+                    noTape: cutout || undefined
                 });
                 el.dataset.filename = 'images/' + file.name;
                 scrapbookCanvas.appendChild(el);
                 updateEmptyState();
             };
-            reader.readAsDataURL(file);
+            if (isVideo) {
+                // A data: URL can't be played by <video> (no byte-range support),
+                // so use a blob URL for the live preview instead.
+                addEl(URL.createObjectURL(file));
+            } else {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    const src = ev.target.result;
+                    // Only PNG/WebP/GIF can carry an alpha channel; JPEGs never do.
+                    if (/png|webp|gif/i.test(file.type)) {
+                        detectTransparency(src, (transparent) => addEl(src, transparent));
+                    } else {
+                        addEl(src, false);
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
         });
     };
     input.click();
@@ -1147,7 +1206,7 @@ function createScrapbookElement(data) {
             if (data.width) wrapper.style.width = data.width + 'px';
             const vid = document.createElement('video');
             vid.src = data.src.includes('#t=') ? data.src : data.src + '#t=0.001';
-            vid.muted = true;
+            vid.muted = false;
             vid.controls = true;
             vid.playsInline = true;
             vid.preload = 'metadata';
@@ -1603,7 +1662,7 @@ function getCanvasLayout() {
             case 'image':
             case 'video':
                 let mediaSrc = el.querySelector('img, video')?.src || '';
-                if (mediaSrc.startsWith('data:')) {
+                if (mediaSrc.startsWith('data:') || mediaSrc.startsWith('blob:')) {
                     mediaSrc = el.dataset.filename || mediaSrc;
                 }
                 mediaSrc = toRelativePath(mediaSrc);
@@ -1715,6 +1774,22 @@ function showToast(msg) {
 
 
 // ─── Render Scrapbook From Data ───
+// Mobile-only tuning fields live in the hardcoded item.scrapbook (not in the
+// exported JSON, which strips them). Overlay them onto whatever data actually
+// renders (localStorage or JSON file) by matching on src/content.
+const MOBILE_ONLY_FIELDS = ['mobileAttachTo', 'mobileCaption', 'mobileBackgroundFor', 'mobilePosition'];
+function mergeMobileFields(data, hardcoded) {
+    if (!Array.isArray(data) || !Array.isArray(hardcoded)) return data;
+    return data.map(el => {
+        const match = hardcoded.find(h => h.type === el.type &&
+            (el.src ? h.src === el.src : h.content === el.content));
+        if (!match) return el;
+        const merged = { ...el };
+        MOBILE_ONLY_FIELDS.forEach(f => { if (match[f] !== undefined) merged[f] = match[f]; });
+        return merged;
+    });
+}
+
 function renderScrapbook(item) {
     // Clear existing scrapbook elements
     scrapbookCanvas.querySelectorAll('.sb-element').forEach(el => el.remove());
@@ -1725,10 +1800,10 @@ function renderScrapbook(item) {
     // Check localStorage first, then JSON file, then hardcoded data
     const localData = loadFromLocalStorage(item);
     if (localData) {
-        renderScrapbookData(localData);
+        renderScrapbookData(mergeMobileFields(localData, item.scrapbook));
     } else {
         loadFromJsonFile(item).then(fileData => {
-            renderScrapbookData(fileData || item.scrapbook);
+            renderScrapbookData(mergeMobileFields(fileData || item.scrapbook, item.scrapbook));
         });
     }
 }
@@ -1778,16 +1853,27 @@ function renderScrapbookData(scrapbookData) {
 
 // ─── Mobile: pair text annotations with nearest image ───
 function renderScrapbookMobile(scrapbookData) {
-    const images = scrapbookData.filter(d => d.type === 'image' || d.type === 'video');
+    // Decorative backdrops don't get their own flow slot on mobile — they render
+    // behind a specific image (see mobileBackgroundFor) instead.
+    const bgLayers = scrapbookData.filter(d => (d.type === 'image' || d.type === 'video') && d.mobileBackgroundFor);
+    const bgFor = new Map();
+    bgLayers.forEach(b => bgFor.set(b.mobileBackgroundFor, b));
+
+    const images = scrapbookData.filter(d => (d.type === 'image' || d.type === 'video') && !d.mobileBackgroundFor);
     const texts = scrapbookData.filter(d => d.type === 'text');
     const others = scrapbookData.filter(d => d.type !== 'image' && d.type !== 'video' && d.type !== 'text');
+
+    // Texts with mobileCaption render as a standalone caption directly below
+    // their attached image (not overlaid on top of it).
+    const captionTexts = texts.filter(t => t.mobileCaption && t.mobileAttachTo);
+    const overlayTexts = texts.filter(t => !(t.mobileCaption && t.mobileAttachTo));
 
     // For each text, find the nearest image by center-to-center distance
     const textAssignments = new Map(); // imageIndex -> [textData, ...]
 
     const orphanedTexts = [];
 
-    texts.forEach(textData => {
+    overlayTexts.forEach(textData => {
         // Explicit mobile pairing: attach this text to a specific image by src
         if (textData.mobileAttachTo) {
             const attachIdx = images.findIndex(img => img.src === textData.mobileAttachTo);
@@ -1834,12 +1920,29 @@ function renderScrapbookMobile(scrapbookData) {
         .map((data, origIdx) => ({ data, origIdx }))
         .sort((a, b) => (a.data.y || 0) - (b.data.y || 0));
 
+    // Map image src -> its position in the sorted flow, so captions can slot in
+    const srcToSortedIdx = new Map();
+    sortedImages.forEach(({ data }, i) => { if (data.src) srcToSortedIdx.set(data.src, i); });
+
     // Render images with overlays
     sortedImages.forEach(({ data, origIdx }, sortedIdx) => {
         const el = createScrapbookElement(data);
         el.style.position = 'relative';
-        el.style.order = sortedIdx * 2;
-        scrapbookCanvas.appendChild(el);
+
+        // If a decorative backdrop targets this image, wrap it in a frame that
+        // shows the backdrop peeking out behind the photo.
+        const bg = bgFor.get(data.src);
+        if (bg) {
+            const frame = document.createElement('div');
+            frame.className = 'sb-mobile-bg-frame';
+            frame.style.order = sortedIdx * 2;
+            frame.style.backgroundImage = `url('${bg.src}')`;
+            frame.appendChild(el);
+            scrapbookCanvas.appendChild(frame);
+        } else {
+            el.style.order = sortedIdx * 2;
+            scrapbookCanvas.appendChild(el);
+        }
 
         // Add text overlays for this image
         const assignedTexts = textAssignments.get(origIdx) || [];
@@ -1872,6 +1975,17 @@ function renderScrapbookMobile(scrapbookData) {
 
             el.appendChild(overlay);
         });
+    });
+
+    // Render caption texts as standalone elements directly below their image
+    captionTexts.forEach(textData => {
+        const si = srcToSortedIdx.get(textData.mobileAttachTo);
+        const el = createScrapbookElement(textData);
+        el.style.position = 'relative';
+        // Slot into the odd order between the attached image and the next one;
+        // fall back to the bottom if the image isn't present.
+        el.style.order = si === undefined ? 8999 : si * 2 + 1;
+        scrapbookCanvas.appendChild(el);
     });
 
     // Render orphaned texts (too far from any image) as standalone

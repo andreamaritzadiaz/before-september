@@ -175,7 +175,7 @@ const bucketList = [
     {
         title: "build one hardware project",
         slug: "hardware",
-        completed: false,
+        completed: true,
         note: "parts are on the way",
         noPrefix: true,
         media: [],

@@ -1,0 +1,241 @@
+{
+  "item": "build one hardware project",
+  "scrapbook": [
+    {
+      "type": "image",
+      "x": 56,
+      "y": 198,
+      "rotation": 0.7994258371474592,
+      "src": "images/selfie.JPG",
+      "width": 260,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 0,
+      "y": 170,
+      "rotation": 0.22503500159121437,
+      "src": "images/retro-paint-removebg-preview.png",
+      "width": 324,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 973,
+      "y": 379,
+      "rotation": 0.5135485232895141,
+      "src": "images/guide.PNG",
+      "width": 261,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "video",
+      "x": 585,
+      "y": 451,
+      "rotation": 0.4547794176223121,
+      "src": "images/ascii-screen.MOV#t=0.001",
+      "width": 295,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 334,
+      "y": 415,
+      "rotation": 0.07554926151534058,
+      "src": "images/ascii-screen.JPG",
+      "width": 238,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 408,
+      "y": 62,
+      "rotation": 0.5797559273847792,
+      "src": "images/cyberdeck-ideas.jpg",
+      "width": 331
+    },
+    {
+      "type": "image",
+      "x": 1023,
+      "y": 52,
+      "rotation": 0.6156094886380412,
+      "src": "images/flower.gif",
+      "width": 434,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 756,
+      "y": 56,
+      "rotation": -0.260181809263349,
+      "src": "images/flyer.PNG",
+      "width": 240,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 2,
+      "y": 60,
+      "rotation": 0.42972601969484625,
+      "src": "images/text.jpg",
+      "width": 393,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 20,
+      "y": 566,
+      "rotation": 0.31454355540498913,
+      "src": "images/workshop.JPG",
+      "width": 261,
+      "noBorder": true
+    },
+    {
+      "type": "image",
+      "x": -34,
+      "y": 996,
+      "rotation": -0.12989386748892784,
+      "src": "images/parts-4.JPG",
+      "width": 305,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1264,
+      "y": 1178,
+      "rotation": -0.12473967545296816,
+      "src": "images/parts-8.JPG",
+      "width": 286,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 305,
+      "y": 1158,
+      "rotation": -0.2104442036959817,
+      "src": "images/parts.JPG",
+      "width": 304,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 950,
+      "y": 989,
+      "rotation": -0.10142005922061959,
+      "src": "images/parts-6.JPG",
+      "width": 291,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 629,
+      "y": 1014,
+      "rotation": 0.13694634435292663,
+      "src": "images/parts-5.JPG",
+      "width": 293,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1216,
+      "y": 651,
+      "rotation": 20.70594637541834,
+      "src": "images/cables-removebg-preview.png",
+      "width": 293,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 221,
+      "y": 677,
+      "rotation": 2.3399733288971154,
+      "src": "images/breadboard-removebg-preview.png",
+      "width": 368,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1213,
+      "y": 474,
+      "rotation": -22.736750090499164,
+      "src": "images/resistor-removebg-preview.png",
+      "width": 227,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1142,
+      "y": 310,
+      "rotation": 0.5048557822461346,
+      "src": "images/raspberrypi-pico-removebg-preview.png",
+      "width": 325,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1198,
+      "y": 429,
+      "rotation": 2.5172877989658105,
+      "src": "images/resistor-removebg-preview.png",
+      "width": 203,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1278,
+      "y": 472,
+      "rotation": -31.97122727175954,
+      "src": "images/resistor-removebg-preview.png",
+      "width": 223,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 413,
+      "y": 917,
+      "rotation": 3.8248013161895846,
+      "src": "images/bread-removebg-preview.png",
+      "width": 229,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 663,
+      "y": 1437,
+      "rotation": 0.2334115203571825,
+      "src": "images/reflection.gif",
+      "width": 541,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1222,
+      "y": 842,
+      "rotation": 0.19224040200824177,
+      "src": "images/retro-paint-tools-removebg-preview.png",
+      "width": 330,
+      "noBorder": true,
+      "noTape": true
+    }
+  ]
+}

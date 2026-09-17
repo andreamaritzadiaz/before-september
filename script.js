@@ -179,7 +179,32 @@ const bucketList = [
         note: "parts are on the way",
         noPrefix: true,
         media: [],
-        scrapbook: []
+        scrapbook: [
+            { type: 'image', x: 56, y: 198, rotation: 0.8, src: 'images/selfie.JPG', width: 260, noBorder: true, noTape: true },
+            { type: 'image', x: 0, y: 170, rotation: 0.23, src: 'images/retro-paint-removebg-preview.png', width: 324, noBorder: true, noTape: true, mobileOverlayFor: 'images/selfie.JPG' },
+            { type: 'image', x: 973, y: 379, rotation: 0.51, src: 'images/guide.PNG', width: 261, noBorder: true, noTape: true },
+            { type: 'video', x: 585, y: 451, rotation: 0.45, src: 'images/ascii-screen.MOV#t=0.001', width: 295, noTape: true },
+            { type: 'image', x: 334, y: 415, rotation: 0.08, src: 'images/ascii-screen.JPG', width: 238, noBorder: true, noTape: true },
+            { type: 'image', x: 408, y: 62, rotation: 0.58, src: 'images/cyberdeck-ideas.jpg', width: 331 },
+            { type: 'image', x: 1023, y: 52, rotation: 0.62, src: 'images/flower.gif', width: 434, noBorder: true, noTape: true },
+            { type: 'image', x: 756, y: 56, rotation: -0.26, src: 'images/flyer.PNG', width: 240, noBorder: true, noTape: true },
+            { type: 'image', x: 2, y: 60, rotation: 0.43, src: 'images/text.jpg', width: 393, noBorder: true, noTape: true },
+            { type: 'image', x: 20, y: 566, rotation: 0.31, src: 'images/workshop.JPG', width: 261, noBorder: true },
+            { type: 'image', x: -34, y: 996, rotation: -0.13, src: 'images/parts-4.JPG', width: 305, noBorder: true, noTape: true },
+            { type: 'image', x: 1264, y: 1178, rotation: -0.12, src: 'images/parts-8.JPG', width: 286, noBorder: true, noTape: true },
+            { type: 'image', x: 305, y: 1158, rotation: -0.21, src: 'images/parts.JPG', width: 304, noBorder: true, noTape: true },
+            { type: 'image', x: 950, y: 989, rotation: -0.1, src: 'images/parts-6.JPG', width: 291, noBorder: true, noTape: true },
+            { type: 'image', x: 629, y: 1014, rotation: 0.14, src: 'images/parts-5.JPG', width: 293, noBorder: true, noTape: true },
+            { type: 'image', x: 1216, y: 651, rotation: 20.71, src: 'images/cables-removebg-preview.png', width: 293, noBorder: true, noTape: true },
+            { type: 'image', x: 221, y: 677, rotation: 2.34, src: 'images/breadboard-removebg-preview.png', width: 368, noBorder: true, noTape: true },
+            { type: 'image', x: 1213, y: 474, rotation: -22.74, src: 'images/resistor-removebg-preview.png', width: 227, noBorder: true, noTape: true },
+            { type: 'image', x: 1142, y: 310, rotation: 0.5, src: 'images/raspberrypi-pico-removebg-preview.png', width: 325, noBorder: true, noTape: true },
+            { type: 'image', x: 1198, y: 429, rotation: 2.52, src: 'images/resistor-removebg-preview.png', width: 203, noBorder: true, noTape: true },
+            { type: 'image', x: 1278, y: 472, rotation: -31.97, src: 'images/resistor-removebg-preview.png', width: 223, noBorder: true, noTape: true },
+            { type: 'image', x: 413, y: 917, rotation: 3.82, src: 'images/bread-removebg-preview.png', width: 229, noBorder: true, noTape: true, mobileAfter: 'images/breadboard-removebg-preview.png' },
+            { type: 'image', x: 663, y: 1437, rotation: 0.23, src: 'images/reflection.gif', width: 541, noBorder: true, noTape: true },
+            { type: 'image', x: 1222, y: 842, rotation: 0.19, src: 'images/retro-paint-tools-removebg-preview.png', width: 330, noBorder: true, noTape: true }
+        ]
     },
     {
         title: "volunteer for a good cause",
@@ -969,8 +994,14 @@ sbEditToggle.addEventListener('click', () => {
     scrapbookToolbar.classList.toggle('hidden', !editMode);
     scrapbookCanvas.classList.toggle('edit-mode', editMode);
 
-    if (!editMode) {
+    // Always allow scrolling while editing, even on an empty scrapbook, so
+    // elements can be placed below the fold and reached again.
+    if (editMode) {
+        detailView.style.overflowY = '';
+        growCanvasToFit();
+    } else {
         deselectAll();
+        updateEmptyState();
     }
 });
 
@@ -1596,8 +1627,29 @@ document.addEventListener('mousemove', (e) => {
 });
 
 document.addEventListener('mouseup', () => {
+    if (dragState) growCanvasToFit();
     dragState = null;
 });
+
+// ─── Grow the canvas so elements dragged past the bottom stay reachable ───
+function growCanvasToFit() {
+    if (window.innerWidth <= 768) return;
+
+    let maxBottom = 0;
+    scrapbookCanvas.querySelectorAll('.sb-element').forEach(el => {
+        const bottom = (parseInt(el.style.top) || 0) + el.offsetHeight + 40;
+        if (bottom > maxBottom) maxBottom = bottom;
+    });
+    if (!maxBottom || maxBottom <= canvasNaturalHeight) return;
+
+    scrapbookCanvas.style.height = maxBottom + 'px';
+    if (canvasNaturalWidth) {
+        scaleScrapbookCanvas(canvasNaturalWidth, maxBottom);
+    } else {
+        canvasNaturalHeight = maxBottom;
+        scrapbookCanvas.parentElement.style.minHeight = maxBottom + 'px';
+    }
+}
 
 // ─── Selection ───
 function selectElement(el) {
@@ -1635,6 +1687,7 @@ function updateEmptyState() {
     const hasElements = scrapbookCanvas.querySelectorAll('.sb-element').length > 0;
     scrapbookEmpty.classList.toggle('hidden', hasElements);
     detailNote.style.display = hasElements ? 'none' : '';
+    if (hasElements) growCanvasToFit();
 }
 
 // ─── Save / Export to JSON ───
@@ -1859,7 +1912,13 @@ function renderScrapbookMobile(scrapbookData) {
     const bgFor = new Map();
     bgLayers.forEach(b => bgFor.set(b.mobileBackgroundFor, b));
 
-    const images = scrapbookData.filter(d => (d.type === 'image' || d.type === 'video') && !d.mobileBackgroundFor);
+    // Decorative layers that sit ON TOP of a specific image on mobile (the
+    // mirror of mobileBackgroundFor) — they also skip their own flow slot.
+    const overlayLayers = scrapbookData.filter(d => (d.type === 'image' || d.type === 'video') && d.mobileOverlayFor);
+    const overlayFor = new Map();
+    overlayLayers.forEach(o => overlayFor.set(o.mobileOverlayFor, o));
+
+    const images = scrapbookData.filter(d => (d.type === 'image' || d.type === 'video') && !d.mobileBackgroundFor && !d.mobileOverlayFor);
     const texts = scrapbookData.filter(d => d.type === 'text');
     const others = scrapbookData.filter(d => d.type !== 'image' && d.type !== 'video' && d.type !== 'text');
 
@@ -1920,6 +1979,16 @@ function renderScrapbookMobile(scrapbookData) {
         .map((data, origIdx) => ({ data, origIdx }))
         .sort((a, b) => (a.data.y || 0) - (b.data.y || 0));
 
+    // mobileAfter pins an image directly below another one in the flow, for
+    // pairs that read together but aren't adjacent once sorted by Y.
+    sortedImages.filter(e => e.data.mobileAfter).forEach(entry => {
+        const from = sortedImages.indexOf(entry);
+        const target = sortedImages.findIndex(e => e.data.src === entry.data.mobileAfter);
+        if (from < 0 || target < 0 || target === from) return;
+        sortedImages.splice(from, 1);
+        sortedImages.splice(sortedImages.findIndex(e => e.data.src === entry.data.mobileAfter) + 1, 0, entry);
+    });
+
     // Map image src -> its position in the sorted flow, so captions can slot in
     const srcToSortedIdx = new Map();
     sortedImages.forEach(({ data }, i) => { if (data.src) srcToSortedIdx.set(data.src, i); });
@@ -1942,6 +2011,19 @@ function renderScrapbookMobile(scrapbookData) {
         } else {
             el.style.order = sortedIdx * 2;
             scrapbookCanvas.appendChild(el);
+        }
+
+        // If a decorative layer targets this image, lay it over the photo at
+        // the same relative size it has on desktop.
+        const over = overlayFor.get(data.src);
+        if (over) {
+            const overEl = createScrapbookElement(over);
+            overEl.classList.add('sb-mobile-overlay');
+            overEl.style.left = '50%';
+            overEl.style.top = '50%';
+            overEl.style.width = ((over.width || 180) / (data.width || 180) * 100) + '%';
+            overEl.style.height = 'auto';
+            el.appendChild(overEl);
         }
 
         // Add text overlays for this image

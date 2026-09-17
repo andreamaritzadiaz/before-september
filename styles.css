@@ -1655,6 +1655,15 @@ footer .footer-cta {
         max-width: none !important;
     }
 
+    /* Decorative layer sitting on top of the photo it belongs to */
+    .sb-element .sb-mobile-overlay {
+        position: absolute !important;
+        transform: translate(-50%, -50%);
+        max-width: none !important;
+        z-index: 3;
+        pointer-events: none;
+    }
+
     .sb-element-image {
         width: 100% !important;
         position: relative !important;

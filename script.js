@@ -146,7 +146,7 @@ const bucketList = [
     {
         title: "go tide pooling",
         slug: "tide-pooling",
-        completed: false,
+        completed: true,
         note: "waiting for a low tide weekend",
         media: [],
         scrapbook: [
@@ -1901,9 +1901,10 @@ function renderScrapbookData(scrapbookData) {
     scrapbookCanvas.style.width = '';
     scrapbookCanvas.style.height = '';
     scrapbookCanvas.style.transform = '';
+    canvasOffsetX = 0;
 
     if (scrapbookData && scrapbookData.length > 0) {
-        let maxRight = 0, maxBottom = 0;
+        let maxRight = 0, maxBottom = 0, minLeft = 0;
 
         const isMobile = window.innerWidth <= 768;
 
@@ -1918,6 +1919,7 @@ function renderScrapbookData(scrapbookData) {
                 const bottom = (data.y || 0) + (data.width || 250) + 40;
                 if (right > maxRight) maxRight = right;
                 if (bottom > maxBottom) maxBottom = bottom;
+                if ((data.x || 0) < minLeft) minLeft = data.x || 0;
             });
 
             // Include Spotify player position in canvas bounds
@@ -1928,9 +1930,16 @@ function renderScrapbookData(scrapbookData) {
                 if (spBottom > maxBottom) maxBottom = spBottom;
             }
 
-            scrapbookCanvas.style.width = maxRight + 'px';
+            // Elements placed left of the origin (negative x) used to hang
+            // outside the canvas box, which pushed the whole layout off-centre
+            // and left dead space on the right. Widen the box by that overhang
+            // and slide the contents back in, so the box matches what's drawn.
+            canvasOffsetX = -minLeft;
+            const canvasWidth = maxRight + canvasOffsetX;
+
+            scrapbookCanvas.style.width = canvasWidth + 'px';
             scrapbookCanvas.style.height = maxBottom + 'px';
-            scaleScrapbookCanvas(maxRight, maxBottom);
+            scaleScrapbookCanvas(canvasWidth, maxBottom);
         }
     }
 
@@ -2136,6 +2145,7 @@ function renderScrapbookMobile(scrapbookData) {
 // ─── Responsive Scaling ───
 let canvasNaturalWidth = 0;
 let canvasNaturalHeight = 0;
+let canvasOffsetX = 0;
 
 function scaleScrapbookCanvas(naturalWidth, naturalHeight) {
     canvasNaturalWidth = naturalWidth || parseInt(scrapbookCanvas.style.width) || 0;
@@ -2153,7 +2163,10 @@ function scaleScrapbookCanvas(naturalWidth, naturalHeight) {
     const containerWidth = detailView.clientWidth - 80;
     const scale = Math.min(1.4, containerWidth / canvasNaturalWidth);
 
-    scrapbookCanvas.style.transform = `scale(${scale})`;
+    // translate runs before scale here, so the offset is in canvas units — it
+    // slides left-of-origin elements back inside the box without touching their
+    // stored x, which is what gets exported.
+    scrapbookCanvas.style.transform = `scale(${scale}) translateX(${canvasOffsetX}px)`;
     scrapbookCanvas.style.height = canvasNaturalHeight + 'px';
 
     // Set wrapper height to account for scaling

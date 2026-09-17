@@ -1655,11 +1655,14 @@ footer .footer-cta {
         max-width: none !important;
     }
 
-    /* Decorative layer sitting on top of the photo it belongs to */
-    .sb-element .sb-mobile-overlay {
-        position: absolute !important;
-        transform: translate(-50%, -50%);
-        max-width: none !important;
+    /* Decorative layer sitting on top of the photo it belongs to. A bare <img>,
+       so the .sb-element flow rules above don't apply to it. */
+    .sb-element-image > .sb-mobile-overlay-img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: auto;
+        max-width: none;
         z-index: 3;
         pointer-events: none;
     }

@@ -1863,7 +1863,7 @@ function showToast(msg) {
 // Mobile-only tuning fields live in the hardcoded item.scrapbook (not in the
 // exported JSON, which strips them). Overlay them onto whatever data actually
 // renders (localStorage or JSON file) by matching on src/content.
-const MOBILE_ONLY_FIELDS = ['mobileAttachTo', 'mobileCaption', 'mobileBackgroundFor', 'mobilePosition'];
+const MOBILE_ONLY_FIELDS = ['mobileAttachTo', 'mobileCaption', 'mobileBackgroundFor', 'mobilePosition', 'mobileOverlayFor', 'mobileAfter'];
 function mergeMobileFields(data, hardcoded) {
     if (!Array.isArray(data) || !Array.isArray(hardcoded)) return data;
     return data.map(el => {
@@ -2060,6 +2060,18 @@ function renderScrapbookMobile(scrapbookData) {
             overImg.style.width = ((over.width || 180) / (data.width || 180) * 100) + '%';
             overImg.style.transform = `translate(-50%, -50%) rotate(${over.rotation || 0}deg)`;
             el.appendChild(overImg);
+
+            // The overlay is taller than the photo it sits on, so it would spill
+            // into the neighbours above and below. Reserve room for the part
+            // that sticks out, once both images know their size.
+            const reserveRoom = () => {
+                const spill = (overImg.offsetHeight - el.offsetHeight) / 2;
+                el.style.marginBlock = spill > 0 ? Math.ceil(spill) + 'px' : '';
+            };
+            overImg.addEventListener('load', reserveRoom);
+            el.querySelector('img:not(.sb-mobile-overlay-img)')?.addEventListener('load', reserveRoom);
+            window.addEventListener('resize', reserveRoom);
+            reserveRoom();
         }
 
         // Add text overlays for this image

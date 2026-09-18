@@ -411,7 +411,7 @@ header .subtitle {
     text-align: left;
     max-width: 380px;
     padding: 32px 36px;
-    background: #fffef9;
+    background: #ffffff;
     background-image:
         linear-gradient(to bottom, transparent 27px, rgba(200, 195, 180, 0.2) 27px);
     background-size: 100% 28px;
@@ -1292,7 +1292,7 @@ footer .footer-cta {
 /* Photo elements with tape decoration */
 .sb-element-image {
     padding: 6px;
-    background: #fff;
+    background: #ffffff;
     box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -1487,7 +1487,8 @@ footer .footer-cta {
     min-width: 60px;
     min-height: 24px;
     border-radius: 2px;
-    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.12);
+    /* No shadow: any blur around a small white box reads as grey. */
+    box-shadow: none;
 }
 
 .sb-element-text .sb-text-content[contenteditable="true"] {
@@ -1753,13 +1754,13 @@ footer .footer-cta {
         position: absolute;
         z-index: 10;
         padding: 4px 10px;
-        background: rgba(255, 255, 255, 0.92);
+        background: #ffffff;
         color: #1a1a1a;
         font-family: 'Hedvig Letters Serif', serif;
         letter-spacing: 0.01em;
         white-space: pre-wrap;
         border-radius: 2px;
-        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+        box-shadow: none;
         pointer-events: none;
         max-width: 70%;
         line-height: 1.3;

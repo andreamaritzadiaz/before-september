@@ -150,20 +150,21 @@ const bucketList = [
         note: "waiting for a low tide weekend",
         media: [],
         scrapbook: [
-            { type: 'video', x: 689, y: 2196, rotation: 0.3, src: 'images/bambi-being-brave.MOV', width: 299 },
-            { type: 'video', x: 467, y: 948, rotation: 3.95, src: 'images/explorer-bams-2.MOV', width: 180 },
-            { type: 'video', x: 321, y: 2188, rotation: 0.21, src: 'images/explorer-bams.MOV', width: 338 },
-            { type: 'video', x: 243, y: 1529, rotation: 0.02, src: 'images/more-fun-stuff.MOV', width: 320, noTape: true },
-            { type: 'video', x: 1283, y: 2552, rotation: 0.83, src: 'images/ocean-waves.MOV', width: 281 },
-            { type: 'video', x: 1045, y: 29, rotation: 0.47, src: 'images/ocean.MOV', width: 495 },
-            { type: 'video', x: 1211, y: 1571, rotation: 0.05, src: 'images/tide-pools-2.MOV', width: 318 },
-            { type: 'video', x: -31, y: 1102, rotation: 0.16, src: 'images/waterfall.MOV', width: 529 },
+            { type: 'image', x: 3, y: 32, rotation: 0.08, src: 'images/valeria+i.JPG', width: 360, noTape: true },
+            { type: 'beads', x: 45, y: -12, rotation: 0.38, content: "valeria", fontSize: 44 },
+            { type: 'video', x: 689, y: 2196, rotation: 0.3, src: 'images/bambi-being-brave.MOV#t=0.001', width: 299 },
+            { type: 'video', x: 321, y: 2188, rotation: 0.21, src: 'images/explorer-bams.MOV#t=0.001', width: 338 },
+            { type: 'video', x: 243, y: 1529, rotation: 0.02, src: 'images/more-fun-stuff.MOV#t=0.001', width: 320, noTape: true },
+            { type: 'video', x: 1283, y: 2552, rotation: 0.83, src: 'images/ocean-waves.MOV#t=0.001', width: 281 },
+            { type: 'video', x: 1062, y: 18, rotation: 0.05, src: 'images/ocean.MOV#t=0.001', width: 495 },
+            { type: 'video', x: 1211, y: 1571, rotation: 0.05, src: 'images/tide-pools-2.MOV#t=0.001', width: 318 },
+            { type: 'video', x: -31, y: 1102, rotation: 0.16, src: 'images/waterfall.MOV#t=0.001', width: 529 },
             { type: 'image', x: 766, y: 814, rotation: -2.19, src: 'images/barnacle.JPG', width: 180 },
             { type: 'image', x: 514, y: 1109, rotation: 0.08, src: 'images/lovelypeople.JPG', width: 450, noBorder: true, noTape: true },
             { type: 'image', x: 566, y: 456, rotation: -1.68, src: 'images/trio.JPG', width: 180 },
-            { type: 'image', x: 240, y: 1424, rotation: -0.08, src: 'images/jesuslovesyou.JPG', width: 401, noBorder: true, noTape: true },
+            { type: 'image', x: 725, y: 2743, rotation: -0.08, src: 'images/jesuslovesyou.JPG', width: 514, noBorder: true, noTape: true },
             { type: 'image', x: 0, y: 321, rotation: 0.13, src: 'images/me.JPG', width: 267, noBorder: true, noTape: true },
-            { type: 'image', x: 919, y: 1842, rotation: 0.29, src: 'images/sanddollar.JPG', width: 252 },
+            { type: 'image', x: 873, y: 1844, rotation: 0.29, src: 'images/sanddollar.JPG', width: 252 },
             { type: 'image', x: 184, y: 893, rotation: 0.15, src: 'images/meundertree.JPG', width: 251 },
             { type: 'image', x: 583, y: 1861, rotation: -0.22, src: 'images/shell.JPG', width: 230, noBorder: true, noTape: true },
             { type: 'image', x: 1294, y: 1117, rotation: 0.23, src: 'images/valeriaandhercollection.JPG', width: 294, noBorder: true, noTape: true },
@@ -171,17 +172,25 @@ const bucketList = [
             { type: 'image', x: 187, y: 690, rotation: 0.09, src: 'images/me+valeriaundertree.JPG', width: 251, noTape: true },
             { type: 'image', x: -29, y: 688, rotation: 0.29, src: 'images/meundertree-2.JPG', width: 207, noTape: true },
             { type: 'image', x: -25, y: 1418, rotation: 0.1, src: 'images/tide-pools.JPG', width: 251, noTape: true },
-            { type: 'image', x: -2, y: 35, rotation: 0.08, src: 'images/valeria+i.JPG', width: 360, noTape: true },
-            { type: 'image', x: 1003, y: 2551, rotation: 1.01, src: 'images/bams+adam.JPG', width: 269 },
+            { type: 'image', x: 337, y: 2812, rotation: 0.48, src: 'images/bams+adam.JPG', width: 353 },
             { type: 'image', x: 375, y: 38, rotation: 0.5, src: 'images/beach.JPG', width: 358, noBorder: true, noTape: true },
-            { type: 'image', x: 1039, y: 495, rotation: 0.07, src: 'images/tree-of-life-description.JPG', width: 411, noTape: true },
-            { type: 'image', x: 450, y: 339, rotation: 0.47, src: 'images/tree-of-life.JPG', width: 564, noBorder: true, noTape: true },
-            { type: 'image', x: 1025, y: 342, rotation: 0.1, src: 'images/tree-of-life-description.png', width: 440, noTape: true },
+            { type: 'image', x: 1135, y: 504, rotation: 0.07, src: 'images/tree-of-life-description.JPG', width: 411, noTape: true },
+            { type: 'image', x: 493, y: 331, rotation: 0.47, src: 'images/tree-of-life.JPG', width: 564, noBorder: true, noTape: true },
+            { type: 'image', x: 1128, y: 335, rotation: 0.1, src: 'images/tree-of-life-description.png', width: 440, noTape: true },
             { type: 'image', x: 988, y: 1118, rotation: 0.38, src: 'images/trio.JPG', width: 294, noBorder: true, noTape: true },
-            { type: 'video', x: -35, y: 2111, rotation: 0.2, src: 'images/bambi+i.mov', width: 329 },
-            { type: 'video', x: 1006, y: 2199, rotation: 0.25, src: 'images/explorer-bams-2.MOV', width: 577 },
-            { type: 'image', x: 839, y: 1536, rotation: 0.4, src: 'images/barnacle.JPG', width: 224, noBorder: true, noTape: true },
-            { type: 'image', x: 749, y: 40, rotation: 0.51, src: 'images/onp-stamp-removebg-preview.png', width: 270, noBorder: true, noTape: true }
+            { type: 'video', x: -46, y: 2195, rotation: 0.2, src: 'images/bambi+i.mov#t=0.001', width: 348 },
+            { type: 'video', x: 1006, y: 2199, rotation: 0.25, src: 'images/explorer-bams-2.MOV#t=0.001', width: 577 },
+            { type: 'image', x: 849, y: 1536, rotation: 0.4, src: 'images/barnacle.JPG', width: 224, noBorder: true, noTape: true },
+            { type: 'image', x: 749, y: 40, rotation: 0.51, src: 'images/onp-stamp-removebg-preview.png', width: 270, noBorder: true, noTape: true },
+            { type: 'beads', x: 249, y: 1456, rotation: 1.05, content: "tide", fontSize: 65 },
+            { type: 'beads', x: 528, y: 1459, rotation: 0.84, content: "pooling", fontSize: 62 },
+            { type: 'text', x: 865, y: 1583, rotation: 0.61, content: "a barnacle", fontSize: 18 },
+            { type: 'text', x: 582, y: 1813, rotation: -1.0, content: "sand dollars", fontSize: 18 },
+            { type: 'text', x: 1024, y: 2551, rotation: -0.02, content: "bams the explorer", fontSize: 18 },
+            { type: 'beads', x: 262, y: 169, rotation: -1.62, content: "<", fontSize: 26 },
+            { type: 'beads', x: 294, y: 370, rotation: 1.75, content: "tree", fontSize: 44 },
+            { type: 'beads', x: 342, y: 438, rotation: 0.3, content: "of", fontSize: 44 },
+            { type: 'beads', x: 297, y: 504, rotation: 0.04, content: "life", fontSize: 44 }
         ]
     },
     {
@@ -1333,6 +1342,20 @@ function createScrapbookElement(data) {
             });
             break;
 
+        case 'beads':
+            wrapper.classList.add('sb-element-beads');
+            wrapper.style.fontSize = (data.fontSize || 26) + 'px';
+            wrapper.dataset.fontSize = data.fontSize || 26;
+            if (data.beadColors) wrapper.dataset.beadColors = data.beadColors;
+            renderBeads(wrapper, data.content || '');
+            wrapper.addEventListener('dblclick', (e) => {
+                if (!editMode) return;
+                e.stopPropagation();
+                const next = prompt('Letters on the beads:', wrapper.dataset.content || '');
+                if (next !== null) renderBeads(wrapper, next);
+            });
+            break;
+
         case 'sticker':
             wrapper.classList.add('sb-element-sticker');
             const stickerSpan = document.createElement('span');
@@ -1638,7 +1661,7 @@ document.addEventListener('mousemove', (e) => {
             const newScale = Math.max(0.3, dragState.origScale + dx / 100);
             el.dataset.scale = newScale;
             el.style.transform = `rotate(${el.dataset.rotation || 0}deg) scale(${newScale})`;
-        } else if (el.dataset.type === 'text') {
+        } else if (el.dataset.type === 'text' || el.dataset.type === 'beads') {
             const newSize = Math.max(8, dragState.origFontSize + dx / 4);
             el.style.fontSize = newSize + 'px';
             el.dataset.fontSize = newSize;
@@ -1723,6 +1746,51 @@ function updateEmptyState() {
     if (hasElements) growCanvasToFit();
 }
 
+// ─── Letter beads ───
+// Each character becomes a round bead. Letters get the classic white disc with
+// a black letter; the charm characters below get a coloured disc instead, the
+// way a charm bead breaks up a string of letters.
+const BEAD_CHARMS = {
+    '*': 'star', '★': 'star', '☆': 'star',
+    '<': 'heart', '♥': 'heart', '♡': 'heart',
+    '(': 'moon', '☾': 'moon', '☽': 'moon',
+    '%': 'flower', '✿': 'flower', '❀': 'flower'
+};
+
+function renderBeads(wrapper, content) {
+    wrapper.dataset.content = content;
+    wrapper.textContent = '';
+
+    let charmIndex = 0;
+    [...content].forEach(ch => {
+        if (ch === ' ') {
+            const gap = document.createElement('span');
+            gap.className = 'sb-bead-gap';
+            wrapper.appendChild(gap);
+            return;
+        }
+        if (ch === '\n') {
+            wrapper.appendChild(document.createElement('br'));
+            return;
+        }
+
+        const bead = document.createElement('span');
+        bead.className = 'sb-bead';
+        const charm = BEAD_CHARMS[ch];
+        if (charm) {
+            bead.classList.add('sb-bead-charm');
+            bead.style.backgroundImage = `url('images/bead-${charm}.png')`;
+            bead.title = charm;
+            charmIndex++;
+        } else {
+            bead.textContent = ch.toUpperCase();
+        }
+        // A little scatter, so a word doesn't read like a typed line
+        bead.style.setProperty('--bead-tilt', (Math.random() * 16 - 8).toFixed(1) + 'deg');
+        wrapper.appendChild(bead);
+    });
+}
+
 // ─── Save / Export to JSON ───
 function toRelativePath(src) {
     if (src.includes('/images/')) {
@@ -1760,6 +1828,10 @@ function getCanvasLayout() {
             case 'text':
                 base.content = el.querySelector('.sb-text-content')?.textContent || '';
                 base.fontSize = parseInt(el.dataset.fontSize) || 18;
+                break;
+            case 'beads':
+                base.content = el.dataset.content || '';
+                base.fontSize = parseInt(el.dataset.fontSize) || 26;
                 break;
             case 'sticker':
                 base.name = el.querySelector('.sb-sticker-content')?.textContent || '';
@@ -2134,10 +2206,17 @@ function renderScrapbookMobile(scrapbookData) {
         scrapbookCanvas.appendChild(el);
     });
 
-    // Render stickers and other non-text elements
+    // Render stickers and other non-text elements. Beads usually act as a
+    // heading, so they keep their place in the vertical flow instead of being
+    // swept to the bottom with the decorative bits.
     others.sort((a, b) => (a.y || 0) - (b.y || 0)).forEach(data => {
         const el = createScrapbookElement(data);
-        el.style.order = 9000;
+        if (data.type === 'beads') {
+            const below = sortedImages.findIndex(e => (e.data.y || 0) > (data.y || 0));
+            el.style.order = below === -1 ? 8998 : below * 2 - 1;
+        } else {
+            el.style.order = 9000;
+        }
         scrapbookCanvas.appendChild(el);
     });
 }
@@ -2457,6 +2536,27 @@ sbAddSwirl.addEventListener('click', () => {
     updateEmptyState();
 });
 scrapbookToolbar.insertBefore(sbAddSwirl, sbSave);
+
+// Add letter-bead button to toolbar
+const sbAddBeads = document.createElement('button');
+sbAddBeads.className = 'sb-tool-btn';
+sbAddBeads.textContent = '⚬ beads';
+sbAddBeads.title = 'Add letter beads — * star, < heart, ( moon, % flower';
+sbAddBeads.addEventListener('click', () => {
+    const content = prompt('Letters on the beads:\n(* star, < heart, ( moon, % flower)', 'summer');
+    if (content === null || !content.trim()) return;
+    const el = createScrapbookElement({
+        type: 'beads',
+        content,
+        x: 100 + Math.random() * 200,
+        y: 100 + Math.random() * 150,
+        fontSize: 26,
+        rotation: (Math.random() - 0.5) * 4
+    });
+    scrapbookCanvas.appendChild(el);
+    updateEmptyState();
+});
+scrapbookToolbar.insertBefore(sbAddBeads, sbSave);
 
 // ═══════════════════════════════════════════════════════════════════════
 // DOT STAR — interactive particle star for empty pages

@@ -1428,6 +1428,54 @@ footer .footer-cta {
 
 
 /* Text elements */
+/* Letter beads — the round acrylic alphabet beads from a friendship bracelet */
+.sb-element-beads {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.22em;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    max-width: 14em;
+}
+
+/* The disc itself is a photograph of a real bead, cut out of its background;
+   only the letter is drawn. */
+.sb-bead {
+    width: 1.55em;
+    height: 1.55em;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/bead-blank.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #141416;
+    font-family: 'Arial Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Letter sized to leave the bead a clear margin all the way round */
+    font-size: 0.5em;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    filter: drop-shadow(0 0.05em 0.07em rgba(0, 0, 0, 0.3));
+    transform: rotate(var(--bead-tilt, 0deg));
+    user-select: none;
+}
+
+/* Charm beads are photographs too, so they carry no drawn glyph */
+.sb-bead-charm {
+    font-size: 0;
+}
+
+.sb-bead-gap {
+    width: 0.5em;
+    flex: 0 0 auto;
+}
+
 .sb-element-text {
     padding: 10px 20px;
     background: #ffffff;

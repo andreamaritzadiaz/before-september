@@ -2,27 +2,36 @@
   "item": "go tide pooling",
   "scrapbook": [
     {
+      "type": "image",
+      "x": 3,
+      "y": 32,
+      "rotation": 0.07847812211814365,
+      "src": "images/valeria+i.JPG",
+      "width": 360,
+      "noTape": true
+    },
+    {
+      "type": "beads",
+      "x": 45,
+      "y": -12,
+      "rotation": 0.375816780018686,
+      "content": "valeria",
+      "fontSize": 44
+    },
+    {
       "type": "video",
       "x": 689,
       "y": 2196,
       "rotation": 0.2967801186739756,
-      "src": "images/bambi-being-brave.MOV",
+      "src": "images/bambi-being-brave.MOV#t=0.001",
       "width": 299
-    },
-    {
-      "type": "video",
-      "x": 467,
-      "y": 948,
-      "rotation": 3.9516924234813544,
-      "src": "images/explorer-bams-2.MOV",
-      "width": 180
     },
     {
       "type": "video",
       "x": 321,
       "y": 2188,
       "rotation": 0.2058750578091697,
-      "src": "images/explorer-bams.MOV",
+      "src": "images/explorer-bams.MOV#t=0.001",
       "width": 338
     },
     {
@@ -30,7 +39,7 @@
       "x": 243,
       "y": 1529,
       "rotation": 0.016858756488701054,
-      "src": "images/more-fun-stuff.MOV",
+      "src": "images/more-fun-stuff.MOV#t=0.001",
       "width": 320,
       "noTape": true
     },
@@ -39,15 +48,15 @@
       "x": 1283,
       "y": 2552,
       "rotation": 0.8300923788578114,
-      "src": "images/ocean-waves.MOV",
+      "src": "images/ocean-waves.MOV#t=0.001",
       "width": 281
     },
     {
       "type": "video",
-      "x": 1045,
-      "y": 29,
-      "rotation": 0.47020713748899823,
-      "src": "images/ocean.MOV",
+      "x": 1062,
+      "y": 18,
+      "rotation": 0.05464678845279991,
+      "src": "images/ocean.MOV#t=0.001",
       "width": 495
     },
     {
@@ -55,7 +64,7 @@
       "x": 1211,
       "y": 1571,
       "rotation": 0.04616589944460081,
-      "src": "images/tide-pools-2.MOV",
+      "src": "images/tide-pools-2.MOV#t=0.001",
       "width": 318
     },
     {
@@ -63,7 +72,7 @@
       "x": -31,
       "y": 1102,
       "rotation": 0.15872834648482215,
-      "src": "images/waterfall.MOV",
+      "src": "images/waterfall.MOV#t=0.001",
       "width": 529
     },
     {
@@ -94,11 +103,11 @@
     },
     {
       "type": "image",
-      "x": 240,
-      "y": 1424,
+      "x": 725,
+      "y": 2743,
       "rotation": -0.08327561862405464,
       "src": "images/jesuslovesyou.JPG",
-      "width": 401,
+      "width": 514,
       "noBorder": true,
       "noTape": true
     },
@@ -114,8 +123,8 @@
     },
     {
       "type": "image",
-      "x": 919,
-      "y": 1842,
+      "x": 873,
+      "y": 1844,
       "rotation": 0.2886114106065101,
       "src": "images/sanddollar.JPG",
       "width": 252
@@ -185,20 +194,11 @@
     },
     {
       "type": "image",
-      "x": -2,
-      "y": 35,
-      "rotation": 0.07847812211814365,
-      "src": "images/valeria+i.JPG",
-      "width": 360,
-      "noTape": true
-    },
-    {
-      "type": "image",
-      "x": 1003,
-      "y": 2551,
-      "rotation": 1.0079435526794818,
+      "x": 337,
+      "y": 2812,
+      "rotation": 0.4819702400952117,
       "src": "images/bams+adam.JPG",
-      "width": 269
+      "width": 353
     },
     {
       "type": "image",
@@ -212,8 +212,8 @@
     },
     {
       "type": "image",
-      "x": 1039,
-      "y": 495,
+      "x": 1135,
+      "y": 504,
       "rotation": 0.06932359696972412,
       "src": "images/tree-of-life-description.JPG",
       "width": 411,
@@ -221,8 +221,8 @@
     },
     {
       "type": "image",
-      "x": 450,
-      "y": 339,
+      "x": 493,
+      "y": 331,
       "rotation": 0.4650661168027055,
       "src": "images/tree-of-life.JPG",
       "width": 564,
@@ -231,8 +231,8 @@
     },
     {
       "type": "image",
-      "x": 1025,
-      "y": 342,
+      "x": 1128,
+      "y": 335,
       "rotation": 0.09591053233256108,
       "src": "images/tree-of-life-description.png",
       "width": 440,
@@ -250,23 +250,23 @@
     },
     {
       "type": "video",
-      "x": -35,
-      "y": 2111,
+      "x": -46,
+      "y": 2195,
       "rotation": 0.1957614369672882,
-      "src": "images/bambi+i.mov",
-      "width": 329
+      "src": "images/bambi+i.mov#t=0.001",
+      "width": 348
     },
     {
       "type": "video",
       "x": 1006,
       "y": 2199,
       "rotation": 0.2461967649665011,
-      "src": "images/explorer-bams-2.MOV",
+      "src": "images/explorer-bams-2.MOV#t=0.001",
       "width": 577
     },
     {
       "type": "image",
-      "x": 839,
+      "x": 849,
       "y": 1536,
       "rotation": 0.40229317545565024,
       "src": "images/barnacle.JPG",
@@ -283,6 +283,78 @@
       "width": 270,
       "noBorder": true,
       "noTape": true
+    },
+    {
+      "type": "beads",
+      "x": 249,
+      "y": 1456,
+      "rotation": 1.050982568275931,
+      "content": "tide",
+      "fontSize": 65
+    },
+    {
+      "type": "beads",
+      "x": 528,
+      "y": 1459,
+      "rotation": 0.8353725214790195,
+      "content": "pooling",
+      "fontSize": 62
+    },
+    {
+      "type": "text",
+      "x": 865,
+      "y": 1583,
+      "rotation": 0.6079234231307773,
+      "content": "a barnacle",
+      "fontSize": 18
+    },
+    {
+      "type": "text",
+      "x": 582,
+      "y": 1813,
+      "rotation": -0.9961450686424533,
+      "content": "sand dollars",
+      "fontSize": 18
+    },
+    {
+      "type": "text",
+      "x": 1024,
+      "y": 2551,
+      "rotation": -0.0184722265339321,
+      "content": "bams the explorer",
+      "fontSize": 18
+    },
+    {
+      "type": "beads",
+      "x": 262,
+      "y": 169,
+      "rotation": -1.620861774233961,
+      "content": "<",
+      "fontSize": 26
+    },
+    {
+      "type": "beads",
+      "x": 294,
+      "y": 370,
+      "rotation": 1.7470410407476331,
+      "content": "tree",
+      "fontSize": 44
+    },
+    {
+      "type": "beads",
+      "x": 342,
+      "y": 438,
+      "rotation": 0.30218579684492664,
+      "content": "of",
+      "fontSize": 44
+    },
+    {
+      "type": "beads",
+      "x": 297,
+      "y": 504,
+      "rotation": 0.041309372593076876,
+      "content": "life",
+      "fontSize": 44
     }
   ]
 }

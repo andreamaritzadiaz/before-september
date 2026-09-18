@@ -1189,6 +1189,38 @@ sbAddAudio.addEventListener('click', () => {
 // ─── Create Scrapbook Element DOM ───
 let sbElementCount = 0;
 
+// ─── Video posters ───
+// Generated from the files in images/posters (first frame of each video).
+// A video with a poster shows its still immediately and loads no video data
+// until play, which is what keeps a page of clips feeling instant.
+const VIDEO_POSTERS = new Set([
+    'IMG_2847',
+    'IMG_4684',
+    'ascii-screen',
+    'bambi+i',
+    'bambi-being-brave',
+    'explorer-bams',
+    'explorer-bams-2',
+    'i_love_seattle',
+    'mariners-7',
+    'mariners-8',
+    'more-fun-stuff',
+    'ocean',
+    'ocean-waves',
+    'salsa-practice-1',
+    'salsa-practice-2',
+    'salsa-practice-3',
+    'solo_day_hiking',
+    'tide-pools-2',
+    'waterfall'
+]);
+
+function posterFor(src) {
+    const file = src.split('#')[0].split('/').pop();
+    const base = file.replace(/\.[^.]+$/, '');
+    return VIDEO_POSTERS.has(base) ? 'images/posters/' + base + '.jpg' : null;
+}
+
 function createScrapbookElement(data) {
     const wrapper = document.createElement('div');
     wrapper.className = 'sb-element';
@@ -1282,15 +1314,25 @@ function createScrapbookElement(data) {
             vid.muted = false;
             vid.controls = true;
             vid.playsInline = true;
-            vid.preload = 'metadata';
             vid.draggable = false;
             vid.style.width = '100%';
             vid.style.pointerEvents = 'all';
-            vid.style.opacity = '0';
-            vid.style.transition = 'opacity 0.4s ease';
-            vid.onloadeddata = () => { vid.style.opacity = '1'; };
-            if (vid.readyState >= 2) vid.style.opacity = '1';
-            setTimeout(() => { vid.style.opacity = '1'; }, 5000);
+
+            // A poster is the video's own first frame, saved as a small JPEG.
+            // With one, the page shows the still straight away and downloads no
+            // video at all until someone presses play.
+            const poster = posterFor(data.src);
+            if (poster) {
+                vid.poster = poster;
+                vid.preload = 'none';
+            } else {
+                vid.preload = 'metadata';
+                vid.style.opacity = '0';
+                vid.style.transition = 'opacity 0.4s ease';
+                vid.onloadeddata = () => { vid.style.opacity = '1'; };
+                if (vid.readyState >= 2) vid.style.opacity = '1';
+                setTimeout(() => { vid.style.opacity = '1'; }, 5000);
+            }
             wrapper.appendChild(vid);
 
             const vidOptions = document.createElement('div');

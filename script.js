@@ -138,10 +138,31 @@ const bucketList = [
     {
         title: "watch a sounders game",
         slug: "sounders",
-        completed: false,
+        completed: true,
         note: "checking the schedule for a good match",
         media: [],
-        scrapbook: []
+        scrapbook: [
+            { type: 'image', x: 388, y: 495, rotation: 0.05, src: 'images/picture.JPG', width: 359, noTape: true },
+            { type: 'video', x: 14, y: 408, rotation: 0.54, src: 'images/meetandgreet.MOV', width: 329 },
+            { type: 'image', x: 1186, y: 155, rotation: 2.75, src: 'images/me!.JPG', width: 241 },
+            { type: 'image', x: 398, y: 793, rotation: -0.37, src: 'images/group.JPG', width: 351 },
+            { type: 'image', x: 819, y: 581, rotation: 0.29, src: 'images/me.JPG', width: 238, noTape: true },
+            { type: 'image', x: 1033, y: 593, rotation: 2.52, src: 'images/me+plush.JPG', width: 222 },
+            { type: 'image', x: 822, y: 304, rotation: -0.19, src: 'images/me+anu.JPG', width: 334, noTape: true },
+            { type: 'image', x: -91, y: -162, rotation: -9.66, src: 'images/camera.PNG', width: 583, noBorder: true, noTape: true },
+            { type: 'image', x: 819, y: 30, rotation: 0.1, src: 'images/me+plushagain.JPG', width: 337, noTape: true },
+            { type: 'image', x: 444, y: 28, rotation: -0.09, src: 'images/field.PNG', width: 326, noBorder: true, noTape: true },
+            { type: 'text', x: 59, y: 26, rotation: 0.25, content: "hello kitty night \nat lumen field <3\n", fontSize: 18 },
+            { type: 'text', x: 845, y: 916, rotation: 0.84, content: ".　 +⠀   ⠀\n⠀˚⠀ ⣴⠟⠉⠉⠛⢦⡀⢀⣴⠛⠉⠈⠙⠻⣄\n⠀⠀⣼⠃⠀⠀⠀⠀⠀⠙⠋⠀⠀⠀⠀⠀⠀⠹⣦\n⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿\n⠀⠀⠿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡆\n⠀⠀⠀⢻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠃\n⠀⠀⠀⠀⠀⠻⢦⣄⠀⠀⠀⠀⠀⣠⡴⠛\n⠀⠀⠀⠀⠀⠀⠀⠉⠛⠶⣄⠶⠋ ⠀⠀⠀+.  *", fontSize: 23 },
+            { type: 'image', x: 1215, y: -24, rotation: 2.9, src: 'images/hello-kitty Background Removed.png', width: 180, noBorder: true, noTape: true },
+            { type: 'image', x: 69, y: 1017, rotation: 0.65, src: 'images/hello-kitty-2.jpg', width: 278 },
+            { type: 'image', x: 1110, y: 658, rotation: 13.09, src: 'images/hk Background Removed.png', width: 430, noBorder: true, noTape: true },
+            { type: 'image', x: 528, y: 1105, rotation: 0.62, src: 'images/seattle-reign.jpeg', width: 275, noBorder: true },
+            { type: 'image', x: 1224, y: 499, rotation: 2.97, src: 'images/soccer-ticket.jpg', width: 180, noBorder: true, noTape: true },
+            { type: 'image', x: 890, y: 1211, rotation: -0.11, src: 'images/hello-kitty-gif.gif', width: 429, noTape: true },
+            { type: 'image', x: 372, y: 1122, rotation: 0.21, src: 'images/match-results.png', width: 233, noBorder: true, noTape: true },
+            { type: 'image', x: 7, y: 1278, rotation: 0.53, src: 'images/goal.gif', width: 478, noBorder: true, noTape: true }
+        ]
     },
     {
         title: "go tide pooling",
@@ -1203,6 +1224,7 @@ const VIDEO_POSTERS = new Set([
     'explorer-bams-2',
     'i_love_seattle',
     'mariners-7',
+    'meetandgreet',
     'mariners-8',
     'more-fun-stuff',
     'ocean',

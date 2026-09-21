@@ -1,0 +1,185 @@
+{
+  "item": "watch a sounders game",
+  "scrapbook": [
+    {
+      "type": "image",
+      "x": 388,
+      "y": 495,
+      "rotation": 0.050365094952321776,
+      "src": "images/picture.JPG",
+      "width": 359,
+      "noTape": true
+    },
+    {
+      "type": "video",
+      "x": 14,
+      "y": 408,
+      "rotation": 0.5398348395083303,
+      "src": "images/meetandgreet.MOV",
+      "width": 329
+    },
+    {
+      "type": "image",
+      "x": 1186,
+      "y": 155,
+      "rotation": 2.748979476863221,
+      "src": "images/me!.JPG",
+      "width": 241
+    },
+    {
+      "type": "image",
+      "x": 398,
+      "y": 793,
+      "rotation": -0.3728846133895658,
+      "src": "images/group.JPG",
+      "width": 351
+    },
+    {
+      "type": "image",
+      "x": 819,
+      "y": 581,
+      "rotation": 0.286850196383841,
+      "src": "images/me.JPG",
+      "width": 238,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 1033,
+      "y": 593,
+      "rotation": 2.5225470163545207,
+      "src": "images/me+plush.JPG",
+      "width": 222
+    },
+    {
+      "type": "image",
+      "x": 822,
+      "y": 304,
+      "rotation": -0.18671966525171246,
+      "src": "images/me+anu.JPG",
+      "width": 334,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": -91,
+      "y": -162,
+      "rotation": -9.658428408783646,
+      "src": "images/camera.PNG",
+      "width": 583,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 819,
+      "y": 30,
+      "rotation": 0.10337706691856763,
+      "src": "images/me+plushagain.JPG",
+      "width": 337,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 444,
+      "y": 28,
+      "rotation": -0.09303432298237979,
+      "src": "images/field.PNG",
+      "width": 326,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "text",
+      "x": 59,
+      "y": 26,
+      "rotation": 0.25480820584206043,
+      "content": "hello kitty night \nat lumen field <3\n",
+      "fontSize": 18
+    },
+    {
+      "type": "text",
+      "x": 845,
+      "y": 916,
+      "rotation": 0.8364600654551095,
+      "content": ".　 +⠀   ⠀\n⠀˚⠀ ⣴⠟⠉⠉⠛⢦⡀⢀⣴⠛⠉⠈⠙⠻⣄\n⠀⠀⣼⠃⠀⠀⠀⠀⠀⠙⠋⠀⠀⠀⠀⠀⠀⠹⣦\n⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿\n⠀⠀⠿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡆\n⠀⠀⠀⢻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠃\n⠀⠀⠀⠀⠀⠻⢦⣄⠀⠀⠀⠀⠀⣠⡴⠛\n⠀⠀⠀⠀⠀⠀⠀⠉⠛⠶⣄⠶⠋ ⠀⠀⠀+.  *",
+      "fontSize": 23
+    },
+    {
+      "type": "image",
+      "x": 1215,
+      "y": -24,
+      "rotation": 2.9012429295160347,
+      "src": "images/hello-kitty Background Removed.png",
+      "width": 180,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 69,
+      "y": 1017,
+      "rotation": 0.6526047226619722,
+      "src": "images/hello-kitty-2.jpg",
+      "width": 278
+    },
+    {
+      "type": "image",
+      "x": 1110,
+      "y": 658,
+      "rotation": 13.086599301418584,
+      "src": "images/hk Background Removed.png",
+      "width": 430,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 528,
+      "y": 1105,
+      "rotation": 0.6234238646010422,
+      "src": "images/seattle-reign.jpeg",
+      "width": 275,
+      "noBorder": true
+    },
+    {
+      "type": "image",
+      "x": 1224,
+      "y": 499,
+      "rotation": 2.968340555592003,
+      "src": "images/soccer-ticket.jpg",
+      "width": 180,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 890,
+      "y": 1211,
+      "rotation": -0.10763514255291362,
+      "src": "images/hello-kitty-gif.gif",
+      "width": 429,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 372,
+      "y": 1122,
+      "rotation": 0.20690116664845615,
+      "src": "images/match-results.png",
+      "width": 233,
+      "noBorder": true,
+      "noTape": true
+    },
+    {
+      "type": "image",
+      "x": 7,
+      "y": 1278,
+      "rotation": 0.5316465168919384,
+      "src": "images/goal.gif",
+      "width": 478,
+      "noBorder": true,
+      "noTape": true
+    }
+  ]
+}

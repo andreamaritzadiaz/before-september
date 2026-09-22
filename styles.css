@@ -1686,6 +1686,12 @@ footer .footer-cta {
         max-width: 350px;
     }
 
+    /* Photos flagged mobileWide render bigger than the usual capped size */
+    .sb-element.sb-mobile-wide {
+        width: 100% !important;
+        max-width: 440px;
+    }
+
     /* Decorative backdrop shown behind a single photo */
     .sb-mobile-bg-frame {
         width: 90%;
@@ -1769,6 +1775,19 @@ footer .footer-cta {
     .sb-element-text {
         width: auto !important;
         max-width: 100%;
+    }
+
+    /* Braille/ASCII art: keep it as art (monospace, no wrap) but scale the
+       font to the viewport so the whole shape fits instead of being clipped. */
+    .sb-element-text.sb-mobile-ascii {
+        font-size: clamp(9px, 4vw, 20px) !important;
+        font-family: 'Courier New', monospace;
+        white-space: pre;
+        line-height: 1.1;
+        text-align: center;
+        padding: 8px 12px;
+        max-width: 100%;
+        overflow-x: auto;
     }
 
     .sb-element-sticker {

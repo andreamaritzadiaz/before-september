@@ -15,7 +15,7 @@
       "x": 14,
       "y": 408,
       "rotation": 0.5398348395083303,
-      "src": "images/meetandgreet.MOV",
+      "src": "images/meetandgreet.MOV#t=0.001",
       "width": 329
     },
     {
@@ -36,23 +36,6 @@
     },
     {
       "type": "image",
-      "x": 819,
-      "y": 581,
-      "rotation": 0.286850196383841,
-      "src": "images/me.JPG",
-      "width": 238,
-      "noTape": true
-    },
-    {
-      "type": "image",
-      "x": 1033,
-      "y": 593,
-      "rotation": 2.5225470163545207,
-      "src": "images/me+plush.JPG",
-      "width": 222
-    },
-    {
-      "type": "image",
       "x": 822,
       "y": 304,
       "rotation": -0.18671966525171246,
@@ -68,7 +51,8 @@
       "src": "images/camera.PNG",
       "width": 583,
       "noBorder": true,
-      "noTape": true
+      "noTape": true,
+      "mobileWide": true
     },
     {
       "type": "image",
@@ -95,22 +79,28 @@
       "y": 26,
       "rotation": 0.25480820584206043,
       "content": "hello kitty night \nat lumen field <3\n",
-      "fontSize": 18
+      "fontSize": 18,
+      "mobileAttachTo": "images/camera.PNG",
+      "mobileCaption": true,
+      "mobileAbove": true
     },
     {
       "type": "text",
-      "x": 845,
-      "y": 916,
+      "x": 813,
+      "y": 637,
       "rotation": 0.8364600654551095,
       "content": ".　 +⠀   ⠀\n⠀˚⠀ ⣴⠟⠉⠉⠛⢦⡀⢀⣴⠛⠉⠈⠙⠻⣄\n⠀⠀⣼⠃⠀⠀⠀⠀⠀⠙⠋⠀⠀⠀⠀⠀⠀⠹⣦\n⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿\n⠀⠀⠿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡆\n⠀⠀⠀⢻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠃\n⠀⠀⠀⠀⠀⠻⢦⣄⠀⠀⠀⠀⠀⣠⡴⠛\n⠀⠀⠀⠀⠀⠀⠀⠉⠛⠶⣄⠶⠋ ⠀⠀⠀+.  *",
-      "fontSize": 23
+      "fontSize": 23,
+      "mobileAttachTo": "images/group.JPG",
+      "mobileCaption": true,
+      "mobileAsciiArt": true
     },
     {
       "type": "image",
       "x": 1215,
       "y": -24,
       "rotation": 2.9012429295160347,
-      "src": "images/hello-kitty Background Removed.png",
+      "src": "images/hello-kitty%20Background%20Removed.png",
       "width": 180,
       "noBorder": true,
       "noTape": true
@@ -128,7 +118,7 @@
       "x": 1110,
       "y": 658,
       "rotation": 13.086599301418584,
-      "src": "images/hk Background Removed.png",
+      "src": "images/hk%20Background%20Removed.png",
       "width": 430,
       "noBorder": true,
       "noTape": true
@@ -163,11 +153,11 @@
     },
     {
       "type": "image",
-      "x": 372,
-      "y": 1122,
+      "x": 845,
+      "y": 988,
       "rotation": 0.20690116664845615,
       "src": "images/match-results.png",
-      "width": 233,
+      "width": 336,
       "noBorder": true,
       "noTape": true
     },

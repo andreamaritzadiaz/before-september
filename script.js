@@ -149,11 +149,11 @@ const bucketList = [
             { type: 'image', x: 819, y: 581, rotation: 0.29, src: 'images/me.JPG', width: 238, noTape: true },
             { type: 'image', x: 1033, y: 593, rotation: 2.52, src: 'images/me+plush.JPG', width: 222 },
             { type: 'image', x: 822, y: 304, rotation: -0.19, src: 'images/me+anu.JPG', width: 334, noTape: true },
-            { type: 'image', x: -91, y: -162, rotation: -9.66, src: 'images/camera.PNG', width: 583, noBorder: true, noTape: true },
+            { type: 'image', x: -91, y: -162, rotation: -9.66, src: 'images/camera.PNG', width: 583, noBorder: true, noTape: true, mobileWide: true },
             { type: 'image', x: 819, y: 30, rotation: 0.1, src: 'images/me+plushagain.JPG', width: 337, noTape: true },
             { type: 'image', x: 444, y: 28, rotation: -0.09, src: 'images/field.PNG', width: 326, noBorder: true, noTape: true },
-            { type: 'text', x: 59, y: 26, rotation: 0.25, content: "hello kitty night \nat lumen field <3\n", fontSize: 18 },
-            { type: 'text', x: 845, y: 916, rotation: 0.84, content: ".　 +⠀   ⠀\n⠀˚⠀ ⣴⠟⠉⠉⠛⢦⡀⢀⣴⠛⠉⠈⠙⠻⣄\n⠀⠀⣼⠃⠀⠀⠀⠀⠀⠙⠋⠀⠀⠀⠀⠀⠀⠹⣦\n⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿\n⠀⠀⠿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡆\n⠀⠀⠀⢻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠃\n⠀⠀⠀⠀⠀⠻⢦⣄⠀⠀⠀⠀⠀⣠⡴⠛\n⠀⠀⠀⠀⠀⠀⠀⠉⠛⠶⣄⠶⠋ ⠀⠀⠀+.  *", fontSize: 23 },
+            { type: 'text', x: 59, y: 26, rotation: 0.25, content: "hello kitty night \nat lumen field <3\n", fontSize: 18, mobileAttachTo: 'images/camera.PNG', mobileCaption: true, mobileAbove: true },
+            { type: 'text', x: 845, y: 916, rotation: 0.84, content: ".　 +⠀   ⠀\n⠀˚⠀ ⣴⠟⠉⠉⠛⢦⡀⢀⣴⠛⠉⠈⠙⠻⣄\n⠀⠀⣼⠃⠀⠀⠀⠀⠀⠙⠋⠀⠀⠀⠀⠀⠀⠹⣦\n⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿\n⠀⠀⠿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡆\n⠀⠀⠀⢻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠃\n⠀⠀⠀⠀⠀⠻⢦⣄⠀⠀⠀⠀⠀⣠⡴⠛\n⠀⠀⠀⠀⠀⠀⠀⠉⠛⠶⣄⠶⠋ ⠀⠀⠀+.  *", fontSize: 23, mobileAttachTo: 'images/group.JPG', mobileCaption: true, mobileAsciiArt: true },
             { type: 'image', x: 1215, y: -24, rotation: 2.9, src: 'images/hello-kitty Background Removed.png', width: 180, noBorder: true, noTape: true },
             { type: 'image', x: 69, y: 1017, rotation: 0.65, src: 'images/hello-kitty-2.jpg', width: 278 },
             { type: 'image', x: 1110, y: 658, rotation: 13.09, src: 'images/hk Background Removed.png', width: 430, noBorder: true, noTape: true },
@@ -1270,6 +1270,7 @@ function createScrapbookElement(data) {
             wrapper.classList.add('sb-element-image');
             if (data.noBorder) wrapper.classList.add('no-border');
             if (data.noTape) wrapper.classList.add('no-tape');
+            if (data.mobileWide) wrapper.classList.add('sb-mobile-wide');
             if (data.width) wrapper.style.width = data.width + 'px';
             const img = document.createElement('img');
             img.draggable = false;
@@ -1330,6 +1331,7 @@ function createScrapbookElement(data) {
             wrapper.classList.add('sb-element-image');
             if (data.noBorder) wrapper.classList.add('no-border');
             if (data.noTape) wrapper.classList.add('no-tape');
+            if (data.mobileWide) wrapper.classList.add('sb-mobile-wide');
             if (data.width) wrapper.style.width = data.width + 'px';
             const vid = document.createElement('video');
             vid.src = data.src.includes('#t=') ? data.src : data.src + '#t=0.001';
@@ -1385,6 +1387,7 @@ function createScrapbookElement(data) {
 
         case 'text':
             wrapper.classList.add('sb-element-text');
+            if (data.mobileAsciiArt) wrapper.classList.add('sb-mobile-ascii');
             const textSpan = document.createElement('span');
             textSpan.className = 'sb-text-content';
             textSpan.textContent = data.content;
@@ -1999,7 +2002,7 @@ function showToast(msg) {
 // Mobile-only tuning fields live in the hardcoded item.scrapbook (not in the
 // exported JSON, which strips them). Overlay them onto whatever data actually
 // renders (localStorage or JSON file) by matching on src/content.
-const MOBILE_ONLY_FIELDS = ['mobileAttachTo', 'mobileCaption', 'mobileBackgroundFor', 'mobilePosition', 'mobileOverlayFor', 'mobileAfter'];
+const MOBILE_ONLY_FIELDS = ['mobileAttachTo', 'mobileCaption', 'mobileBackgroundFor', 'mobilePosition', 'mobileOverlayFor', 'mobileAfter', 'mobileAbove', 'mobileWide', 'mobileAsciiArt'];
 function mergeMobileFields(data, hardcoded) {
     if (!Array.isArray(data) || !Array.isArray(hardcoded)) return data;
     return data.map(el => {
@@ -2258,8 +2261,9 @@ function renderScrapbookMobile(scrapbookData) {
         const el = createScrapbookElement(textData);
         el.style.position = 'relative';
         // Slot into the odd order between the attached image and the next one;
-        // fall back to the bottom if the image isn't present.
-        el.style.order = si === undefined ? 8999 : si * 2 + 1;
+        // mobileAbove tucks the caption into the slot just before the image
+        // instead. Fall back to the bottom if the image isn't present.
+        el.style.order = si === undefined ? 8999 : (textData.mobileAbove ? si * 2 - 1 : si * 2 + 1);
         scrapbookCanvas.appendChild(el);
     });
 
